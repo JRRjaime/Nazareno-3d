@@ -31,7 +31,10 @@ html{scroll-behavior:smooth;}
 body{font-family:'EB Garamond',Georgia,serif;color:var(--tinta);
   background:radial-gradient(ellipse at 85% 8%,rgba(201,165,77,.12),transparent 32%),
   radial-gradient(ellipse at 8% 65%,rgba(75,16,32,.08),transparent 28%),
-  linear-gradient(180deg,#fffefb 0%,#faf4e8 45%,#f0e6d8 100%);min-height:100vh;}
+  linear-gradient(180deg,#fffefb 0%,#faf4e8 45%,#f0e6d8 100%);min-height:100vh;overflow-x:hidden;}
+img,svg{max-width:100%;height:auto;}
+button,input,select,textarea{font:inherit;}
+html,body{max-width:100%;}
 .page{width:min(1160px,calc(100vw - 32px));margin:0 auto;padding-bottom:80px;}
 
 /* NAV */
@@ -544,6 +547,8 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
   .steps-grid{grid-template-columns:1fr 1fr;}
   .cfg-prev{min-height:auto;}
   #previewSvg{width:60%;max-width:240px;}
+  .encargo-head{flex-direction:column;}
+  .encargo-form{grid-template-columns:1fr 1fr;}
   /* tabla scroll horizontal en tablet */
   .price-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
   .price-table{min-width:560px;}
@@ -551,6 +556,7 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
 
 /* Móvil grande (hasta 640px) */
 @media(max-width:640px){
+  body{padding-bottom:84px;}
   .page{width:calc(100vw - 16px);}
 
   /* NAV — compacto, sin sticky para no ocupar espacio */
@@ -558,28 +564,30 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
   .nav-brand{width:100%;}
   .nav-ey{font-size:9px;letter-spacing:.2em;}
   .nav-tit{font-size:17px;}
-  .nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
-  .nav-a{text-align:center;padding:9px 6px;font-size:10px;letter-spacing:.04em;}
+  .nav-links{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+  .nav-a{text-align:center;padding:10px 8px;font-size:10px;letter-spacing:.04em;}
+  .dark-btn{grid-column:1/-1;width:100%;height:42px;border-radius:12px;}
 
   /* HERO */
   .hero{padding:24px 18px 0;border-radius:22px;gap:20px;}
+  .hero-copy{padding-bottom:26px;}
   .hero-pill{font-size:9px;padding:6px 12px;margin-bottom:14px;}
   .hero-h1{font-size:28px;margin-bottom:12px;}
   .hero-p{font-size:15px;margin-bottom:20px;}
-  .btn{padding:12px 18px;font-size:11px;}
-  .hero-cta{gap:8px;}
+  .btn{padding:12px 18px;font-size:11px;justify-content:center;}
+  .hero-cta{gap:8px;display:grid;grid-template-columns:1fr;}
   .hero-art{gap:8px;padding:0 4px;}
   .hnz:nth-child(1){width:25%;}
   .hnz:nth-child(2){width:34%;}
   .hnz:nth-child(3){width:25%;}
 
   /* CONTADOR */
-  .counter-bar{padding:14px 18px;gap:10px;border-radius:16px;}
+  .counter-bar{padding:14px 18px;gap:6px;border-radius:16px;flex-direction:column;text-align:center;}
   .counter-num{font-size:28px;}
   .counter-txt{font-size:10px;letter-spacing:.08em;text-align:center;}
 
   /* SECCIONES */
-  .section{margin-top:48px;}
+  .section{margin-top:48px;scroll-margin-top:20px;}
   .sec-h2{font-size:24px;}
   .sec-p{font-size:16px;}
   .card{padding:20px 16px;}
@@ -599,22 +607,34 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
 
   /* PREVIEW */
   .cfg-prev{padding:18px 14px;gap:12px;}
-  #previewSvg{width:62%;max-width:220px;}
+  .flip-stage{width:min(72vw,260px);max-width:none;}
+  #previewSvg{width:100%;max-width:none;}
   .prev-row span{font-size:9px;}
   .prev-row b{font-size:11px;}
   .prev-price{font-size:22px;}
   .view-btn{font-size:10px;padding:7px 12px;}
 
-  /* TABLA DE PRECIOS */
-  .price-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px;}
-  .price-table{min-width:480px;font-size:13px;}
-  .price-table thead th{padding:12px 10px;font-size:10px;}
-  .price-table td{padding:10px 10px;}
-  .td-name{font-size:13px;}
-  .td-qty{font-size:11px;display:none;} /* ocultar desc en móvil */
+  /* TABLA DE PRECIOS → tarjetas */
+  .price-table-wrap{overflow:visible;border-radius:0;}
+  .price-table{min-width:0;width:100%;border-spacing:0 10px;display:block;box-shadow:none;background:transparent;}
+  .price-table thead{display:none;}
+  .price-table tbody{display:grid;gap:12px;}
+  .price-table tbody tr{display:block;padding:8px 0;border-radius:18px;border:1px solid var(--borde);box-shadow:var(--smd);background:rgba(255,255,255,.94);}
+  .price-table tbody tr.popular{background:linear-gradient(180deg,#fffdf5,#fff8e8);}
+  .price-table td{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:10px 14px;text-align:right !important;border:none;}
+  .price-table td::before{content:attr(data-label);font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);text-align:left;flex:1;}
+  .price-table td > *{flex-shrink:0;}
+  .price-table td:first-child{display:block;text-align:left !important;padding-bottom:6px;}
+  .price-table td:first-child::before{display:none;}
+  .td-name{font-size:14px;}
+  .td-qty{font-size:12px;display:block;margin-top:4px;}
   .td-price,.td-mono{font-size:16px;}
   .td-pu{font-size:10px;}
-  .btn-tadd{padding:6px 9px;font-size:9px;}
+  .td-add{display:flex;justify-content:flex-end;gap:8px;padding-top:6px;}
+  .td-add::before{display:none;}
+  .btn-tadd{padding:8px 12px;font-size:10px;}
+  .price-table tfoot,.price-table tfoot tr,.price-table tfoot td{display:block;width:100%;}
+  .price-table tfoot td{text-align:left !important;border-radius:16px;padding:14px 16px;margin-top:4px;}
 
   /* PACKS/STEPS */
   .packs-grid{grid-template-columns:1fr;}
@@ -622,12 +642,17 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
   .step{padding:22px 18px;}
 
   /* PEDIDO */
+  .ped-grid{gap:16px;}
   .wa-card{padding:24px 18px;min-height:auto;}
   .wa-h3{font-size:22px;}
   .wa-p{font-size:15px;}
   .form-card{padding:24px 18px;}
   .form-h3{font-size:20px;}
   .frow{grid-template-columns:1fr;}
+  .encargo-card{padding:22px 16px;}
+  .encargo-form{grid-template-columns:1fr;gap:12px;}
+  .encargo-h3{font-size:22px;}
+  .encargo-p{font-size:15px;}
 
   /* CESTA FLOTANTE */
   .cart-panel{
@@ -638,11 +663,11 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
   .cart-float{bottom:88px;right:16px;width:52px;height:52px;}
   .wa-float{bottom:24px;right:16px;width:52px;height:52px;}
   .cart-items{padding:10px 16px;}
-  .cart-footer{padding:12px 16px;}
+  .cart-footer{padding:12px 16px max(12px, env(safe-area-inset-bottom));}
   .cart-head{padding:16px 18px 12px;}
 
   /* POPUP */
-  .popup-box{padding:24px 20px;border-radius:22px 22px 0 0;position:fixed;bottom:0;left:0;right:0;width:100%;}
+  .popup-box{padding:24px 20px;border-radius:22px 22px 0 0;position:fixed;bottom:0;left:0;right:0;width:100%;max-height:min(88vh,720px);overflow-y:auto;}
   .popup-overlay{align-items:flex-end;padding:0;}
   .popup-title{font-size:18px;}
   .popup-btns{flex-direction:column;}
@@ -655,10 +680,12 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
 /* Móvil pequeño (hasta 380px) */
 @media(max-width:380px){
   .hero-h1{font-size:24px;}
-  .nav-links{grid-template-columns:1fr 1fr;}
-  .nav-a.pri{grid-column:1/-1;}
+  .nav-links{grid-template-columns:1fr;}
+  .nav-a.pri{grid-column:auto;}
   .dual-color{grid-template-columns:1fr;}
   .size-row{grid-template-columns:1fr;}
+  .counter-num{font-size:24px;}
+  .popup-box{padding:20px 16px;}
 }
 </style>
 </head>
@@ -1504,31 +1531,31 @@ function buildPacks(){
   if(!tbody) return;
   tbody.innerHTML=PACKS.map(p=>{
     const addBtn = p.g
-      ? `<td class="td-add">
+      ? `<td class="td-add" data-label="Acción">
            <button class="btn-tadd" id="tadd_${p.qty}_c" onclick="addPackToCart(event,${p.qty},${p.g},'color')">＋ Añadir</button>
          </td>`
-      : `<td class="td-add">
+      : `<td class="td-add" data-label="Acción">
            <button class="btn-tadd"      id="tadd_${p.qty}_c" onclick="addPackToCart(event,${p.qty},${p.g},'color')">🎨</button>
            <button class="btn-tadd mono" id="tadd_${p.qty}_m" onclick="addPackToCart(event,${p.qty},${p.g},'mono')">⬛</button>
          </td>`;
     if(p.g) return `
       <tr onclick="clickPack(this,${p.qty},${p.g})" class="wr">
-        <td><div class="td-name">${p.name}</div><div class="td-qty">${p.desc}</div></td>
-        <td>Unidad única</td>
-        <td class="td-price">${fmt(p.color)}</td>
-        <td class="td-mono">—</td>
-        <td>—</td>
+        <td data-label="Pack"><div class="td-name">${p.name}</div><div class="td-qty">${p.desc}</div></td>
+        <td data-label="Unidades">Unidad única</td>
+        <td class="td-price" data-label="A color">${fmt(p.color)}</td>
+        <td class="td-mono" data-label="Monocolor">—</td>
+        <td data-label="Ahorro mono">—</td>
         ${addBtn}
       </tr>`;
     const save=fmt(p.color-p.mono);
     const isPopular=p.qty===100;
     return `
       <tr onclick="clickPack(this,${p.qty},${p.g})" class="wr${isPopular?' popular':''}">
-        <td><div class="td-name">${p.name}${isPopular?'<span class="popular-badge">★ Popular</span>':''}</div><div class="td-qty">${p.desc}</div></td>
-        <td><strong>${p.qty}</strong> uds</td>
-        <td class="td-price">${fmt(p.color)}<div class="td-pu">${fmt(p.color/p.qty)}/ud</div></td>
-        <td class="td-mono">${fmt(p.mono)}<div class="td-pu">${fmt(p.mono/p.qty)}/ud</div></td>
-        <td><span class="td-save">−${save}</span></td>
+        <td data-label="Pack"><div class="td-name">${p.name}${isPopular?'<span class="popular-badge">★ Popular</span>':''}</div><div class="td-qty">${p.desc}</div></td>
+        <td data-label="Unidades"><strong>${p.qty}</strong> uds</td>
+        <td class="td-price" data-label="A color">${fmt(p.color)}<div class="td-pu">${fmt(p.color/p.qty)}/ud</div></td>
+        <td class="td-mono" data-label="Monocolor">${fmt(p.mono)}<div class="td-pu">${fmt(p.mono/p.qty)}/ud</div></td>
+        <td data-label="Ahorro mono"><span class="td-save">−${save}</span></td>
         ${addBtn}
       </tr>`;
   }).join('');
