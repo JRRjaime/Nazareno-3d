@@ -3,30 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nazarenos de Semana Santa en impresión 3D para cofradías y hermandades. Color personalizado de capa y hábito. Envío a toda España desde Granada.">
-<meta name="keywords" content="nazarenos 3D, figuras semana santa, impresión 3D cofradías, hermandades Granada, penitentes 3D, recuerdos semana santa, nazarenos personalizados, cofradías Granada, figuras cofrades">
-<meta name="author" content="Jaime Rivas Reinoso">
-<meta property="og:title" content="Nazarenos 3D · Jaime Rivas · Granada">
-<meta property="og:description" content="Figuras de nazarenos en impresión 3D para cofradías y hermandades. Color personalizado, envío a toda España.">
-<meta property="og:type" content="website">
-<title>Nazarenos 3D · Figuras Semana Santa · Jaime Rivas · Granada</title>
-<!-- FAVICON inline SVG (nazareno) -->
+<meta name="description" content="Semana Santa 3D · Figuras cofrades en impresión 3D. Nazarenos, costaleros, músicos, altares y más. Hecho en Granada.">
+<title>Semana Santa 3D · Jaime Rivas · Granada</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234b1020'/%3E%3Cpath d='M16 2 Q19 7 20 11 L19 27 L13 27 L12 11 Q13 7 16 2Z' fill='%23c9a54d'/%3E%3Cellipse cx='16' cy='13' rx='3' ry='2' fill='%234b1020'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{
-  scroll-behavior:smooth;
-  width:100%;
-  overflow-x:hidden;
-  background:
-    radial-gradient(ellipse at 85% 8%,rgba(201,165,77,.12),transparent 32%),
-    radial-gradient(ellipse at 8% 65%,rgba(75,16,32,.08),transparent 28%),
-    linear-gradient(180deg,#fffefb 0%,#faf4e8 45%,#f0e6d8 100%);
-  -webkit-text-size-adjust:100%;
-}
+html{scroll-behavior:smooth;}
 :root{
   --vino:#4b1020;--vino2:#6b1a31;
   --oro:#c9a54d;--oroS:#ead8a3;
@@ -37,677 +22,188 @@ html{
   --slg:0 24px 64px rgba(34,18,11,.2);
   --r:26px;
 }
-body{font-family:'EB Garamond',Georgia,serif;color:var(--tinta);
+body{
+  font-family:'EB Garamond',Georgia,serif;color:var(--tinta);
   background:radial-gradient(ellipse at 85% 8%,rgba(201,165,77,.12),transparent 32%),
-  radial-gradient(ellipse at 8% 65%,rgba(75,16,32,.08),transparent 28%),
-  linear-gradient(180deg,#fffefb 0%,#faf4e8 45%,#f0e6d8 100%);min-height:100vh;overflow-x:hidden;}
-img,svg{max-width:100%;height:auto;}
-button,input,select,textarea{font:inherit;}
-html,body{max-width:100%;}
-.page{width:min(1160px,calc(100vw - 32px));margin:0 auto;padding-bottom:80px;}
+             radial-gradient(ellipse at 8% 65%,rgba(75,16,32,.08),transparent 28%),
+             linear-gradient(180deg,#fffefb 0%,#faf4e8 45%,#f0e6d8 100%);
+  min-height:100vh;
+}
+.page{width:min(1160px,calc(100vw - 32px));margin:0 auto;padding-bottom:100px;}
 
-/* NAV */
+/* ── NAV ── */
 .nav{position:sticky;top:14px;z-index:100;margin:16px 0 0;padding:14px 22px;
   background:rgba(255,255,255,.88);backdrop-filter:blur(18px);
   border:1px solid var(--borde);border-radius:20px;box-shadow:var(--smd);
   display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.nav-brand{display:flex;flex-direction:column;gap:2px;}
+.nav-brand{display:flex;flex-direction:column;gap:1px;}
 .nav-ey{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--vino);font-weight:600;}
 .nav-tit{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--grafito);}
-.nav-links{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.nav-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 .nav-a{font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-decoration:none;padding:9px 16px;border-radius:999px;border:1px solid var(--borde);color:var(--grafito);transition:all .22s;}
 .nav-a:hover{background:var(--crema);border-color:rgba(75,16,32,.22);}
 .nav-a.pri{background:var(--vino);color:#fff;border-color:transparent;}
 .nav-a.pri:hover{background:var(--vino2);transform:translateY(-1px);}
 
-/* HERO */
-.hero{margin-top:20px;border-radius:36px;overflow:hidden;position:relative;
+/* ── HERO ── */
+.hero{
+  margin-top:20px;border-radius:36px;overflow:hidden;position:relative;
   background:linear-gradient(135deg,#3a0c18 0%,#5a1423 28%,#2c1010 65%,#190c0a 100%);
-  padding:52px 52px 0;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:end;}
+  padding:56px 56px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:end;
+}
 .hero::before{content:'';position:absolute;inset:18px;border:1px solid rgba(201,165,77,.18);border-radius:24px;pointer-events:none;z-index:0;}
-.hero-copy{position:relative;z-index:2;padding-bottom:52px;}
+.hero-copy{position:relative;z-index:2;padding-bottom:56px;}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(201,165,77,.13);border:1px solid rgba(201,165,77,.28);color:var(--oroS);font-family:'Cinzel',serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:22px;}
-.hero-h1{font-family:'Cinzel',serif;font-size:clamp(36px,5.5vw,64px);font-weight:900;line-height:1.0;letter-spacing:.02em;color:#fff;margin-bottom:18px;}
+.hero-h1{font-family:'Cinzel',serif;font-size:clamp(34px,5.5vw,62px);font-weight:900;line-height:1.0;letter-spacing:.02em;color:#fff;margin-bottom:16px;}
 .hero-h1 em{color:var(--oro);font-style:normal;display:block;}
-.hero-p{font-size:18px;line-height:1.7;color:rgba(255,245,220,.78);max-width:480px;margin-bottom:30px;}
+.hero-p{font-size:18px;line-height:1.7;color:rgba(255,245,220,.78);max-width:480px;margin-bottom:28px;}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;border:none;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:.07em;text-decoration:none;cursor:pointer;transition:all .25s;}
 .btn-gold{background:var(--oro);color:#1a0c07;}
 .btn-gold:hover{background:#deba5e;transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,165,77,.4);}
 .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);}
 .btn-ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-2px);}
-.hero-art{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;gap:14px;padding:0 8px;}
+.hero-art{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;gap:12px;padding:0 8px;}
 .hnz{opacity:0;transform:translateY(50px);animation:nzRise .9s cubic-bezier(.22,1,.36,1) forwards;filter:drop-shadow(0 18px 30px rgba(0,0,0,.45));cursor:pointer;transition:filter .3s;}
 .hnz:hover{filter:drop-shadow(0 24px 40px rgba(0,0,0,.65));}
 .hnz:nth-child(1){width:27%;animation-delay:.28s;}
 .hnz:nth-child(2){width:37%;animation-delay:.08s;}
 .hnz:nth-child(3){width:27%;animation-delay:.44s;}
 @keyframes nzRise{to{opacity:1;transform:translateY(0);}}
-@keyframes nzFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.hnz.floating{animation:nzFloat 3.2s ease-in-out infinite;}
 
-/* SECCIONES */
-.section{margin-top:72px;}
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--borde);border-radius:var(--r);overflow:hidden;margin:24px 0 0;box-shadow:var(--smd);}
+.stat{background:rgba(255,255,255,.92);padding:22px 16px;text-align:center;}
+.stat-num{font-family:'Cinzel',serif;font-size:28px;font-weight:900;color:var(--grafito);margin-bottom:4px;}
+.stat-lbl{font-size:12px;color:var(--gris);letter-spacing:.06em;text-transform:uppercase;}
+
+/* ── SECCIÓN CATÁLOGO ── */
+.section{margin-top:68px;}
 .sec-lbl{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--vino);font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
 .sec-lbl::before{content:'';display:block;width:24px;height:1px;background:var(--oro);}
-.sec-h2{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.08;color:var(--grafito);margin-bottom:12px;}
-.sec-p{font-size:18px;color:var(--gris);line-height:1.7;max-width:620px;}
-.card{background:rgba(255,255,255,.9);border:1px solid var(--borde);border-radius:var(--r);box-shadow:var(--smd);padding:30px;}
+.sec-h2{font-family:'Cinzel',serif;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.08;color:var(--grafito);margin-bottom:12px;}
+.sec-p{font-size:17px;color:var(--gris);line-height:1.7;max-width:600px;}
 
-/* CONFIGURADOR */
-.cfg-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
-.blk{margin-bottom:26px;}
-.blk:last-child{margin-bottom:0;}
-.blk-lbl{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--vino);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-.blk-lbl::before{content:'';width:16px;height:1px;background:var(--oro);}
-
-/* TOGGLE COLOR/MONO */
-.mode-toggle{display:flex;gap:0;margin-bottom:22px;background:var(--crema);border:1px solid var(--borde);border-radius:999px;padding:4px;}
-.mode-btn{flex:1;padding:10px 14px;border:none;border-radius:999px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--gris);transition:all .22s;}
-.mode-btn.on{background:var(--vino);color:#fff;box-shadow:0 4px 14px rgba(75,16,32,.25);}
-.mode-btn.on.mono-btn{background:var(--grafito);}
-
-/* ZONAS DE COLOR */
-.dual-color{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;}
-.color-zone{border:1px solid var(--borde);border-radius:16px;padding:14px;background:#fdfaf6;}
-.zone-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;color:var(--grafito);}
-.zone-title .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.15);}
-.zone-swatch-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;}
-.sw{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;outline:none;transition:all .2s;position:relative;flex-shrink:0;}
-.sw:hover{transform:scale(1.18);}
-.sw.on{border-color:var(--oro);box-shadow:0 0 0 2px rgba(201,165,77,.4);}
-.sw-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--grafito);color:#fff;font-family:'Cinzel',serif;font-size:9px;white-space:nowrap;padding:4px 8px;border-radius:5px;pointer-events:none;z-index:20;}
-.sw:hover .sw-tip{display:block;}
-.zone-custom{display:flex;align-items:center;gap:8px;margin-top:4px;}
-.zone-custom label{font-size:13px;color:var(--gris);}
-.zone-custom input[type=color]{width:32px;height:32px;border:2px solid var(--borde);border-radius:7px;cursor:pointer;padding:2px;background:transparent;}
-.color-strip{height:5px;border-radius:999px;margin-top:8px;transition:background .3s;}
-
-/* MONO ZONE */
-.mono-zone{border:1px solid var(--borde);border-radius:16px;padding:14px;background:#fdfaf6;margin-bottom:22px;}
-
-/* SIZE / QTY */
-.size-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.sz{padding:16px 14px;border-radius:18px;border:2px solid rgba(75,16,32,.1);background:#fff;cursor:pointer;transition:all .22s;text-align:left;}
-.sz:hover{border-color:rgba(75,16,32,.25);transform:translateY(-2px);}
-.sz.on{border-color:var(--oro);background:linear-gradient(180deg,#fffdf8,#fff8ed);}
-.sz-name{font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--grafito);margin-bottom:2px;}
-.sz-meds{margin-bottom:6px;}
-.sz-meds span{
-  display:inline-flex;align-items:center;gap:4px;
-  font-family:'Cinzel',serif;font-size:11px;font-weight:700;
-  color:var(--oro);background:rgba(201,165,77,.12);
-  padding:3px 9px;border-radius:999px;letter-spacing:.06em;
+/* ── GRID CATEGORÍAS ── */
+.cat-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;margin-top:32px;}
+.cat-card{
+  border-radius:24px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,#3a0c18,#2e0f1c);
+  border:1px solid rgba(201,165,77,.12);
+  cursor:pointer;transition:all .3s;text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:270px;padding:24px;
 }
-.sz-sub{font-size:13px;color:var(--gris);line-height:1.4;margin-bottom:10px;}
-.sz-price{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:var(--vino2);}
+.cat-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(34,18,11,.28);border-color:rgba(201,165,77,.28);}
+.cat-card.featured{min-height:320px;}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.08) 55%,transparent 100%);}
+.cat-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:20px;}
+.cat-art-svg{width:50%;opacity:.82;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5));transition:transform .3s;}
+.cat-card:hover .cat-art-svg{transform:scale(1.07) translateY(-5px);}
+.cat-art-emoji{font-size:72px;opacity:.28;transition:transform .3s;}
+.cat-card:hover .cat-art-emoji{transform:scale(1.12) translateY(-6px);}
+.cat-info{position:relative;z-index:2;}
+.cat-pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(201,165,77,.18);border:1px solid rgba(201,165,77,.3);color:var(--oroS);font-family:'Cinzel',serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.cat-name{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.1;}
+.cat-card.featured .cat-name{font-size:30px;}
+.cat-desc{font-size:14px;color:rgba(255,245,220,.65);line-height:1.5;margin-bottom:12px;}
+.cat-price{font-family:'Cinzel',serif;font-size:13px;color:var(--oro);font-weight:700;letter-spacing:.04em;margin-bottom:10px;}
+.cat-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:999px;background:rgba(201,165,77,.15);border:1px solid rgba(201,165,77,.28);color:var(--oroS);font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:all .22s;}
+.cat-card:hover .cat-btn{background:var(--oro);color:#1a0c07;border-color:transparent;}
 
-/* ENCARGO ESPECIAL */
-.encargo-card{
-  margin-top:22px;border-radius:var(--r);overflow:hidden;
-  background:linear-gradient(135deg,#1a0c07 0%,#2e0f1c 50%,#120807 100%);
-  border:1px solid rgba(201,165,77,.2);padding:32px;
-  position:relative;
-}
-.encargo-card::before{
-  content:'';position:absolute;inset:14px;
-  border:1px solid rgba(201,165,77,.12);border-radius:18px;pointer-events:none;
-}
-.encargo-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:24px;position:relative;z-index:1;}
-.encargo-copy{}
-.encargo-pill{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:6px 14px;border-radius:999px;margin-bottom:12px;
-  background:rgba(201,165,77,.12);border:1px solid rgba(201,165,77,.25);
-  color:var(--oroS);font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-}
-.encargo-h3{font-family:'Cinzel',serif;font-size:26px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px;}
-.encargo-p{font-size:16px;color:rgba(255,245,220,.7);line-height:1.6;max-width:540px;}
-.encargo-form{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.encargo-form .fgrp{margin-bottom:0;}
-.encargo-form .fgrp.full{grid-column:1/-1;}
-.encargo-finput,.encargo-fsel,.encargo-ftxt{
-  width:100%;padding:12px 14px;
-  border:1px solid rgba(201,165,77,.18);border-radius:12px;
-  font-family:'EB Garamond',serif;font-size:15px;color:#fff;
-  background:rgba(255,255,255,.07);outline:none;transition:all .2s;
-}
-.encargo-finput::placeholder,.encargo-fsel::placeholder,.encargo-ftxt::placeholder{color:rgba(255,245,220,.4);}
-.encargo-finput:focus,.encargo-fsel:focus,.encargo-ftxt:focus{
-  border-color:rgba(201,165,77,.5);background:rgba(255,255,255,.1);
-}
-.encargo-fsel option{background:#1a0c07;color:#fff;}
-.encargo-ftxt{resize:vertical;min-height:80px;}
-.encargo-flbl{display:block;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--oroS);font-weight:700;margin-bottom:6px;opacity:.8;}
-.encargo-nota{
-  grid-column:1/-1;margin-top:4px;
-  padding:12px 14px;border-radius:12px;
-  background:rgba(201,165,77,.08);border:1px solid rgba(201,165,77,.15);
-  font-size:13px;color:rgba(255,245,220,.6);line-height:1.5;font-style:italic;
-}
-.btn-encargo-wa{
-  grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:10px;
-  padding:15px;border-radius:14px;background:#25D366;color:#fff;border:none;cursor:pointer;
-  font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:.07em;
-  transition:all .26s;margin-top:4px;
-}
-.btn-encargo-wa:hover{background:#1cb957;transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.35);}
-body.dark .encargo-card{background:linear-gradient(135deg,#120807,#200d16,#0e0504);}
+/* Colores por categoría */
+.cat-nazareno{background:linear-gradient(135deg,#3a0c18 0%,#5a1423 35%,#2c1010 100%);}
+.cat-costalero{background:linear-gradient(135deg,#0c1e1a,#0d2f24,#091b10);}
+.cat-musico{background:linear-gradient(135deg,#14100a,#221805,#181006);}
+.cat-altar{background:linear-gradient(135deg,#101418,#14202c,#0c1018);}
+.cat-centuria{background:linear-gradient(135deg,#1a1008,#2e2010,#140c04);}
+.cat-monaguillo{background:linear-gradient(135deg,#0e1820,#0a1828,#0c1016);}
 
-.qty-row{display:flex;align-items:center;margin-bottom:14px;}
-.qbtn{width:44px;height:44px;border:1px solid rgba(75,16,32,.14);background:#fff;cursor:pointer;font-size:22px;color:var(--grafito);display:flex;align-items:center;justify-content:center;transition:all .18s;user-select:none;}
-.qbtn:first-child{border-radius:12px 0 0 12px;}
-.qbtn:last-child{border-radius:0 12px 12px 0;}
-.qbtn:hover{background:var(--crema);color:var(--vino);}
-.qty-num{height:44px;min-width:80px;padding:0 12px;border:1px solid rgba(75,16,32,.14);border-left:none;border-right:none;background:#fff;text-align:center;font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--grafito);display:flex;align-items:center;justify-content:center;}
-.qty-presets{display:flex;flex-wrap:wrap;gap:8px;}
-.qp{padding:8px 14px;border-radius:999px;border:1px solid rgba(75,16,32,.12);background:#fff;font-family:'Cinzel',serif;font-size:12px;font-weight:600;color:var(--grafito);cursor:pointer;transition:all .18s;}
-.qp:hover{background:var(--crema);}
-.qp.on{background:var(--vino);color:#fff;border-color:transparent;}
-
-/* PREVIEW PANEL */
-.cfg-prev{position:relative;border-radius:var(--r);overflow:hidden;
-  background:linear-gradient(145deg,#1c0e0a,#2e0f1c,#160c0a);
-  border:1px solid rgba(201,165,77,.15);box-shadow:0 28px 70px rgba(14,6,3,.35);
-  display:flex;flex-direction:column;align-items:center;padding:24px 22px;gap:16px;}
-.cfg-prev::before{content:'';position:absolute;inset:16px;border:1px solid rgba(201,165,77,.1);border-radius:18px;pointer-events:none;}
-.view-toggle{position:relative;z-index:1;display:flex;gap:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px;}
-.view-btn{padding:8px 18px;border:none;border-radius:999px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.1em;background:transparent;color:rgba(255,255,255,.5);transition:all .22s;}
-.view-btn.on{background:rgba(255,255,255,.14);color:#fff;}
-.prev-nz-wrap{position:relative;z-index:1;display:flex;justify-content:center;width:100%;}
-#previewSvg{
-  width:100%;
-  filter:drop-shadow(0 22px 44px rgba(0,0,0,.6));
-}
-.prev-info{position:relative;z-index:1;width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:14px;}
-.prev-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
-.prev-row:last-child{border-bottom:none;}
-.prev-row span{color:rgba(255,245,210,.5);text-transform:uppercase;font-size:10px;letter-spacing:.12em;font-family:'Cinzel',serif;}
-.prev-row b{color:#fff;font-family:'Cinzel',serif;font-size:12px;font-weight:600;text-align:right;display:flex;align-items:center;gap:6px;}
-.cdot{width:11px;height:11px;border-radius:50%;border:1px solid rgba(255,255,255,.25);flex-shrink:0;display:inline-block;}
-.prev-price{font-family:'Cinzel',serif;font-size:26px;font-weight:700;color:var(--oro);text-align:center;}
-.prev-price small{font-size:12px;color:rgba(234,216,163,.55);display:block;margin-top:3px;}
-.prev-actions{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;width:100%;}
-.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:14px;background:#25D366;color:#fff;text-decoration:none;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:.05em;transition:all .24s;}
-.btn-wa:hover{background:#1cb957;transform:translateY(-2px);box-shadow:0 12px 30px rgba(37,211,102,.3);}
-.btn-copy{padding:11px;border-radius:14px;border:none;cursor:pointer;background:rgba(255,255,255,.09);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.15);font-size:14px;transition:all .22s;font-family:'EB Garamond',serif;}
-.btn-copy:hover{background:rgba(255,255,255,.16);}
-
-/* TABLA DE PRECIOS */
-.price-table-wrap{margin-top:32px;overflow-x:auto;}
-.price-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:20px;overflow:hidden;box-shadow:var(--smd);}
-.price-table thead tr{background:var(--vino);}
-.price-table thead th{font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:16px 20px;text-align:left;}
-.price-table thead th:not(:first-child){text-align:center;}
-.price-table tbody tr{background:rgba(255,255,255,.92);border-bottom:1px solid rgba(75,16,32,.07);transition:background .18s;}
-.price-table tbody tr:hover{background:#fffdf8;}
-.price-table tbody tr.popular{background:linear-gradient(90deg,#fffdf5,#fff8e8);}
-.price-table tbody tr:last-child{border-bottom:none;}
-.price-table td{padding:14px 20px;font-size:15px;color:var(--tinta);vertical-align:middle;}
-.price-table td:not(:first-child){text-align:center;}
-.td-name{font-family:'Cinzel',serif;font-weight:700;font-size:15px;color:var(--grafito);}
-.td-qty{font-size:13px;color:var(--gris);margin-top:2px;}
-.td-price{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--grafito);}
-.td-mono{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--vino2);}
-.td-save{font-size:13px;color:#166534;background:rgba(22,101,52,.08);border-radius:999px;padding:4px 10px;white-space:nowrap;font-weight:700;}
-.popular-badge{display:inline-flex;align-items:center;gap:5px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--oro);color:#1a0c07;padding:4px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;}
-.price-table tfoot td{background:rgba(201,165,77,.08);font-size:14px;color:var(--gris);padding:14px 20px;font-style:italic;border-top:1px solid rgba(201,165,77,.2);}
-.btn-tadd{border:none;cursor:pointer;padding:7px 13px;border-radius:999px;background:var(--vino);color:#fff;font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.08em;transition:all .2s;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
-.btn-tadd:hover{background:var(--vino2);transform:scale(1.06);}
-.btn-tadd.ok{background:#166534;}
-.btn-tadd.mono{background:var(--grafito);margin-left:5px;}
-.btn-tadd.mono:hover{background:#111;}
-.td-add{white-space:nowrap;}
-
-/* mantener pack click highlight */
-.price-table tbody tr{cursor:pointer;}
-.price-table tbody tr.on td:first-child{border-left:3px solid var(--oro);}
-
-/* PACKS (ocultos, solo se usan en JS para datos) */
-.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;}
-.pack{background:rgba(255,255,255,.9);border:1px solid var(--borde);border-radius:var(--r);padding:24px;box-shadow:var(--smd);cursor:pointer;transition:all .26s;position:relative;overflow:hidden;}
-.pack::after{content:'';position:absolute;top:-48px;right:-48px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(201,165,77,.14),transparent 70%);pointer-events:none;}
-.pack:hover{transform:translateY(-6px);box-shadow:var(--slg);}
-.pack.on{border-color:var(--oro);box-shadow:0 0 0 2px rgba(201,165,77,.3),var(--slg);}
-.pack-badge{display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;margin-bottom:12px;font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(75,16,32,.1);color:var(--vino2);}
-.pack-badge.g{background:rgba(201,165,77,.18);color:#7a5a0d;}
-.pack-name{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--grafito);margin-bottom:4px;}
-.pack-qty{font-size:14px;color:var(--gris);margin-bottom:10px;}
-.pack-desc{font-size:14px;color:var(--gris);line-height:1.6;margin-bottom:16px;}
-.pack-price{font-family:'Cinzel',serif;font-size:30px;font-weight:700;color:var(--grafito);}
-.pack-mono-price{font-size:13px;color:var(--gris);margin-top:6px;}
-.pack-mono-price strong{color:var(--grafito);}
-.packs-note{margin-top:18px;padding:16px 20px;border-radius:16px;background:rgba(201,165,77,.08);border:1px solid rgba(201,165,77,.2);font-size:15px;color:var(--gris);line-height:1.6;font-style:italic;}
-
-/* STEPS */
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;}
-.step{background:rgba(255,255,255,.9);border:1px solid var(--borde);border-radius:var(--r);padding:28px;box-shadow:var(--smd);}
-.step-num{width:42px;height:42px;border-radius:50%;background:var(--vino);color:#fff;font-family:'Cinzel',serif;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.step-tit{font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:var(--grafito);margin-bottom:8px;}
-.step-p{font-size:16px;color:var(--gris);line-height:1.65;}
-
-/* PEDIDO */
-.ped-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
-.wa-card{border-radius:var(--r);overflow:hidden;background:linear-gradient(145deg,#0c2116,#0d2f1a,#091b10);border:1px solid rgba(37,211,102,.15);padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:360px;}
-.wa-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.22);color:#4ade80;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;}
-.wa-h3{font-family:'Cinzel',serif;font-size:26px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:10px;}
-.wa-p{font-size:17px;color:rgba(210,255,225,.7);line-height:1.65;}
-.btn-wa-big{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 24px;border-radius:16px;background:#25D366;color:#fff;text-decoration:none;font-family:'Cinzel',serif;font-size:14px;font-weight:700;letter-spacing:.06em;transition:all .26s;}
-.btn-wa-big:hover{background:#1cb957;transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,.35);}
-.wa-foot{text-align:center;color:rgba(210,255,225,.35);font-size:13px;margin-top:8px;}
-.form-card{background:rgba(255,255,255,.93);border:1px solid var(--borde);border-radius:var(--r);padding:36px 32px;box-shadow:var(--smd);}
-.form-h3{font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:var(--grafito);margin-bottom:8px;}
-.form-sub{font-size:16px;color:var(--gris);margin-bottom:24px;line-height:1.6;}
-.fgrp{margin-bottom:16px;}
-.flbl{display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--vino);font-weight:700;margin-bottom:7px;}
-.finput,.fsel,.ftxt{width:100%;padding:12px 15px;border:1px solid rgba(75,16,32,.15);border-radius:12px;font-family:'EB Garamond',serif;font-size:16px;color:var(--tinta);background:#fdfaf6;outline:none;transition:all .2s;}
-.finput:focus,.fsel:focus,.ftxt:focus{border-color:var(--vino);background:#fff;box-shadow:0 0 0 3px rgba(75,16,32,.1);}
-.ftxt{resize:vertical;min-height:90px;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.btn-sub{width:100%;padding:15px;border-radius:14px;border:none;background:var(--vino);color:#fff;cursor:pointer;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:all .26s;margin-top:4px;}
-.btn-sub:hover{background:var(--vino2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(75,16,32,.35);}
-.btn-sub:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.form-ok{display:none;text-align:center;padding:22px;margin-top:16px;border-radius:16px;background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.2);}
-.form-ok.show{display:block;}
-.form-ok strong{display:block;font-size:18px;margin-bottom:6px;color:#166534;}
-.form-ok p{font-size:15px;color:#166534;line-height:1.55;}
-
-/* WA FLOTANTE */
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .25s;text-decoration:none;}
-.wa-float:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 12px 32px rgba(37,211,102,.55);}
-.wa-pulse{position:absolute;inset:-6px;border-radius:50%;background:rgba(37,211,102,.25);animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:.6;}50%{transform:scale(1.18);opacity:0;}}
-
-/* ANIMACIÓN NAZARENO VOLADOR */
-.fly-nz{
-  position:fixed;z-index:9999;pointer-events:none;
-  width:44px;opacity:1;
-  filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));
-  transition:none;
-}
-@keyframes flyToCart{
-  0%  {transform:scale(1) rotate(0deg);   opacity:1;}
-  60% {transform:scale(.7) rotate(-15deg);opacity:.9;}
-  100%{transform:scale(.2) rotate(-30deg);opacity:0;}
-}
-
-/* HOVER PREVIEW EN SWATCHES */
-.sw-preview{
-  position:fixed;z-index:500;pointer-events:none;
-  width:72px;opacity:0;transform:scale(.7);
-  transition:opacity .18s,transform .18s;
-  filter:drop-shadow(0 8px 18px rgba(0,0,0,.5));
-}
-.sw-preview.show{opacity:1;transform:scale(1);}
-
-/* PRECIO POR UNIDAD EN TABLA */
-.td-pu{font-size:11px;color:var(--gris);margin-top:3px;}
-
-/* CONTADOR NAZARENOS */
-.counter-bar{
-  margin-top:24px;
-  padding:18px 28px;border-radius:20px;
+/* ── FRANJA CTA ── */
+.cta-strip{
+  margin-top:44px;border-radius:22px;
   background:linear-gradient(135deg,var(--vino),var(--vino2));
-  display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;
   box-shadow:var(--smd);
 }
-.counter-num{
-  font-family:'Cinzel',serif;font-size:36px;font-weight:900;color:var(--oro);
-  letter-spacing:.04em;
-}
-.counter-txt{font-family:'Cinzel',serif;font-size:13px;color:rgba(255,245,220,.8);letter-spacing:.12em;text-transform:uppercase;}
+.cta-text h3{font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:6px;}
+.cta-text p{font-size:15px;color:rgba(255,245,220,.75);line-height:1.6;}
+.btn-wa-strip{display:flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#25D366;color:#fff;text-decoration:none;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:.06em;transition:all .26s;white-space:nowrap;flex-shrink:0;}
+.btn-wa-strip:hover{background:#1cb957;transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.35);}
 
-/* POPUP DATOS CLIENTE */
-.popup-overlay{
-  position:fixed;inset:0;z-index:500;
-  background:rgba(23,13,11,.55);backdrop-filter:blur(4px);
-  display:none;align-items:center;justify-content:center;padding:20px;
-}
-.popup-overlay.open{display:flex;}
-.popup-box{
-  background:#fff;border-radius:28px;padding:32px;
-  width:min(440px,100%);box-shadow:0 32px 80px rgba(0,0,0,.28);
-  animation:popIn .3s cubic-bezier(.22,1,.36,1);
-}
-@keyframes popIn{from{transform:scale(.88);opacity:0;}to{transform:scale(1);opacity:1;}}
-.popup-title{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:var(--grafito);margin-bottom:6px;}
-.popup-sub{font-size:15px;color:var(--gris);margin-bottom:22px;line-height:1.5;}
-.popup-fgrp{margin-bottom:14px;}
-.popup-lbl{display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--vino);font-weight:700;margin-bottom:6px;}
-.popup-input{width:100%;padding:12px 14px;border:1px solid rgba(75,16,32,.15);border-radius:12px;font-family:'EB Garamond',serif;font-size:16px;color:var(--tinta);background:#fdfaf6;outline:none;transition:all .2s;}
-.popup-input:focus{border-color:var(--vino);background:#fff;box-shadow:0 0 0 3px rgba(75,16,32,.1);}
-.popup-btns{display:flex;gap:10px;margin-top:6px;}
-.popup-send-wa{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:14px;background:#25D366;color:#fff;border:none;cursor:pointer;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.06em;transition:all .22s;}
-.popup-send-wa:hover{background:#1cb957;transform:translateY(-1px);}
-.popup-send-email{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:14px;background:var(--vino);color:#fff;border:none;cursor:pointer;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.06em;transition:all .22s;}
-.popup-send-email:hover{background:var(--vino2);transform:translateY(-1px);}
-.popup-cancel{width:100%;margin-top:8px;background:none;border:none;cursor:pointer;font-size:13px;color:var(--gris);font-family:'EB Garamond',serif;text-decoration:underline;padding:4px;}
-.popup-cancel:hover{color:var(--vino);}
-.popup-preview{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
-.popup-item-chip{display:flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;background:var(--crema);border:1px solid var(--borde);font-size:13px;color:var(--grafito);}
-.popup-item-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex-shrink:0;}
+/* ── SOBRE ── */
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:32px;align-items:center;}
+.sobre-copy h3{font-family:'Cinzel',serif;font-size:30px;font-weight:700;color:var(--grafito);margin-bottom:12px;}
+.sobre-copy p{font-size:16px;color:var(--gris);line-height:1.75;margin-bottom:14px;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{padding:7px 14px;border-radius:999px;background:rgba(75,16,32,.08);border:1px solid rgba(75,16,32,.12);font-family:'Cinzel',serif;font-size:11px;font-weight:600;color:var(--vino);letter-spacing:.05em;}
+.sobre-art{border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#2e0f1c,#3a0c18);min-height:260px;display:flex;align-items:flex-end;justify-content:center;}
+.sobre-nzgroup{display:flex;align-items:flex-end;justify-content:center;gap:8px;padding:0 16px;}
 
-/* CESTA FLOTANTE */
-.cart-float{position:fixed;bottom:24px;right:92px;z-index:200;width:58px;height:58px;border-radius:50%;background:var(--vino);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(75,16,32,.45);transition:all .25s;}
-.cart-float:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 12px 32px rgba(75,16,32,.55);}
-.cart-badge{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:999px;background:var(--oro);color:#1a0c07;font-family:'Cinzel',serif;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid #fff;display:none;}
-.cart-badge.show{display:flex;}
-
-/* PANEL CESTA */
-.cart-panel{
-  position:fixed;bottom:96px;right:24px;z-index:300;
-  width:min(420px, calc(100% - 32px));
-  background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
-  border:1px solid var(--borde);border-radius:28px;
-  box-shadow:0 24px 64px rgba(34,18,11,.22);
-  display:none;flex-direction:column;
-  max-height:calc(100vh - 120px);overflow:hidden;
-}
-.cart-panel.open{display:flex;}
-.cart-head{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 22px 16px;border-bottom:1px solid var(--borde);flex-shrink:0;
-}
-.cart-head-title{font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--grafito);display:flex;align-items:center;gap:10px;}
-.cart-head-title svg{color:var(--vino);}
-.cart-close{width:32px;height:32px;border-radius:50%;border:1px solid var(--borde);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gris);transition:all .18s;}
-.cart-close:hover{background:var(--crema);color:var(--tinta);}
-.cart-empty{padding:32px 22px;text-align:center;color:var(--gris);font-size:16px;font-style:italic;}
-.cart-items{overflow-y:auto;padding:12px 22px;flex:1;}
-.cart-item{
-  display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;
-  padding:12px 0;border-bottom:1px solid rgba(75,16,32,.07);
-}
-.cart-item:last-child{border-bottom:none;}
-.cart-item-svg{width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 4px 8px rgba(0,0,0,.2));}
-.cart-item-info{}
-.cart-item-name{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--grafito);margin-bottom:3px;}
-.cart-item-detail{font-size:12px;color:var(--gris);line-height:1.5;}
-.cart-item-colors{display:flex;gap:5px;margin-top:5px;align-items:center;}
-.cart-item-dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex-shrink:0;}
-.cart-item-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
-.cart-item-price{font-family:'Cinzel',serif;font-size:15px;font-weight:700;color:var(--grafito);white-space:nowrap;}
-.cart-item-del{width:26px;height:26px;border-radius:50%;border:1px solid rgba(75,16,32,.14);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gris);transition:all .18s;}
-.cart-item-del:hover{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
-.cart-footer{padding:16px 22px;border-top:1px solid var(--borde);flex-shrink:0;background:#fffaf2;border-radius:0 0 28px 28px;}
-.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
-.cart-total-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gris);}
-.cart-total-price{font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:var(--grafito);}
-.cart-actions{display:flex;flex-direction:column;gap:8px;}
-.cart-btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:14px;background:#25D366;color:#fff;text-decoration:none;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.06em;transition:all .24s;border:none;cursor:pointer;width:100%;}
-.cart-btn-wa:hover{background:#1cb957;transform:translateY(-1px);}
-.cart-btn-email{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:14px;background:var(--vino);color:#fff;text-decoration:none;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.06em;transition:all .24s;border:none;cursor:pointer;width:100%;}
-.cart-btn-email:hover{background:var(--vino2);transform:translateY(-1px);}
-.cart-btn-clear{background:none;border:none;cursor:pointer;font-size:12px;color:var(--gris);text-align:center;padding:6px;width:100%;font-family:'EB Garamond',serif;text-decoration:underline;}
-.cart-btn-clear:hover{color:var(--vino);}
-
-/* BOTÓN AÑADIR A CESTA en preview */
-.btn-add-cart{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:13px;border-radius:14px;border:2px solid var(--oro);
-  background:rgba(201,165,77,.1);color:var(--grafito);
-  font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.06em;
-  cursor:pointer;transition:all .24s;width:100%;
-}
-.btn-add-cart:hover{background:var(--oro);color:#1a0c07;transform:translateY(-1px);}
-.btn-add-cart.added{background:var(--oro);color:#1a0c07;}
-
-/* FOOTER */
-footer{margin-top:90px;padding:36px 0 48px;border-top:1px solid rgba(75,16,32,.08);text-align:center;}
-.foot-brand{font-family:'Cinzel',serif;font-size:18px;color:var(--grafito);margin-bottom:8px;}
+/* ── FOOTER ── */
+footer{margin-top:80px;padding:32px 0 48px;border-top:1px solid rgba(75,16,32,.08);text-align:center;}
+.foot-brand{font-family:'Cinzel',serif;font-size:18px;color:var(--grafito);margin-bottom:7px;}
 .foot-sub{font-size:14px;color:var(--gris);line-height:1.8;}
 .foot-sub a{color:var(--gris);text-decoration:none;}
 .foot-sub a:hover{color:var(--vino);}
 
-/* REVEAL */
+/* ── WA ── */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .25s;text-decoration:none;}
+.wa-float:hover{transform:scale(1.1) translateY(-3px);}
+.wa-pulse{position:absolute;inset:-6px;border-radius:50%;background:rgba(37,211,102,.25);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.6;}50%{transform:scale(1.18);opacity:0;}}
+
+/* ── REVEAL ── */
 .wr{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);}
 .wr.show{opacity:1;transform:translateY(0);}
 
-/* ═══════════════════════════════
-   MODO OSCURO
-   ═══════════════════════════════ */
-body.dark{
-  --crema:#1a1210;--tinta:#f0e8dc;--grafito:#f5efe6;
-  --gris:#a09080;--borde:rgba(201,165,77,.15);
-  --smd:0 14px 44px rgba(0,0,0,.4);--slg:0 24px 64px rgba(0,0,0,.55);
-  background:
-    radial-gradient(ellipse at 85% 8%,rgba(201,165,77,.08),transparent 32%),
-    radial-gradient(ellipse at 8% 65%,rgba(75,16,32,.15),transparent 28%),
-    linear-gradient(180deg,#120a07 0%,#1a0e0a 45%,#150b08 100%);
-}
-body.dark .nav{background:rgba(20,10,7,.88);border-color:rgba(201,165,77,.12);}
-body.dark .card{background:rgba(255,255,255,.05);border-color:rgba(201,165,77,.12);}
-body.dark .color-zone,.dark .mono-zone{background:#1e1410;border-color:rgba(201,165,77,.12);}
-body.dark .sz{background:#1e1410;border-color:rgba(201,165,77,.1);}
-body.dark .sz.on{background:linear-gradient(180deg,#2a1c12,#1e1410);}
-body.dark .qty-num,.dark .qbtn{background:#1e1410;border-color:rgba(201,165,77,.12);color:var(--tinta);}
-body.dark .qp{background:#1e1410;border-color:rgba(201,165,77,.1);color:var(--tinta);}
-body.dark .qp.on{background:var(--vino);color:#fff;}
-body.dark .mode-toggle{background:#1e1410;}
-body.dark .mode-btn{color:var(--gris);}
-body.dark .step{background:rgba(255,255,255,.05);border-color:rgba(201,165,77,.1);}
-body.dark .form-card{background:rgba(20,10,7,.9);border-color:rgba(201,165,77,.12);}
-body.dark .finput,.dark .fsel,.dark .ftxt{background:#1a0e0a;border-color:rgba(201,165,77,.14);color:var(--tinta);}
-body.dark .finput:focus,.dark .fsel:focus,.dark .ftxt:focus{background:#22120c;}
-body.dark .price-table tbody tr{background:rgba(255,255,255,.04);}
-body.dark .price-table tbody tr:hover{background:rgba(201,165,77,.06);}
-body.dark .price-table tbody tr.popular{background:linear-gradient(90deg,rgba(201,165,77,.07),rgba(201,165,77,.03));}
-body.dark .price-table thead tr{background:var(--vino);}
-body.dark .price-table tfoot td{background:rgba(201,165,77,.06);}
-body.dark .pack{background:rgba(255,255,255,.05);border-color:rgba(201,165,77,.1);}
-body.dark .cart-panel{background:rgba(20,10,7,.97);border-color:rgba(201,165,77,.15);}
-body.dark .cart-footer{background:#1a0e0a;}
-body.dark .cart-item{border-color:rgba(201,165,77,.08);}
-body.dark .cart-item-del{background:#1e1410;border-color:rgba(201,165,77,.1);color:var(--gris);}
-body.dark .popup-box{background:#1e1208;}
-body.dark .popup-input{background:#150d07;border-color:rgba(201,165,77,.15);color:var(--tinta);}
-body.dark .packs-note{background:rgba(201,165,77,.06);border-color:rgba(201,165,77,.15);}
-body.dark footer{border-color:rgba(201,165,77,.1);}
-body.dark .counter-bar{background:linear-gradient(135deg,#2a0c14,#3d1020);}
-
-/* botón modo oscuro */
-.dark-btn{
-  width:38px;height:38px;border-radius:50%;border:1px solid var(--borde);
-  background:transparent;cursor:pointer;font-size:18px;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .22s;color:var(--grafito);flex-shrink:0;
-}
-.dark-btn:hover{background:var(--crema);transform:rotate(20deg);}
-body.dark .dark-btn{border-color:rgba(201,165,77,.2);color:var(--oro);}
-body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
-
-/* ═══════════════════════════════
-   FLIP 3D FRENTE/ESPALDA
-   ═══════════════════════════════ */
-.prev-nz-wrap{
-  position:relative;z-index:1;display:flex;justify-content:center;width:100%;
-  perspective:600px;
-}
-.flip-stage{
-  width:72%;max-width:280px;
-  transform-style:preserve-3d;
-  transition:transform .55s cubic-bezier(.4,0,.2,1);
-}
-.flip-stage.flipping-to-back{ animation:flipToBack .55s cubic-bezier(.4,0,.2,1) forwards; }
-.flip-stage.flipping-to-front{ animation:flipToFront .55s cubic-bezier(.4,0,.2,1) forwards; }
-@keyframes flipToBack{
-  0%  {transform:rotateY(0deg)   scaleX(1);}
-  50% {transform:rotateY(90deg)  scaleX(.05);}
-  100%{transform:rotateY(0deg)   scaleX(1);}
-}
-@keyframes flipToFront{
-  0%  {transform:rotateY(0deg)   scaleX(1);}
-  50% {transform:rotateY(-90deg) scaleX(.05);}
-  100%{transform:rotateY(0deg)   scaleX(1);}
-}
-#previewSvg{
-  width:100%;
-  filter:drop-shadow(0 22px 44px rgba(0,0,0,.6));
-}
-#previewSvg:hover{transform:translateY(-8px) scale(1.04);transition:transform .3s;}
-
-
-
-@supports (-webkit-touch-callout:none){
-  html,body{
-    overflow-x:hidden;
-  }
-  body{
-    min-height:-webkit-fill-available;
-  }
-  .page{
-    width:min(1160px,calc(100% - 32px));
-  }
-}
-
-/* Tablet (hasta 960px) */
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .hero{grid-template-columns:1fr;padding:36px 28px 0;}
-  .cfg-grid{grid-template-columns:1fr;}
-  .ped-grid{grid-template-columns:1fr;}
-  .packs-grid{grid-template-columns:repeat(2,1fr);}
-  .steps-grid{grid-template-columns:1fr 1fr;}
-  .cfg-prev{min-height:auto;}
-  #previewSvg{width:60%;max-width:240px;}
-  .encargo-head{flex-direction:column;}
-  .encargo-form{grid-template-columns:1fr 1fr;}
-  /* tabla scroll horizontal en tablet */
-  .price-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-  .price-table{min-width:560px;}
+  .hero{grid-template-columns:1fr;padding:36px 28px 0;gap:20px;}
+  .hero-copy{padding-bottom:32px;}
+  .hero-art{max-width:340px;margin:0 auto;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .cat-card.featured{grid-column:1/-1;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .sobre-grid{grid-template-columns:1fr;}
+  .cta-strip{flex-direction:column;text-align:center;}
 }
-
-/* Móvil grande (hasta 640px) */
 @media(max-width:640px){
-  body{padding-bottom:84px;}
-  .page{width:calc(100% - 16px);}
-
-  /* NAV — compacto, sin sticky para no ocupar espacio */
+  .page{width:calc(100vw - 16px);}
   .nav{flex-wrap:wrap;border-radius:16px;position:static;margin-top:10px;padding:12px 16px;gap:10px;}
   .nav-brand{width:100%;}
-  .nav-ey{font-size:9px;letter-spacing:.2em;}
+  .nav-ey{font-size:9px;}
   .nav-tit{font-size:17px;}
-  .nav-links{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
-  .nav-a{text-align:center;padding:10px 8px;font-size:10px;letter-spacing:.04em;}
-  .dark-btn{grid-column:1/-1;width:100%;height:42px;border-radius:12px;}
-
-  /* HERO */
-  .hero{padding:24px 18px 0;border-radius:22px;gap:20px;}
-  .hero-copy{padding-bottom:26px;}
-  .hero-pill{font-size:9px;padding:6px 12px;margin-bottom:14px;}
-  .hero-h1{font-size:28px;margin-bottom:12px;}
-  .hero-p{font-size:15px;margin-bottom:20px;}
-  .btn{padding:12px 18px;font-size:11px;justify-content:center;}
-  .hero-cta{gap:8px;display:grid;grid-template-columns:1fr;}
-  .hero-art{gap:8px;padding:0 4px;}
-  .hnz:nth-child(1){width:25%;}
-  .hnz:nth-child(2){width:34%;}
-  .hnz:nth-child(3){width:25%;}
-
-  /* CONTADOR */
-  .counter-bar{padding:14px 18px;gap:6px;border-radius:16px;flex-direction:column;text-align:center;}
-  .counter-num{font-size:28px;}
-  .counter-txt{font-size:10px;letter-spacing:.08em;text-align:center;}
-
-  /* SECCIONES */
-  .section{margin-top:48px;scroll-margin-top:20px;}
-  .sec-h2{font-size:24px;}
-  .sec-p{font-size:16px;}
-  .card{padding:20px 16px;}
-
-  /* CONFIGURADOR */
-  .cfg-grid{gap:16px;}
-  .dual-color{grid-template-columns:1fr;gap:10px;}
-  .color-zone{padding:12px;}
-  .sw{width:28px;height:28px;}
-  .size-row{grid-template-columns:1fr 1fr;gap:10px;}
-  .sz{padding:12px 10px;}
-  .sz-name{font-size:14px;}
-  .sz-sub{font-size:12px;}
-  .sz-price{font-size:15px;}
-  .mode-toggle{margin-bottom:16px;}
-  .mode-btn{font-size:10px;padding:9px 10px;}
-
-  /* PREVIEW */
-  .cfg-prev{padding:18px 14px;gap:12px;}
-  .flip-stage{width:min(72vw,260px);max-width:100%;}
-  #previewSvg{width:100%;max-width:none;}
-  .prev-row span{font-size:9px;}
-  .prev-row b{font-size:11px;}
-  .prev-price{font-size:22px;}
-  .view-btn{font-size:10px;padding:7px 12px;}
-
-  /* TABLA DE PRECIOS → tarjetas */
-  .price-table-wrap{overflow:visible;border-radius:0;}
-  .price-table{min-width:0;width:100%;border-spacing:0 10px;display:block;box-shadow:none;background:transparent;}
-  .price-table thead{display:none;}
-  .price-table tbody{display:grid;gap:12px;}
-  .price-table tbody tr{display:block;padding:8px 0;border-radius:18px;border:1px solid var(--borde);box-shadow:var(--smd);background:rgba(255,255,255,.94);}
-  .price-table tbody tr.popular{background:linear-gradient(180deg,#fffdf5,#fff8e8);}
-  .price-table td{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:10px 14px;text-align:right !important;border:none;}
-  .price-table td::before{content:attr(data-label);font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);text-align:left;flex:1;}
-  .price-table td > *{flex-shrink:0;}
-  .price-table td:first-child{display:block;text-align:left !important;padding-bottom:6px;}
-  .price-table td:first-child::before{display:none;}
-  .td-name{font-size:14px;}
-  .td-qty{font-size:12px;display:block;margin-top:4px;}
-  .td-price,.td-mono{font-size:16px;}
-  .td-pu{font-size:10px;}
-  .td-add{display:flex;justify-content:flex-end;gap:8px;padding-top:6px;}
-  .td-add::before{display:none;}
-  .btn-tadd{padding:8px 12px;font-size:10px;}
-  .price-table tfoot,.price-table tfoot tr,.price-table tfoot td{display:block;width:100%;}
-  .price-table tfoot td{text-align:left !important;border-radius:16px;padding:14px 16px;margin-top:4px;}
-
-  /* PACKS/STEPS */
-  .packs-grid{grid-template-columns:1fr;}
-  .steps-grid{grid-template-columns:1fr;}
-  .step{padding:22px 18px;}
-
-  /* PEDIDO */
-  .ped-grid{gap:16px;}
-  .wa-card{padding:24px 18px;min-height:auto;}
-  .wa-h3{font-size:22px;}
-  .wa-p{font-size:15px;}
-  .form-card{padding:24px 18px;}
-  .form-h3{font-size:20px;}
-  .frow{grid-template-columns:1fr;}
-  .encargo-card{padding:22px 16px;}
-  .encargo-form{grid-template-columns:1fr;gap:12px;}
-  .encargo-h3{font-size:22px;}
-  .encargo-p{font-size:15px;}
-
-  /* CESTA FLOTANTE */
-  .cart-panel{
-    position:fixed;bottom:0;left:0;right:0;
-    width:100%;border-radius:24px 24px 0 0;
-    max-height:85vh;
-  }
-  .cart-float{bottom:88px;right:16px;width:52px;height:52px;}
-  .wa-float{bottom:24px;right:16px;width:52px;height:52px;}
-  .cart-items{padding:10px 16px;}
-  .cart-footer{padding:12px 16px max(12px, env(safe-area-inset-bottom));}
-  .cart-head{padding:16px 18px 12px;}
-
-  /* POPUP */
-  .popup-box{padding:24px 20px;border-radius:22px 22px 0 0;position:fixed;bottom:0;left:0;right:0;width:100%;max-height:min(88vh,720px);overflow-y:auto;}
-  .popup-overlay{align-items:flex-end;padding:0;}
-  .popup-title{font-size:18px;}
-  .popup-btns{flex-direction:column;}
-
-  /* BOTONES FLOTANTES en móvil más separados */
-  .cart-float{right:16px;bottom:86px;}
-  .wa-float{right:16px;bottom:24px;}
+  .nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+  .nav-a{text-align:center;padding:8px 6px;font-size:10px;letter-spacing:.04em;}
+  .hero{padding:20px 14px 0;border-radius:20px;gap:14px;}
+  .hero-pill{font-size:9px;padding:6px 11px;margin-bottom:12px;}
+  .hero-h1{font-size:26px;margin-bottom:10px;}
+  .hero-p{font-size:14px;margin-bottom:16px;}
+  .btn{padding:11px 16px;font-size:11px;}
+  .hero-cta{gap:8px;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .stat-num{font-size:22px;}
+  .section{margin-top:44px;}
+  .sec-h2{font-size:22px;}
+  .sec-p{font-size:15px;}
+  .cat-grid{grid-template-columns:1fr;}
+  .cat-card.featured{grid-column:auto;}
+  .cat-card{min-height:220px;padding:18px;}
+  .cat-card.featured{min-height:260px;}
+  .cat-name{font-size:18px;}
+  .cat-card.featured .cat-name{font-size:24px;}
+  .cat-desc{font-size:13px;}
+  .cta-strip{padding:24px 18px;border-radius:18px;}
+  .cta-text h3{font-size:20px;}
+  .cta-text p{font-size:14px;}
+  .sobre-art{min-height:200px;}
+  footer{margin-top:56px;padding:24px 0 36px;}
 }
-
-/* Móvil pequeño (hasta 380px) */
 @media(max-width:380px){
-  .hero-h1{font-size:24px;}
-  .nav-links{grid-template-columns:1fr;}
-  .nav-a.pri{grid-column:auto;}
-  .dual-color{grid-template-columns:1fr;}
-  .size-row{grid-template-columns:1fr;}
-  .counter-num{font-size:24px;}
-  .popup-box{padding:20px 16px;}
+  .nav-links{grid-template-columns:1fr 1fr;}
+  .nav-a.pri{grid-column:1/-1;}
+  .cat-card{min-height:190px;padding:16px;}
 }
 </style>
 </head>
@@ -717,1262 +213,238 @@ body.dark .dark-btn:hover{background:rgba(201,165,77,.1);}
 <nav class="nav">
   <div class="nav-brand">
     <span class="nav-ey">Artesanía Cofrade · Granada</span>
-    <span class="nav-tit">Nazarenos 3D</span>
+    <span class="nav-tit">Semana Santa 3D</span>
   </div>
   <div class="nav-links">
     <a href="#catalogo" class="nav-a">Catálogo</a>
-    <a href="#como-funciona" class="nav-a">Cómo funciona</a>
-    <a href="#encargo-especial" class="nav-a">Tamaño especial</a>
-    <a href="#pedir" class="nav-a pri">Hacer un pedido</a>
-    <button class="dark-btn" id="darkBtn" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+    <a href="#sobre" class="nav-a">Sobre mí</a>
+    <a href="https://wa.me/34618648370?text=Hola%20Jaime%2C%20me%20interesan%20las%20figuras%20de%20Semana%20Santa%203D." target="_blank" class="nav-a pri">Pedir ahora</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-copy">
     <div class="hero-pill">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
       Impresión 3D · Hecho en Granada
     </div>
-    <h1 class="hero-h1">Nazarenos<br>de Semana Santa<em>en 3D</em></h1>
-    <p class="hero-p">Figuras impresas en 3D con acabado artesanal. Elige el color de la capa y del hábito, o en monocolor. Para hermandades, cofradías y particulares.</p>
+    <h1 class="hero-h1">Semana Santa<em>en 3D</em></h1>
+    <p class="hero-p">Figuras cofrades impresas en 3D con acabado artesanal. Nazarenos, costaleros, músicos y más. Color personalizado para cada hermandad.</p>
     <div class="hero-cta">
-      <a href="#catalogo" class="btn btn-gold">Personalizar y ver precios</a>
-      <a href="#pedir" class="btn btn-ghost">Hacer un pedido</a>
+      <a href="#catalogo" class="btn btn-gold">Ver el catálogo</a>
+      <a href="nazarenos.html" class="btn btn-ghost">Personalizar nazareno</a>
     </div>
   </div>
   <div class="hero-art" id="heroArt"></div>
 </section>
 
-<!-- CONFIGURADOR -->
+<!-- STATS -->
+<div class="stats wr">
+  <div class="stat"><div class="stat-num" id="counterNum">247</div><div class="stat-lbl">Figuras enviadas</div></div>
+  <div class="stat"><div class="stat-num">+7</div><div class="stat-lbl">Tipos de figura</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Personalizable</div></div>
+  <div class="stat"><div class="stat-num">🇪🇸</div><div class="stat-lbl">Toda España</div></div>
+</div>
+
+<!-- CATÁLOGO -->
 <section class="section" id="catalogo">
-  <div class="sec-lbl">Personaliza tu pedido</div>
-  <h2 class="sec-h2">Elige tu Nazareno</h2>
-  <p class="sec-p">Color, tamaño y cantidad. El precio se calcula al instante.</p>
-  <div class="cfg-grid">
+  <div class="sec-lbl">Colección completa</div>
+  <h2 class="sec-h2">Elige tu figura</h2>
+  <p class="sec-p">Haz clic en cualquier figura para ver precios, personalizar colores y hacer tu pedido.</p>
 
-    <div class="card">
-      <!-- Toggle Color / Monocolor -->
-      <div class="mode-toggle">
-        <button class="mode-btn on"       id="btnColor" onclick="setModo('color')">🎨 A color</button>
-        <button class="mode-btn mono-btn" id="btnMono"  onclick="setModo('mono')">⬛ Monocolor</button>
-      </div>
+  <div class="cat-grid">
 
-      <!-- Zona color (dos colores) -->
-      <div id="zonaColor">
-        <div class="blk-lbl">Color de la capa y del hábito</div>
-        <div class="dual-color">
-          <div class="color-zone">
-            <div class="zone-title"><span class="dot" id="dotCapa" style="background:#6b1a31"></span>Capa <span style="color:var(--gris);font-size:9px">(detrás)</span></div>
-            <div class="zone-swatch-row" id="swCapa"></div>
-            <div class="zone-custom"><label>Otro:</label><input type="color" id="pcCapa" value="#6b1a31"></div>
-            <div class="color-strip" id="stripCapa" style="background:#6b1a31"></div>
-          </div>
-          <div class="color-zone">
-            <div class="zone-title"><span class="dot" id="dotHabito" style="background:#1a3a6b"></span>Hábito <span style="color:var(--gris);font-size:9px">(delante)</span></div>
-            <div class="zone-swatch-row" id="swHabito"></div>
-            <div class="zone-custom"><label>Otro:</label><input type="color" id="pcHabito" value="#1a3a6b"></div>
-            <div class="color-strip" id="stripHabito" style="background:#1a3a6b"></div>
-          </div>
-          <div class="color-zone">
-            <div class="zone-title"><span class="dot" id="dotCapirote" style="background:#1a3a6b"></span>Capirote</div>
-            <div class="zone-swatch-row" id="swCapirote"></div>
-            <div class="zone-custom"><label>Otro:</label><input type="color" id="pcCapirote" value="#1a3a6b"></div>
-            <div class="color-strip" id="stripCapirote" style="background:#1a3a6b"></div>
-          </div>
-        </div>
+    <!-- NAZARENO FEATURED -->
+    <a href="nazarenos.html" class="cat-card cat-nazareno featured wr">
+      <div class="cat-art"><div class="cat-art-svg" id="catNazSvg"></div></div>
+      <div class="cat-info">
+        <div class="cat-pill">⚜️ Figura principal · color personalizado</div>
+        <div class="cat-name">Nazareno</div>
+        <div class="cat-desc">El recuerdo cofrade por excelencia. Elige el color exacto de tu hermandad para la capa, hábito y capirote.</div>
+        <div class="cat-price">Figura única 0,50 € · Pack 10 → 5 € · Pack 100 → 24,99 €</div>
+        <div class="cat-btn">Personalizar y pedir →</div>
       </div>
+    </a>
 
-      <!-- Zona monocolor (un color) -->
-      <div id="zonaMono" style="display:none">
-        <div class="blk-lbl">Color único de la figura</div>
-        <div class="mono-zone">
-          <div class="zone-title"><span class="dot" id="dotMono" style="background:#1e1e1e"></span>Capa y hábito en el mismo color</div>
-          <div class="zone-swatch-row" id="swMono"></div>
-          <div class="zone-custom"><label>Otro:</label><input type="color" id="pcMono" value="#1e1e1e"></div>
-          <div class="color-strip" id="stripMono" style="background:#1e1e1e"></div>
-        </div>
+    <!-- COSTALERO -->
+    <a href="nazarenos.html?tipo=costalero" class="cat-card cat-costalero wr">
+      <div class="cat-art"><div class="cat-art-emoji">🙏</div></div>
+      <div class="cat-info">
+        <div class="cat-pill">3 y 5 cm</div>
+        <div class="cat-name">Costalero</div>
+        <div class="cat-desc">Individual o packs de 5 y 10.</div>
+        <div class="cat-price">Desde 2,49 €</div>
+        <div class="cat-btn">Ver precios →</div>
       </div>
+    </a>
 
-      <!-- Tamaño -->
-      <div class="blk">
-        <div class="blk-lbl">Tamaño</div>
-        <div class="size-row">
-          <div class="sz on" data-sz="pequeno" onclick="pickSize(this)">
-            <div class="sz-name">Pequeño</div>
-            <div class="sz-meds"><span>📐 ~5 cm</span></div>
-            <div class="sz-sub">Ideal para recuerdos y encargos de hermandad.</div>
-            <div class="sz-price">desde 1,99 €</div>
-          </div>
-          <div class="sz" data-sz="grande" onclick="pickSize(this)">
-            <div class="sz-name">Grande</div>
-            <div class="sz-meds"><span>📐 ~15 cm</span></div>
-            <div class="sz-sub">Pieza protagonista. Regalo o colección.</div>
-            <div class="sz-price">14,99 € / ud</div>
-          </div>
-        </div>
+    <!-- MÚSICO -->
+    <a href="nazarenos.html?tipo=musico" class="cat-card cat-musico wr">
+      <div class="cat-art"><div class="cat-art-emoji">🎺</div></div>
+      <div class="cat-info">
+        <div class="cat-pill">3 y 5 cm</div>
+        <div class="cat-name">Músico</div>
+        <div class="cat-desc">Individual o packs de 5 y 10.</div>
+        <div class="cat-price">Desde 3,99 €</div>
+        <div class="cat-btn">Ver precios →</div>
       </div>
+    </a>
 
-      <!-- Cantidad -->
-      <div class="blk" id="qtyBlock">
-        <div class="blk-lbl">Cantidad</div>
-        <div class="qty-row">
-          <button class="qbtn" onclick="stepQty(-10)">−</button>
-          <div class="qty-num" id="qtyNum">100</div>
-          <button class="qbtn" onclick="stepQty(+10)">+</button>
-        </div>
-        <div class="qty-presets">
-          <button class="qp" onclick="pickQty(10)">10 uds</button>
-          <button class="qp" onclick="pickQty(25)">25 uds</button>
-          <button class="qp" onclick="pickQty(50)">50 uds</button>
-          <button class="qp on" onclick="pickQty(100)">100 uds</button>
-          <button class="qp" onclick="pickQty(200)">200 uds</button>
-        </div>
+    <!-- ALTAR -->
+    <a href="nazarenos.html?tipo=altar" class="cat-card cat-altar wr">
+      <div class="cat-art"><div class="cat-art-emoji">🕯️</div></div>
+      <div class="cat-info">
+        <div class="cat-pill">5, 10 y 15 cm</div>
+        <div class="cat-name">Altar de Cultos</div>
+        <div class="cat-desc">Tres tamaños disponibles.</div>
+        <div class="cat-price">Desde 2,99 €</div>
+        <div class="cat-btn">Ver precios →</div>
       </div>
-    </div>
+    </a>
 
-    <!-- Preview -->
-    <div class="cfg-prev">
-      <div class="view-toggle">
-        <button class="view-btn on" id="btnFrente"  onclick="setView('frente')">▶ Frente</button>
-        <button class="view-btn"    id="btnEspalda" onclick="setView('espalda')">◀ Espalda</button>
+    <!-- CENTURIA -->
+    <a href="nazarenos.html?tipo=centuria" class="cat-card cat-centuria wr">
+      <div class="cat-art"><div class="cat-art-emoji">⚔️</div></div>
+      <div class="cat-info">
+        <div class="cat-pill">5 cm · para montar</div>
+        <div class="cat-name">Centuria Romana</div>
+        <div class="cat-desc">Pieza articulada por piezas.</div>
+        <div class="cat-price">11,99 € / pieza</div>
+        <div class="cat-btn">Ver detalles →</div>
       </div>
-      <div class="prev-nz-wrap"><div class="flip-stage" id="flipStage"><div id="previewSvg"></div></div></div>
-      <div class="prev-info">
-        <div class="prev-row"><span>Capa</span>    <b><span class="cdot" id="dPrevCapa"></span>   <span id="pCapa">Vino Cofrade</span></b></div>
-        <div class="prev-row" id="rowHabito"><span>Hábito</span>  <b><span class="cdot" id="dPrevHabito"></span> <span id="pHabito">Azul Marino</span></b></div>
-        <div class="prev-row" id="rowCapirote"><span>Capirote</span><b><span class="cdot" id="dPrevCapirote"></span> <span id="pCapirote">Azul Marino</span></b></div>
-        <div class="prev-row"><span>Modo</span>    <b id="pModo">A color</b></div>
-        <div class="prev-row"><span>Tipo</span>    <b id="pTipo">Nazareno pequeño</b></div>
-        <div class="prev-row"><span>Cantidad</span><b id="pQty">100 unidades</b></div>
-        <div class="prev-price" id="pPrice">12,99 €<small>Pack Calle Llena</small></div>
+    </a>
+
+    <!-- MONAGUILLO -->
+    <a href="nazarenos.html?tipo=monaguillo" class="cat-card cat-monaguillo wr">
+      <div class="cat-art"><div class="cat-art-emoji">🧒</div></div>
+      <div class="cat-info">
+        <div class="cat-pill">3 cm</div>
+        <div class="cat-name">Monaguillo</div>
+        <div class="cat-desc">Individual o packs de 5 y 10.</div>
+        <div class="cat-price">Desde 2,99 €</div>
+        <div class="cat-btn">Ver precios →</div>
       </div>
-      <div class="prev-actions">
-        <button class="btn-add-cart" id="addCartBtn" onclick="addToCart()">
-          🛒 Añadir a la cesta
-        </button>
-        <a class="btn-wa" id="cfgWa" href="#" target="_blank" rel="noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Pedir por WhatsApp
-        </a>
-        <button class="btn-copy" id="copyBtn">📋 Copiar resumen del pedido</button>
-      </div>
-    </div>
+    </a>
+
   </div>
 </section>
 
-<!-- TABLA DE PRECIOS -->
-<section class="section" id="precios">
-  <div class="sec-lbl">Tarifas</div>
-  <h2 class="sec-h2">Precios por packs</h2>
-  <p class="sec-p">Haz clic en cualquier fila para seleccionar ese pack en el configurador.</p>
-  <div class="price-table-wrap">
-    <table class="price-table" id="priceTable">
-      <thead>
-        <tr>
-          <th>Pack</th>
-          <th>Unidades</th>
-          <th>🎨 A color</th>
-          <th>⬛ Monocolor</th>
-          <th>Ahorro mono</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="priceTableBody"></tbody>
-      <tfoot>
-        <tr>
-          <td colspan="5">
-            ★ Cantidades no estándar (ej. 75 uds) se calculan al precio unitario del pack inmediatamente superior.
-            Nazareno grande: precio fijo <strong>14,99 €</strong>. Consúltame para pedidos especiales.
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+<!-- CTA -->
+<div class="cta-strip wr">
+  <div class="cta-text">
+    <h3>¿Necesitas algo especial?</h3>
+    <p>Tamaños personalizados, figuras exclusivas, encargos para cofradías enteras. Cuéntame lo que necesitas.</p>
   </div>
-</section>
-
-<!-- CÓMO FUNCIONA -->
-<section class="section" id="como-funciona">
-  <div class="sec-lbl">El proceso</div>
-  <h2 class="sec-h2">¿Cómo hacer un pedido?</h2>
-  <p class="sec-p">En tres pasos sencillos tienes tus nazarenos en camino.</p>
-  <div class="steps-grid">
-    <div class="step wr"><div class="step-num">1</div><div class="step-tit">Elige y personaliza</div><p class="step-p">Usa el configurador para elegir colores, tamaño y cantidad. Puedes pedir el color exacto de tu cofradía.</p></div>
-    <div class="step wr"><div class="step-num">2</div><div class="step-tit">Confirma el pedido</div><p class="step-p">Contáctame por WhatsApp o formulario. Confirmo precio final y plazo en menos de 24 horas.</p></div>
-    <div class="step wr"><div class="step-num">3</div><div class="step-tit">Recibe tu pedido</div><p class="step-p">Enviamos a toda España. También puedes recoger en persona en Granada.</p></div>
-  </div>
-</section>
-
-<!-- PEDIDO -->
-<section class="section" id="pedir">
-  <div class="sec-lbl">Contacto</div>
-  <h2 class="sec-h2">Haz tu pedido</h2>
-  <p class="sec-p">Por WhatsApp obtienes respuesta inmediata. O rellena el formulario y te respondo en menos de 24 horas.</p>
-  <div class="ped-grid">
-    <div class="wa-card wr">
-      <div>
-        <div class="wa-pill"><svg width="8" height="8" viewBox="0 0 8 8" fill="#4ade80"><circle cx="4" cy="4" r="4"/></svg>Respuesta inmediata</div>
-        <h3 class="wa-h3">WhatsApp<br>directo</h3>
-        <p class="wa-p">La forma más rápida. Cuéntame los colores, la cantidad y si es para una cofradía o particular.</p>
-      </div>
-      <div>
-        <a href="https://wa.me/34618648370?text=Hola%20Jaime%2C%20me%20interesan%20los%20nazarenos%203D.%20%C2%BFPodr%C3%ADas%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" rel="noreferrer" class="btn-wa-big">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Escribir a WhatsApp
-        </a>
-        <p class="wa-foot">618 648 370 · Jaime Rivas · Granada</p>
-      </div>
-    </div>
-    <div class="form-card wr">
-      <h3 class="form-h3">Formulario de contacto</h3>
-      <p class="form-sub">Te respondo en menos de 24 h con presupuesto y plazo de entrega.</p>
-      <!-- Activar: formspree.io → cuenta gratis → nuevo form → reemplaza YOUR_FORM_ID -->
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="frow">
-          <div class="fgrp"><label class="flbl">Nombre *</label><input class="finput" type="text" name="nombre" placeholder="Tu nombre" required></div>
-          <div class="fgrp"><label class="flbl">Teléfono</label><input class="finput" type="tel" name="telefono" placeholder="6XX XXX XXX"></div>
-        </div>
-        <div class="fgrp"><label class="flbl">Email *</label><input class="finput" type="email" id="femail" name="email" placeholder="tucorreo@email.com" required></div>
-        <div class="frow">
-          <div class="fgrp"><label class="flbl">Tipo</label>
-            <select class="fsel" name="tipo">
-              <option value="">Selecciona...</option>
-              <option value="pequeno-color">Pequeño · a color</option>
-              <option value="pequeno-mono">Pequeño · monocolor</option>
-              <option value="grande">Grande · 14,99 € / ud</option>
-            </select>
-          </div>
-          <div class="fgrp"><label class="flbl">Cantidad</label><input class="finput" type="number" name="cantidad" placeholder="Ej: 100" min="1"></div>
-        </div>
-        <div class="fgrp"><label class="flbl">Detalles</label><textarea class="ftxt" name="mensaje" placeholder="Color de capa, color de hábito, nombre cofradía, fecha..."></textarea></div>
-        <input type="hidden" name="_subject" value="Nuevo pedido · Nazarenos 3D Granada">
-        <input type="hidden" name="_replyto" id="replyTo" value="">
-        <button type="submit" class="btn-sub" id="submitBtn">Enviar pedido ✦</button>
-      </form>
-      <div class="form-ok" id="formOk">
-        <strong>✓ Mensaje enviado</strong>
-        <p>Te respondo en menos de 24 horas. ¡Gracias!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ENCARGO ESPECIAL / TAMAÑO PERSONALIZADO -->
-<section class="section" id="encargo-especial">
-  <div class="sec-lbl">Personalización total</div>
-  <h2 class="sec-h2">¿Necesitas otro tamaño?</h2>
-  <p class="sec-p">Los tamaños estándar son ~5 cm (pequeño) y ~15 cm (grande). Si tu hermandad necesita una medida diferente, cuéntame y te preparo un presupuesto.</p>
-
-  <div class="encargo-card wr">
-    <div class="encargo-head">
-      <div class="encargo-copy">
-        <div class="encargo-pill">✦ Encargo especial · medida a demanda</div>
-        <h3 class="encargo-h3">Cuéntame qué necesitas</h3>
-        <p class="encargo-p">Rellena el formulario con los datos de tu hermandad y el tamaño que buscas. Te respondo por WhatsApp en menos de 24 horas con disponibilidad y presupuesto.</p>
-      </div>
-    </div>
-
-    <div class="encargo-form" id="encargoForm">
-      <!-- Datos de contacto -->
-      <div class="fgrp">
-        <label class="encargo-flbl">Nombre / Hermandad *</label>
-        <input class="encargo-finput" type="text" id="eNombre" placeholder="Tu nombre o nombre de la hermandad" required>
-      </div>
-      <div class="fgrp">
-        <label class="encargo-flbl">Teléfono *</label>
-        <input class="encargo-finput" type="tel" id="eTelefono" placeholder="6XX XXX XXX" required>
-      </div>
-
-      <!-- Datos de la hermandad -->
-      <div class="fgrp">
-        <label class="encargo-flbl">Nombre de la cofradía</label>
-        <input class="encargo-finput" type="text" id="eCofraida" placeholder="Ej: Hdad. del Gran Poder de Granada">
-      </div>
-      <div class="fgrp">
-        <label class="encargo-flbl">Ciudad / Localidad</label>
-        <input class="encargo-finput" type="text" id="eCiudad" placeholder="Ej: Granada">
-      </div>
-
-      <!-- Detalles de la pieza -->
-      <div class="fgrp">
-        <label class="encargo-flbl">Tamaño deseado (cm) *</label>
-        <input class="encargo-finput" type="text" id="eTamano" placeholder="Ej: 20 cm, 30 cm..." required>
-      </div>
-      <div class="fgrp">
-        <label class="encargo-flbl">Cantidad aproximada</label>
-        <input class="encargo-finput" type="number" id="eCantidad" placeholder="Ej: 50" min="1">
-      </div>
-
-      <div class="fgrp full">
-        <label class="encargo-flbl">Color de la capa</label>
-        <input class="encargo-finput" type="text" id="eColor" placeholder="Ej: Morado, Vino, Azul marino, código HEX...">
-      </div>
-      <div class="fgrp full">
-        <label class="encargo-flbl">Color del hábito</label>
-        <input class="encargo-finput" type="text" id="eHabito" placeholder="Ej: Negro, Blanco, mismo que la capa...">
-      </div>
-
-      <div class="fgrp full">
-        <label class="encargo-flbl">Detalles adicionales</label>
-        <textarea class="encargo-ftxt" id="eDetalles" placeholder="Fecha en que lo necesitas, algún detalle especial de la figura, acabado específico..."></textarea>
-      </div>
-
-      <div class="encargo-nota">
-        📐 Tamaños estándar disponibles sin recargo: <strong style="color:var(--oroS)">~5 cm</strong> (pequeño) y <strong style="color:var(--oroS)">~15 cm</strong> (grande).
-        Para otras medidas se prepara un presupuesto personalizado según el tamaño y la cantidad.
-      </div>
-
-      <button class="btn-encargo-wa" onclick="enviarEncargo()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Enviar consulta por WhatsApp
-      </button>
-    </div>
-  </div>
-</section>
-
-</div><!-- .page -->
-
-<!-- CESTA FLOTANTE -->
-<button class="cart-float" id="cartFloat" onclick="toggleCart()" title="Ver cesta">
-  <span class="cart-badge" id="cartBadge">0</span>
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
-    <path d="M16 10a4 4 0 01-8 0"/>
-  </svg>
-</button>
-
-<!-- CONTADOR -->
-<div class="counter-bar wr">
-  <span class="counter-num" id="counterNum">0</span>
-  <span class="counter-txt">nazarenos enviados a cofradías de toda España</span>
+  <a href="https://wa.me/34618648370?text=Hola%20Jaime%2C%20me%20interesan%20las%20figuras%20de%20Semana%20Santa%203D." target="_blank" class="btn-wa-strip">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Escribir a Jaime
+  </a>
 </div>
 
-<!-- POPUP DATOS CLIENTE -->
-<div class="popup-overlay" id="popupOverlay">
-  <div class="popup-box">
-    <div class="popup-title">Confirmar pedido</div>
-    <div class="popup-sub">Introduce tus datos para que Jaime pueda identificar tu pedido y contactarte.</div>
-    <div class="popup-preview" id="popupPreview"></div>
-    <div class="popup-fgrp">
-      <label class="popup-lbl">Nombre *</label>
-      <input class="popup-input" type="text" id="popupNombre" placeholder="Tu nombre o hermandad" required>
+<!-- SOBRE MÍ -->
+<section class="section" id="sobre">
+  <div class="sec-lbl">El artesano</div>
+  <h2 class="sec-h2">Hecho en Granada,<br>con cariño cofrade</h2>
+  <div class="sobre-grid">
+    <div class="sobre-copy wr">
+      <p>Soy Jaime Rivas, de Granada. Imprimo en 3D figuras de Semana Santa para hermandades, cofradías y particulares de toda España.</p>
+      <p>Cada pieza se imprime y revisa a mano. Puedo replicar el color exacto de tu cofradía, y si necesitas un tamaño diferente al estándar, me lo dices y te preparo presupuesto.</p>
+      <div class="tags">
+        <span class="tag">✦ Impresión 3D artesanal</span>
+        <span class="tag">🎨 Color personalizado</span>
+        <span class="tag">📦 Envío a toda España</span>
+        <span class="tag">⚜️ Para cofradías y particulares</span>
+        <span class="tag">📱 Respuesta en 24h</span>
+      </div>
     </div>
-    <div class="popup-fgrp">
-      <label class="popup-lbl">Teléfono</label>
-      <input class="popup-input" type="tel" id="popupTel" placeholder="6XX XXX XXX">
+    <div class="sobre-art wr">
+      <div class="sobre-nzgroup" id="sobreArt"></div>
     </div>
-    <div class="popup-btns">
-      <button class="popup-send-wa" id="popupWaBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        WhatsApp
-      </button>
-      <button class="popup-send-email" id="popupEmailBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email
-      </button>
-    </div>
-    <button class="popup-cancel" onclick="closePopup()">Cancelar</button>
   </div>
+</section>
+
 </div>
-
-<!-- PANEL CESTA -->
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-head">
-    <div class="cart-head-title">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      Tu pedido
-    </div>
-    <button class="cart-close" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-empty" id="cartEmpty">
-    🕯️ Tu cesta está vacía.<br>Configura un nazareno y añádelo.
-  </div>
-  <div class="cart-items" id="cartItems"></div>
-  <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total-row">
-      <span class="cart-total-label">Total estimado</span>
-      <span class="cart-total-price" id="cartTotal">0,00 €</span>
-    </div>
-    <div class="cart-actions">
-      <button class="cart-btn-wa" id="cartWaBtn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Enviar pedido por WhatsApp
-      </button>
-      <button class="cart-btn-email" id="cartEmailBtn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Enviar pedido por Email
-      </button>
-      <button class="cart-btn-clear" onclick="clearCart()">Vaciar cesta</button>
-    </div>
-  </div>
-</div>
-
-<!-- HOVER PREVIEW SWATCH -->
-<div class="sw-preview" id="swPreview"></div>
-
-<!-- WA FLOTANTE -->
-<a class="wa-float" id="waFloat" href="https://wa.me/34618648370" target="_blank" rel="noreferrer" title="WhatsApp">
-  <span class="wa-pulse"></span>
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
 
 <footer>
-  <div class="foot-brand">Nazarenos 3D · Jaime Rivas Reinoso</div>
+  <div class="foot-brand">Semana Santa 3D · Jaime Rivas Reinoso · Granada</div>
   <div class="foot-sub">
-    Granada, España &nbsp;·&nbsp;
-    <a href="/cdn-cgi/l/email-protection#dfb5beb6b2baadb6a9beacb8adbeb1bebbbe9fb8b2beb6b3f1bcb0b2"><span class="__cf_email__" data-cfemail="fa909b93979f88938c9b899d889b949b9e9bba9d979b9396d4999597">[email&#160;protected]</span></a>
-    &nbsp;·&nbsp;<a href="tel:+34618648370">618 648 370</a>
+    <a href="tel:+34618648370">618 648 370</a> ·
+    <a href="mailto:jaimerivasgranada@gmail.com">jaimerivasgranada@gmail.com</a>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-'use strict';
+<a class="wa-float" href="https://wa.me/34618648370" target="_blank" rel="noreferrer" title="WhatsApp">
+  <span class="wa-pulse"></span>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
 
-/* ── PALETA ── */
-const COLORS=[
-  {n:'Vino Cofrade', h:'#6b1a31'},{n:'Morado',     h:'#5c1e8a'},
-  {n:'Azul Marino',  h:'#1a3a6b'},{n:'Negro',       h:'#1e1e1e'},
-  {n:'Blanco',       h:'#dedad3'},{n:'Verde',        h:'#1a5c2e'},
-  {n:'Granate',      h:'#7a1515'},{n:'Celeste',      h:'#2a7ab8'},
-  {n:'Dorado',       h:'#9a7218'},
-];
-
-/* ── PACKS ── */
-// Monocolor = 0,10 € menos por unidad respecto al color
-const PACKS=[
-  {g:false,name:'Pack Mini Cuadrilla', qty:10,  color:1.99,  mono:0.99, desc:'Para pequeños encargos, regalos individuales o para probar el producto.'},
-  {g:false,name:'Pack Chicotá',        qty:25,  color:3.99,  mono:1.49, desc:'Perfecto para un grupo de amigos o un tramo pequeño de hermandad.'},
-  {g:false,name:'Pack Media Estación', qty:50,  color:6.99,  mono:1.99, desc:'Ideal para recuerdo de paso, peña cofrade o encargo de hermandad.'},
-  {g:false,name:'Pack Calle Llena',    qty:100, color:12.99, mono:2.99, desc:'El pack más popular. Gran relación calidad-precio para hermandades.'},
-  {g:false,name:'Pack Madrugá Doble',  qty:200, color:24.99, mono:4.99, desc:'Para grandes hermandades o cofradías con alta demanda de recuerdos.'},
-  {g:true, name:'Nazareno Grande · Pieza única',qty:1,color:14.99,mono:14.99,desc:'Pieza protagonista. Regalo especial o colección privada con mayor detalle.'},
-];
-
-/* ── ESTADO ── */
-const S={
-  capa:'#6b1a31', capaName:'Vino Cofrade',
-  habito:'#1a3a6b', habitoName:'Azul Marino',
-  capirote:'#1a3a6b', capiroteNombre:'Azul Marino',
-  mono:'#1e1e1e', monoName:'Negro',
-  modo:'color', size:'pequeno', qty:100, view:'frente'
-};
-
-/* ── COLOR UTILS ── */
+<script>
+/* Mini SVG helpers del original */
 function h2r(h){const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return r?{r:parseInt(r[1],16),g:parseInt(r[2],16),b:parseInt(r[3],16)}:null;}
 function toHsl(r,g,b){r/=255;g/=255;b/=255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);let h,s,l=(mx+mn)/2;if(mx===mn){h=s=0;}else{const d=mx-mn;s=l>.5?d/(2-mx-mn):d/(mx+mn);switch(mx){case r:h=((g-b)/d+(g<b?6:0))/6;break;case g:h=((b-r)/d+2)/6;break;default:h=((r-g)/d+4)/6;}}return[h*360,s*100,l*100];}
 function fromHsl(h,s,l){h/=360;s/=100;l/=100;let r,g,b;if(!s){r=g=b=l;}else{const q=l<.5?l*(1+s):l+s-l*s,p=2*l-q,u=(p,q,t)=>{if(t<0)t+=1;if(t>1)t-=1;return t<1/6?p+(q-p)*6*t:t<.5?q:t<2/3?p+(q-p)*(2/3-t)*6:p;};r=u(p,q,h+1/3);g=u(p,q,h);b=u(p,q,h-1/3);}return'#'+[r,g,b].map(x=>Math.round(x*255).toString(16).padStart(2,'0')).join('');}
 function shades(hex){const rgb=h2r(hex);if(!rgb)return{l:hex,b:hex,d:hex};const[h,s,l]=toHsl(rgb.r,rgb.g,rgb.b);return{l:fromHsl(h,Math.max(s-10,0),Math.min(l+24,88)),b:hex,d:fromHsl(h,Math.min(s+8,100),Math.max(l-26,4))};}
-function spOp(hex){const rgb=h2r(hex);return rgb?(rgb.r*.299+rgb.g*.587+rgb.b*.114)<70?0.30:0.18:0.18;}
-function fmt(n){return n.toFixed(2).replace('.',',')+' €';}
+function spOp(h){const rgb=h2r(h);if(!rgb)return.2;const br=(rgb.r*299+rgb.g*587+rgb.b*114)/1000;return br>200?.08:br>100?.18:.28;}
 
-/* ═══════════════════════════════════════════
-   SVG FRENTE
-   capas: capa (detrás) → hábito+capirote (delante)
-   ═══════════════════════════════════════════ */
-/* ═══════════════════════════════════════════
-   NAZARENO SVG — estilo fotorrealista
-   capaHex  = color capa (lados)
-   habHex   = color hábito (túnica)
-   capiHex  = color capirote + careta
-═══════════════════════════════════════════ */
-function svgF(capaHex,habHex,capiHex){
-  capiHex=capiHex||habHex;
-  const ca=shades(capaHex),ha=shades(habHex),cp=shades(capiHex);
-  const id='f'+Math.random().toString(36).slice(2,8);
-  const sc=spOp(capaHex),sh=spOp(habHex),scp=spOp(capiHex);
-  const skin='#d4a574',gold='#c9a54d',goldD='#8a6b20';
+function svgF(ca,ha,capi){
+  capi=capi||ha;
+  const cS=shades(ca),hS=shades(ha),cpS=shades(capi);
+  const id='p'+Math.random().toString(36).slice(2,8);
+  const scp=spOp(capi);
+  const gold='#c9a54d';
   return `<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <linearGradient id="ha${id}" x1=".15" y1="0" x2=".85" y2="1">
-    <stop offset="0%" stop-color="${ha.l}"/><stop offset="40%" stop-color="${ha.b}"/><stop offset="100%" stop-color="${ha.d}"/>
-  </linearGradient>
-  <linearGradient id="ca${id}" x1=".15" y1="0" x2=".85" y2="1">
-    <stop offset="0%" stop-color="${ca.l}"/><stop offset="40%" stop-color="${ca.b}"/><stop offset="100%" stop-color="${ca.d}"/>
-  </linearGradient>
-  <linearGradient id="caR${id}" x1=".85" y1="0" x2=".15" y2="1">
-    <stop offset="0%" stop-color="${ca.l}"/><stop offset="40%" stop-color="${ca.b}"/><stop offset="100%" stop-color="${ca.d}"/>
-  </linearGradient>
-  <linearGradient id="cp${id}" x1=".15" y1="0" x2=".85" y2="1">
-    <stop offset="0%" stop-color="${cp.l}"/><stop offset="40%" stop-color="${cp.b}"/><stop offset="100%" stop-color="${cp.d}"/>
-  </linearGradient>
-  <linearGradient id="haL${id}" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="rgba(255,255,255,${sh*1.6})"/><stop offset="50%" stop-color="rgba(255,255,255,${sh*0.5})"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-  <linearGradient id="caL${id}" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="rgba(255,255,255,${sc*1.6})"/><stop offset="50%" stop-color="rgba(255,255,255,${sc*0.5})"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-  <linearGradient id="cpL${id}" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="rgba(255,255,255,${scp*1.6})"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-  <radialGradient id="sg${id}" cx="50%" cy="100%" r="50%">
-    <stop offset="0%" stop-color="rgba(0,0,0,.5)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-  </radialGradient>
-  <filter id="ds${id}" x="-20%" y="-5%" width="140%" height="120%">
-    <feDropShadow dx="2" dy="6" stdDeviation="7" flood-color="rgba(0,0,0,0.5)"/>
-  </filter>
+<linearGradient id="ha${id}" x1=".15" y1="0" x2=".85" y2="1"><stop offset="0%" stop-color="${hS.l}"/><stop offset="40%" stop-color="${hS.b}"/><stop offset="100%" stop-color="${hS.d}"/></linearGradient>
+<linearGradient id="ca${id}" x1=".15" y1="0" x2=".85" y2="1"><stop offset="0%" stop-color="${cS.l}"/><stop offset="40%" stop-color="${cS.b}"/><stop offset="100%" stop-color="${cS.d}"/></linearGradient>
+<linearGradient id="cp${id}" x1=".15" y1="0" x2=".85" y2="1"><stop offset="0%" stop-color="${cpS.l}"/><stop offset="40%" stop-color="${cpS.b}"/><stop offset="100%" stop-color="${cpS.d}"/></linearGradient>
+<radialGradient id="sg${id}" cx="50%" cy="100%" r="50%"><stop offset="0%" stop-color="rgba(0,0,0,.5)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/></radialGradient>
+<filter id="ds${id}" x="-20%" y="-5%" width="140%" height="120%"><feDropShadow dx="2" dy="6" stdDeviation="7" flood-color="rgba(0,0,0,0.5)"/></filter>
 </defs>
 <ellipse cx="60" cy="336" rx="36" ry="6" fill="url(#sg${id})"/>
 <g filter="url(#ds${id})">
-
-<!-- ZAPATOS -->
 <path d="M37 322 C34 322 28 323 26 326 Q26 332 37 332 L51 332 Q53 330 52 326 Z" fill="#1a1612"/>
 <path d="M83 322 C86 322 92 323 94 326 Q94 332 83 332 L69 332 Q67 330 68 326 Z" fill="#1a1612"/>
-<path d="M28 325 Q35 323 45 324" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M92 325 Q85 323 75 324" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
-
-<!-- CAPA izq (sale del borde del hábito hacia fuera) -->
-<path d="M41 172 C34 173 22 179 16 192 L10 312 Q10 322 19 323 L41 323 Z" fill="url(#ca${id})"/>
-<path d="M41 172 C34 173 22 179 16 192 L10 312 L41 323 Z" fill="rgba(0,0,0,0.12)"/>
-<path d="M16 192 L10 312 L41 321 L41 172 C34 173 22 179 16 192 Z" fill="url(#caL${id})" opacity=".5"/>
-<path d="M30 182 C25 220 18 268 12 316" fill="none" stroke="${ca.d}" stroke-width="1.2" opacity=".4"/>
-<!-- CAPA dch -->
-<path d="M79 172 C86 173 98 179 104 192 L110 312 Q110 322 101 323 L79 323 Z" fill="url(#caR${id})"/>
-<path d="M79 172 C86 173 98 179 104 192 L110 312 L79 323 Z" fill="rgba(0,0,0,0.08)"/>
-<path d="M90 182 C95 220 102 268 108 316" fill="none" stroke="${ca.d}" stroke-width="1.2" opacity=".35"/>
-<!-- Ribete dorado capa -->
-<path d="M12 316 C22 313 31 311 41 311 M79 311 C89 311 98 313 108 316" stroke="${gold}" stroke-width="2.5" fill="none" opacity=".7" stroke-linecap="round"/>
-<path d="M12 318 C22 315 31 314 41 314 M79 314 C89 314 98 315 108 318" stroke="${goldD}" stroke-width="0.8" fill="none" opacity=".4" stroke-linecap="round"/>
-
-<!-- HÁBITO (encima capa) -->
-<path d="M41 172 L34 318 Q34 328 44 328 L76 328 Q86 328 86 318 L79 172 Z" fill="url(#ha${id})"/>
-<path d="M41 172 L34 318 Q34 328 44 328 L49 328 L55 172 Z" fill="rgba(0,0,0,0.15)"/>
-<path d="M79 172 L86 318 Q86 328 76 328 L71 328 L65 172 Z" fill="rgba(0,0,0,0.1)"/>
-<path d="M41 172 L34 318 L60 326 L60 172 Z" fill="url(#haL${id})" opacity=".35"/>
-<path d="M51 176 L46 322" fill="none" stroke="${ha.d}" stroke-width="1" opacity=".35"/>
-<path d="M69 176 L74 322" fill="none" stroke="${ha.d}" stroke-width="1" opacity=".35"/>
-<path d="M60 178 L60 326" fill="none" stroke="${ha.l}" stroke-width="0.6" opacity=".15"/>
-<path d="M41 172 C49 175 71 175 79 172 C79 180 71 186 60 187 C49 186 41 180 41 172 Z" fill="rgba(0,0,0,0.2)"/>
-
-<!-- ESCLAVINA (hombros, color capirote) -->
-<path d="M60 167 C48 167 28 174 20 188 Q24 208 60 212 Q96 208 100 188 C92 174 72 167 60 167 Z" fill="url(#cp${id})"/>
-<path d="M22 190 Q26 208 60 212 Q94 208 98 190 Q94 214 60 218 Q26 214 22 190 Z" fill="rgba(0,0,0,0.2)"/>
-<path d="M36 178 Q28 196 32 210" fill="none" stroke="${cp.d}" stroke-width="1.2" opacity=".35"/>
-<path d="M84 178 Q92 196 88 210" fill="none" stroke="${cp.d}" stroke-width="1.2" opacity=".35"/>
-<path d="M20 188 Q24 208 60 212 L60 167 C48 167 28 174 20 188 Z" fill="url(#cpL${id})" opacity=".45"/>
-<path d="M23 192 Q38 210 60 212 Q82 210 97 192" fill="none" stroke="${cp.d}" stroke-width="1.5" opacity=".35"/>
-
-<!-- CAPIROTE: cono, base ~36px, punta fina (color capirote) -->
-<path d="M60 8 L42 165 Q42 170 60 170 Q78 170 78 165 Z" fill="url(#cp${id})"/>
-<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(0,0,0,0.22)"/>
-<path d="M60 8 L48 140 L60 170 L72 140 Z" fill="rgba(0,0,0,0.08)"/>
-<path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(255,255,255,${scp*0.8})" opacity=".35"/>
-<path d="M60 9 L60 170" fill="none" stroke="${cp.l}" stroke-width="0.8" opacity=".2"/>
-<path d="M60 8 C57 40 54 80 52 120 C50 145 48 158 46 165" fill="none" stroke="${cp.d}" stroke-width="1.2" opacity=".3"/>
-<path d="M60 8 C63 40 66 80 68 120 C70 145 72 158 74 165" fill="none" stroke="${cp.d}" stroke-width="1" opacity=".25"/>
-<ellipse cx="60" cy="9" rx="2.5" ry="2" fill="${cp.l}" opacity=".6"/>
-
-<!-- CARETA (color capirote) -->
-<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="${cp.d}" opacity=".95"/>
-<ellipse cx="60" cy="134" rx="11.5" ry="7.2" fill="${cp.d}"/>
-<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/>
-<ellipse cx="60" cy="134" rx="10" ry="6.5" fill="rgba(0,0,0,0.5)"/>
-<ellipse cx="53.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
-<ellipse cx="53.5" cy="133" rx="2.4" ry="2" fill="#0a0604"/>
-<circle  cx="52.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
-<ellipse cx="66.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
-<ellipse cx="66.5" cy="133" rx="2.4" ry="2" fill="#0a0604"/>
-<circle  cx="65.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
-
-<!-- MANOS -->
-<ellipse cx="11"  cy="228" rx="5.5" ry="7" fill="${skin}" opacity=".9"/>
-<ellipse cx="11"  cy="234" rx="4" ry="3.5" fill="${skin}" opacity=".6"/>
-<ellipse cx="111" cy="225" rx="5.5" ry="7" fill="${skin}" opacity=".9"/>
-
-<!-- VELA -->
-<rect x="108.5" y="186" width="4.5" height="40" rx="2.2" fill="#fefce8"/>
-<rect x="108.5" y="186" width="2" height="40" rx="1.2" fill="rgba(255,255,255,.4)"/>
-<path d="M108.5 198 Q106 202 108 204" fill="none" stroke="#e8e4c0" stroke-width="1" stroke-linecap="round"/>
-<line x1="110.8" y1="182" x2="110.8" y2="186" stroke="#3d2a0a" stroke-width="1.2" stroke-linecap="round"/>
-<path d="M110.8 182 C107 175 107 167 110.8 162 C114.6 167 114.6 175 110.8 182 Z" fill="#f97316" opacity=".9"/>
-<path d="M110.8 180 C108 174 108 168 110.8 164 C113.6 168 113.6 174 110.8 180 Z" fill="#fbbf24"/>
-<path d="M110.8 179 C109 174 109 169 110.8 166 C112.6 169 112.6 174 110.8 179 Z" fill="#fef9c3"/>
-<ellipse cx="110.8" cy="170" rx="5" ry="7" fill="rgba(251,146,60,.12)"/>
-
-</g></svg>`;
-}
-
-/* ════════════ ESPALDA ════════════ */
-function svgB(capaHex,habHex,capiHex){
-  capiHex=capiHex||habHex;
-  const ca=shades(capaHex),ha=shades(habHex),cp=shades(capiHex);
-  const id='b'+Math.random().toString(36).slice(2,8);
-  const sc=spOp(capaHex),sh=spOp(habHex),scp=spOp(capiHex);
-  const gold='#c9a54d',goldD='#8a6b20';
-  return `<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <linearGradient id="ha${id}" x1=".85" y1="0" x2=".15" y2="1">
-    <stop offset="0%" stop-color="${ha.l}"/><stop offset="40%" stop-color="${ha.b}"/><stop offset="100%" stop-color="${ha.d}"/>
-  </linearGradient>
-  <linearGradient id="ca${id}" x1=".85" y1="0" x2=".15" y2="1">
-    <stop offset="0%" stop-color="${ca.l}"/><stop offset="40%" stop-color="${ca.b}"/><stop offset="100%" stop-color="${ca.d}"/>
-  </linearGradient>
-  <linearGradient id="cp${id}" x1=".85" y1="0" x2=".15" y2="1">
-    <stop offset="0%" stop-color="${cp.l}"/><stop offset="40%" stop-color="${cp.b}"/><stop offset="100%" stop-color="${cp.d}"/>
-  </linearGradient>
-  <linearGradient id="caL${id}" x1="1" y1="0" x2="0" y2="0">
-    <stop offset="0%" stop-color="rgba(255,255,255,${sc*1.6})"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-  <linearGradient id="cpL${id}" x1="1" y1="0" x2="0" y2="0">
-    <stop offset="0%" stop-color="rgba(255,255,255,${scp*1.6})"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-  <radialGradient id="sg${id}" cx="50%" cy="100%" r="50%">
-    <stop offset="0%" stop-color="rgba(0,0,0,.5)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-  </radialGradient>
-  <filter id="ds${id}" x="-20%" y="-5%" width="140%" height="120%">
-    <feDropShadow dx="-2" dy="6" stdDeviation="7" flood-color="rgba(0,0,0,0.5)"/>
-  </filter>
-</defs>
-<ellipse cx="60" cy="336" rx="36" ry="6" fill="url(#sg${id})"/>
-<g filter="url(#ds${id})">
-
-<!-- ZAPATOS -->
-<path d="M37 322 C34 322 28 323 26 326 Q26 332 37 332 L51 332 Q53 330 52 326 Z" fill="#1a1612"/>
-<path d="M83 322 C86 322 92 323 94 326 Q94 332 83 332 L69 332 Q67 330 68 326 Z" fill="#1a1612"/>
-
-<!-- HÁBITO ESPALDA (apenas visible) -->
-<path d="M41 172 L34 318 Q34 328 44 328 L76 328 Q86 328 86 318 L79 172 Z" fill="url(#ha${id})" opacity=".45"/>
-
-<!-- CAPA ESPALDA (protagonista) -->
 <path d="M41 172 C34 173 22 179 16 192 L10 312 Q10 322 19 323 L41 323 Z" fill="url(#ca${id})"/>
 <path d="M79 172 C86 173 98 179 104 192 L110 312 Q110 322 101 323 L79 323 Z" fill="url(#ca${id})"/>
-<path d="M104 192 L110 312 L79 321 L79 172 C86 173 98 179 104 192 Z" fill="url(#caL${id})" opacity=".42"/>
-<path d="M30 182 C25 220 18 268 12 316" fill="none" stroke="${ca.d}" stroke-width="1.2" opacity=".35"/>
-<path d="M90 182 C95 220 102 268 108 316" fill="none" stroke="${ca.d}" stroke-width="1.2" opacity=".3"/>
-<!-- Centro capa espalda -->
-<path d="M41 172 L34 318 Q34 326 44 327 L76 327 Q86 326 86 318 L79 172 Z" fill="url(#ca${id})"/>
-<path d="M60 174 L60 326" fill="none" stroke="${ca.l}" stroke-width="0.8" opacity=".2"/>
-<path d="M50 175 C48 220 46 270 44 320" fill="none" stroke="${ca.d}" stroke-width="1" opacity=".3"/>
-<path d="M70 175 C72 220 74 270 76 320" fill="none" stroke="${ca.d}" stroke-width="1" opacity=".3"/>
-<!-- Ribete dorado -->
+<path d="M41 172 L34 318 Q34 328 44 328 L76 328 Q86 328 86 318 L79 172 Z" fill="url(#ha${id})"/>
+<path d="M41 172 L34 318 L60 326 L60 172 Z" fill="rgba(255,255,255,.08)" opacity=".4"/>
 <path d="M12 316 C28 313 44 311 60 311 C76 311 92 313 108 316" stroke="${gold}" stroke-width="2.5" fill="none" opacity=".7" stroke-linecap="round"/>
-<path d="M12 318 C28 315 44 314 60 314 C76 314 92 315 108 318" stroke="${goldD}" stroke-width="0.8" fill="none" opacity=".35" stroke-linecap="round"/>
-
-<!-- ESCLAVINA ESPALDA (color capirote) -->
 <path d="M60 167 C48 167 28 174 20 188 Q24 208 60 212 Q96 208 100 188 C92 174 72 167 60 167 Z" fill="url(#cp${id})"/>
-<path d="M60 169 L60 212" fill="none" stroke="${cp.l}" stroke-width="0.9" opacity=".25"/>
-<path d="M100 188 Q96 208 60 212 L60 167 C72 167 92 174 100 188 Z" fill="url(#cpL${id})" opacity=".42"/>
-<path d="M22 190 Q38 210 60 212 Q82 210 98 190" fill="none" stroke="${cp.d}" stroke-width="1.5" opacity=".3"/>
-<path d="M24 192 Q30 210 60 214 Q90 210 96 192" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="2.5"/>
-
-<!-- CAPIROTE ESPALDA (color capirote) -->
+<path d="M100 188 Q96 208 60 212 L60 167 C72 167 92 174 100 188 Z" fill="rgba(255,255,255,${scp*1.4})" opacity=".4"/>
 <path d="M60 8 L42 165 Q42 170 60 170 Q78 170 78 165 Z" fill="url(#cp${id})"/>
-<path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(0,0,0,0.2)"/>
-<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(255,255,255,${scp*0.3})" opacity=".3"/>
-<path d="M60 9 L60 170" fill="none" stroke="${cp.l}" stroke-width="0.8" opacity=".22"/>
-<path d="M60 8 C57 40 54 80 52 120 C50 145 48 158 46 165" fill="none" stroke="${cp.d}" stroke-width="1.1" opacity=".28"/>
-<path d="M60 8 C63 40 66 80 68 120 C70 145 72 158 74 165" fill="none" stroke="${cp.d}" stroke-width="1" opacity=".22"/>
-
-<!-- LAZADA NUCA (color capirote) -->
-<path d="M60 171 C54 171 50 175 50 178 C50 182 54 184 60 184 C66 184 70 182 70 178 C70 175 66 171 60 171 Z" fill="${cp.b}" opacity=".9"/>
-<path d="M60 171 C54 171 50 175 50 178 C50 182 54 184 60 184 C66 184 70 182 70 178 C70 175 66 171 60 171 Z" fill="none" stroke="${cp.d}" stroke-width="1"/>
-<path d="M50 178 C50 182 54 184 60 184 C66 184 70 182 70 178 Z" fill="rgba(0,0,0,.2)"/>
-<path d="M54 183 Q49 196 51 206 Q49 218 52 228" fill="none" stroke="${cp.b}" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>
-<path d="M66 183 Q71 196 69 206 Q71 218 68 228" fill="none" stroke="${cp.b}" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>
-<path d="M54 183 Q49 196 51 206 Q49 218 52 228" fill="none" stroke="${cp.d}" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
-<path d="M66 183 Q71 196 69 206 Q71 218 68 228" fill="none" stroke="${cp.d}" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
-
+<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(0,0,0,.22)"/>
+<path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(255,255,255,${scp*.8})" opacity=".3"/>
+<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="${cpS.d}" opacity=".95"/>
+<ellipse cx="60" cy="134" rx="10" ry="6.5" fill="rgba(0,0,0,.5)"/>
+<ellipse cx="53.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
+<circle cx="52.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
+<ellipse cx="66.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
+<circle cx="65.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
 </g></svg>`;
 }
 
-function calcPrice(){
-  const mono=S.modo==='mono';
-  if(S.size==='grande') return{total:'14,99 €',label:'Precio fijo por unidad'};
-
-  // Pack exacto
-  const pack=PACKS.find(p=>!p.g&&p.qty===S.qty);
-  if(pack){
-    const t=mono?pack.mono:pack.color;
-    return{total:fmt(t),label:pack.name+(mono?' · Monocolor':'')};
-  }
-
-  // Cantidad no estándar → pack inmediatamente superior (o el más grande si supera todos)
-  const normalPacks=PACKS.filter(p=>!p.g).sort((a,b)=>a.qty-b.qty);
-  const upper=normalPacks.find(p=>p.qty>S.qty) || normalPacks[normalPacks.length-1];
-  const puColor=upper.color/upper.qty;
-  const puMono=upper.mono/upper.qty;
-  const pu=mono?puMono:puColor;
-  const total=S.qty*pu;
-  return{
-    total:fmt(total),
-    label:`${fmt(pu)} × unidad · tarifa ${upper.name}${mono?' · Monocolor':''}`
-  };
-}
-
-/* ── REFRESH ── */
-function refresh(){
-  const mono=S.modo==='mono';
-  const capaHex    = mono?S.mono:S.capa;
-  const habitoHex  = mono?S.mono:S.habito;
-  const capiroteHex= mono?S.mono:S.capirote;
-  document.getElementById('previewSvg').innerHTML=
-    S.view==='frente'?svgF(capaHex,habitoHex,capiroteHex):svgB(capaHex,habitoHex,capiroteHex);
-  document.getElementById('dPrevCapa').style.background=capaHex;
-  document.getElementById('dPrevHabito').style.background=habitoHex;
-  document.getElementById('dPrevCapirote').style.background=capiroteHex;
-  document.getElementById('pCapa').textContent     = mono?S.monoName:S.capaName;
-  document.getElementById('pHabito').textContent   = mono?S.monoName:S.habitoName;
-  document.getElementById('pCapirote').textContent = mono?S.monoName:S.capiroteNombre;
-  document.getElementById('rowHabito').style.opacity   = mono?'.45':'1';
-  document.getElementById('rowCapirote').style.opacity = mono?'.45':'1';
-  document.getElementById('pModo').textContent   = mono?'Monocolor':'A color';
-  document.getElementById('pTipo').textContent   = S.size==='grande'?'Nazareno grande':'Nazareno pequeño';
-  document.getElementById('pQty').textContent    = S.size==='grande'?'1 unidad':S.qty+' unidades';
-  const p=calcPrice();
-  document.getElementById('pPrice').innerHTML=`${p.total}<small>${p.label}</small>`;
-  const msg=buildMsg();
-  document.getElementById('cfgWa').href=`https://wa.me/34618648370?text=${encodeURIComponent(msg)}`;
-  document.getElementById('waFloat').href=`https://wa.me/34618648370?text=${encodeURIComponent(msg)}`;
-}
-
-/* ── MENSAJE WA ── */
-function buildMsg(){
-  const mono=S.modo==='mono';
-  const tipo=S.size==='grande'?'Nazareno grande':'Nazareno pequeño';
-  const qty=S.size==='grande'?'1 unidad':`${S.qty} unidades`;
-  const p=calcPrice();
-  const colores=mono
-    ?`Color único (monocolor): ${S.monoName} (${S.mono})`
-    :`Color de capa: ${S.capaName} (${S.capa})\nColor de hábito: ${S.habitoName} (${S.habito})\nColor de capirote: ${S.capiroteNombre} (${S.capirote})`;
-  return `Hola Jaime, me interesan los nazarenos 3D 🕯️\n\nTipo: ${tipo}\nModo: ${mono?'Monocolor':'A color'}\n${colores}\nCantidad: ${qty}\nPrecio: ${p.total}\n\n¿Me confirmas disponibilidad y plazo? Gracias.`;
-}
-
-/* ── MODO ── */
-function setModo(m){
-  S.modo=m;
-  document.getElementById('btnColor').classList.toggle('on',m==='color');
-  document.getElementById('btnMono').classList.toggle('on',m==='mono');
-  document.getElementById('zonaColor').style.display=m==='color'?'':'none';
-  document.getElementById('zonaMono').style.display=m==='mono'?'':'none';
-  refresh();
-}
-
-/* ── VISTA con animación giro 3D ── */
-function setView(v){
-  if(S.view===v) return;
-  const stage=document.getElementById('flipStage');
-  const animClass=v==='espalda'?'flipping-to-back':'flipping-to-front';
-  // al 50% del giro (punto de máximo escorzo) cambia el SVG
-  stage.classList.add(animClass);
-  setTimeout(()=>{
-    S.view=v;
-    const mono=S.modo==='mono';
-    const ca=mono?S.mono:S.capa, ha=mono?S.mono:S.habito, cp=mono?S.mono:S.capirote;
-    document.getElementById('previewSvg').innerHTML=v==='frente'?svgF(ca,ha,cp):svgB(ca,ha,cp);
-  },275); // mitad de los 550ms
-  setTimeout(()=>stage.classList.remove(animClass),560);
-  document.getElementById('btnFrente').classList.toggle('on',v==='frente');
-  document.getElementById('btnEspalda').classList.toggle('on',v==='espalda');
-}
-
-/* ── MODO OSCURO ── */
-function toggleDark(){
-  const isDark=document.body.classList.toggle('dark');
-  document.getElementById('darkBtn').textContent=isDark?'☀️':'🌙';
-  localStorage.setItem('nz_dark',isDark?'1':'');
-}
-function initDark(){
-  if(localStorage.getItem('nz_dark')==='1'){
-    document.body.classList.add('dark');
-    const btn=document.getElementById('darkBtn');
-    if(btn) btn.textContent='☀️';
-  }
-}
-
-/* ── PICKERS ── */
-function pickColor(zone,hex,name){
-  if(zone==='capirote'){
-    S.capirote=hex; S.capiroteNombre=name;
-    document.getElementById('pcCapirote').value=hex;
-    document.querySelectorAll('#swCapirote .sw').forEach(s=>s.classList.remove('on'));
-    document.querySelector(`#swCapirote [data-h="${hex}"]`)?.classList.add('on');
-    document.getElementById('dotCapirote').style.background=hex;
-    document.getElementById('stripCapirote').style.background=hex;
-  } else {
-    S[zone]=hex; S[zone+'Name']=name;
-    const Z=zone.charAt(0).toUpperCase()+zone.slice(1);
-    document.getElementById('pc'+Z).value=hex;
-    document.querySelectorAll('#sw'+Z+' .sw').forEach(s=>s.classList.remove('on'));
-    document.querySelector(`#sw${Z} [data-h="${hex}"]`)?.classList.add('on');
-    document.getElementById('dot'+Z).style.background=hex;
-    document.getElementById('strip'+Z).style.background=hex;
-  }
-  refresh();
-}
-function pickMono(hex,name){
-  S.mono=hex; S.monoName=name;
-  document.getElementById('pcMono').value=hex;
-  document.querySelectorAll('#swMono .sw').forEach(s=>s.classList.remove('on'));
-  document.querySelector(`#swMono [data-h="${hex}"]`)?.classList.add('on');
-  document.getElementById('dotMono').style.background=hex;
-  document.getElementById('stripMono').style.background=hex;
-  refresh();
-}
-
-/* ── SIZE / QTY ── */
-function pickSize(btn){
-  S.size=btn.dataset.sz;
-  document.querySelectorAll('.sz').forEach(c=>c.classList.remove('on'));
-  btn.classList.add('on');
-  const qb=document.getElementById('qtyBlock');
-  if(S.size==='grande'){S.qty=1;qb.style.cssText='opacity:.35;pointer-events:none';document.getElementById('qtyNum').textContent='1';}
-  else qb.style.cssText='';
-  refresh();
-}
-function stepQty(d){S.qty=Math.max(1,S.qty+d);document.getElementById('qtyNum').textContent=S.qty;upQp();refresh();}
-function pickQty(q){S.qty=q;document.getElementById('qtyNum').textContent=q;upQp();refresh();}
-function upQp(){document.querySelectorAll('.qp').forEach(b=>b.classList.toggle('on',parseInt(b.textContent)===S.qty));}
-
-/* ── PACKS CLICK ── */
-function clickPack(el,qty,g){
-  document.querySelectorAll('#priceTableBody tr').forEach(r=>r.classList.remove('on'));
-  el.classList.add('on');
-  if(g) pickSize(document.querySelector('[data-sz="grande"]'));
-  else{if(S.size==='grande')pickSize(document.querySelector('[data-sz="pequeno"]'));pickQty(qty);}
-  // scroll suave al configurador
-  document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-/* ── COPY ── */
-async function doCopy(){
-  const btn=document.getElementById('copyBtn');
-  try{await navigator.clipboard.writeText(buildMsg());btn.textContent='✓ ¡Copiado!';setTimeout(()=>btn.textContent='📋 Copiar resumen del pedido',2000);}
-  catch{prompt('Copia este texto:',buildMsg());}
-}
-
-/* ── BUILD SWATCHES ── */
-function mkSwatches(containerId,currentHex,onClickFn){
-  document.getElementById(containerId).innerHTML=COLORS.map(c=>
-    `<button class="sw${c.h===currentHex?' on':''}" data-h="${c.h}"
-      style="background:${c.h}" onclick="${onClickFn}('${c.h}','${c.n}')" aria-label="${c.n}">
-      <span class="sw-tip">${c.n}</span></button>`).join('');
-}
-
-/* ── BUILD TABLA DE PRECIOS ── */
-function buildPacks(){
-  const tbody=document.getElementById('priceTableBody');
-  if(!tbody) return;
-  tbody.innerHTML=PACKS.map(p=>{
-    const addBtn = p.g
-      ? `<td class="td-add" data-label="Acción">
-           <button class="btn-tadd" id="tadd_${p.qty}_c" onclick="addPackToCart(event,${p.qty},${p.g},'color')">＋ Añadir</button>
-         </td>`
-      : `<td class="td-add" data-label="Acción">
-           <button class="btn-tadd"      id="tadd_${p.qty}_c" onclick="addPackToCart(event,${p.qty},${p.g},'color')">🎨</button>
-           <button class="btn-tadd mono" id="tadd_${p.qty}_m" onclick="addPackToCart(event,${p.qty},${p.g},'mono')">⬛</button>
-         </td>`;
-    if(p.g) return `
-      <tr onclick="clickPack(this,${p.qty},${p.g})" class="wr">
-        <td data-label="Pack"><div class="td-name">${p.name}</div><div class="td-qty">${p.desc}</div></td>
-        <td data-label="Unidades">Unidad única</td>
-        <td class="td-price" data-label="A color">${fmt(p.color)}</td>
-        <td class="td-mono" data-label="Monocolor">—</td>
-        <td data-label="Ahorro mono">—</td>
-        ${addBtn}
-      </tr>`;
-    const save=fmt(p.color-p.mono);
-    const isPopular=p.qty===100;
-    return `
-      <tr onclick="clickPack(this,${p.qty},${p.g})" class="wr${isPopular?' popular':''}">
-        <td data-label="Pack"><div class="td-name">${p.name}${isPopular?'<span class="popular-badge">★ Popular</span>':''}</div><div class="td-qty">${p.desc}</div></td>
-        <td data-label="Unidades"><strong>${p.qty}</strong> uds</td>
-        <td class="td-price" data-label="A color">${fmt(p.color)}<div class="td-pu">${fmt(p.color/p.qty)}/ud</div></td>
-        <td class="td-mono" data-label="Monocolor">${fmt(p.mono)}<div class="td-pu">${fmt(p.mono/p.qty)}/ud</div></td>
-        <td data-label="Ahorro mono"><span class="td-save">−${save}</span></td>
-        ${addBtn}
-      </tr>`;
-  }).join('');
-  setupReveal();
-}
-
-/* Añadir desde la tabla forzando el modo (color o mono) */
-function addPackToCart(e,qty,g,modo){
-  e.stopPropagation();
-  // 1. Forzar modo
-  setModo(modo);
-  // 2. Seleccionar pack
-  if(g) pickSize(document.querySelector('[data-sz="grande"]'));
-  else{
-    if(S.size==='grande') pickSize(document.querySelector('[data-sz="pequeno"]'));
-    pickQty(qty);
-  }
-  // 3. Añadir a la cesta
-  addToCart();
-  // 4. Feedback en el botón correcto
-  const suffix=modo==='mono'?'_m':'_c';
-  const btn=document.getElementById(`tadd_${qty}${suffix}`);
-  if(btn){
-    const orig=btn.textContent;
-    btn.textContent='✓';btn.classList.add('ok');
-    setTimeout(()=>{btn.textContent=orig;btn.classList.remove('ok');},1500);
-  }
-}
-
-/* ── BUILD HERO ── */
-function buildHero(){
-  const combos=[{ca:'#1a3a6b',ha:'#6b1a31'},{ca:'#6b1a31',ha:'#1e1e1e'},{ca:'#1a5c2e',ha:'#9a7218'}];
-  document.getElementById('heroArt').innerHTML=combos.map(c=>
-    `<div class="hnz" onclick="this.classList.toggle('floating')">${svgF(c.ca,c.ha)}</div>`).join('');
-}
-
-/* ── SCROLL REVEAL ── */
-function setupReveal(){
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach((en,i)=>{
-      if(en.isIntersecting){setTimeout(()=>en.target.classList.add('show'),i*80);obs.unobserve(en.target);}
-    });
-  },{threshold:0.12});
-  document.querySelectorAll('.wr:not(.show)').forEach(el=>obs.observe(el));
-}
-
-/* ── INIT (todo dentro de DOMContentLoaded para evitar errores) ── */
-document.addEventListener('DOMContentLoaded',()=>{
-  // swatches
-  mkSwatches('swCapa',     S.capa,     "pickColor.bind(null,'capa')");
-  mkSwatches('swHabito',  S.habito,   "pickColor.bind(null,'habito')");
-  mkSwatches('swCapirote',S.capirote, "pickColor.bind(null,'capirote')");
-  mkSwatches('swMono',    S.mono,     'pickMono');
-
-  // color pickers nativos
-  document.getElementById('pcCapa').addEventListener('input',function(){
-    S.capa=this.value;S.capaName='Personalizado';
-    document.querySelectorAll('#swCapa .sw').forEach(s=>s.classList.remove('on'));
-    document.getElementById('dotCapa').style.background=this.value;
-    document.getElementById('stripCapa').style.background=this.value;
-    refresh();
-  });
-  document.getElementById('pcHabito').addEventListener('input',function(){
-    S.habito=this.value;S.habitoName='Personalizado';
-    document.querySelectorAll('#swHabito .sw').forEach(s=>s.classList.remove('on'));
-    document.getElementById('dotHabito').style.background=this.value;
-    document.getElementById('stripHabito').style.background=this.value;
-    refresh();
-  });
-  document.getElementById('pcCapirote').addEventListener('input',function(){
-    S.capirote=this.value;S.capiroteNombre='Personalizado';
-    document.querySelectorAll('#swCapirote .sw').forEach(s=>s.classList.remove('on'));
-    document.getElementById('dotCapirote').style.background=this.value;
-    document.getElementById('stripCapirote').style.background=this.value;
-    refresh();
-  });
-  document.getElementById('pcMono').addEventListener('input',function(){
-    S.mono=this.value;S.monoName='Personalizado';
-    document.querySelectorAll('#swMono .sw').forEach(s=>s.classList.remove('on'));
-    document.getElementById('dotMono').style.background=this.value;
-    document.getElementById('stripMono').style.background=this.value;
-    refresh();
-  });
-
-  // copy button
-  document.getElementById('copyBtn').addEventListener('click',doCopy);
-
-  // formulario
-  document.getElementById('contactForm').addEventListener('submit',async function(e){
-    e.preventDefault();
-    document.getElementById('replyTo').value=document.getElementById('femail').value;
-    const btn=document.getElementById('submitBtn'),ok=document.getElementById('formOk');
-    if(this.action.includes('YOUR_FORM_ID')){
-      const subj=encodeURIComponent('Pedido Nazarenos 3D');
-      const body=encodeURIComponent(buildMsg());
-      window.location.href=`mailto:jaimerivasgranada@gmail.com?subject=${subj}&body=${body}`;
-      return;
-    }
-    btn.textContent='Enviando...';btn.disabled=true;
-    try{
-      const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
-      if(res.ok){this.style.display='none';ok.classList.add('show');}
-      else throw new Error();
-    }catch{
-      btn.textContent='Error · Escríbeme por WhatsApp';
-      setTimeout(()=>{btn.textContent='Enviar pedido ✦';btn.disabled=false;},4000);
-    }
-  });
-
-  buildHero();
-  buildPacks();
-  refresh();
-  setupReveal();
-  initSwatchPreview();
-  initDark();
-  // contador inicial animado
-  animateCounter(COUNTER);
-  // botones popup
-  document.getElementById('popupWaBtn').onclick=()=>sendFromPopup('wa');
-  document.getElementById('popupEmailBtn').onclick=()=>sendFromPopup('email');
-});
-
-/* ══════════════════════════════════════════
-   CESTA DE LA COMPRA
-   ══════════════════════════════════════════ */
-let CART=[];
-let COUNTER=247; // contador inicial de nazarenos enviados
-
-/* ── Animación nazareno volador ── */
-function flyToCartAnim(){
-  const src=document.getElementById('previewSvg');
-  const dst=document.getElementById('cartFloat');
-  if(!src||!dst) return;
-  const sr=src.getBoundingClientRect();
-  const dr=dst.getBoundingClientRect();
-  const el=document.createElement('div');
-  el.className='fly-nz';
-  el.innerHTML=src.innerHTML;
-  el.style.cssText=`left:${sr.left+sr.width/2-22}px;top:${sr.top+sr.height/2-22}px;`;
-  document.body.appendChild(el);
-  // calcular delta
-  const tx=dr.left+dr.width/2-(sr.left+sr.width/2);
-  const ty=dr.top+dr.height/2-(sr.top+sr.height/2);
-  requestAnimationFrame(()=>{
-    el.style.transition='all .65s cubic-bezier(.4,0,.2,1)';
-    el.style.transform=`translate(${tx}px,${ty}px) scale(.15)`;
-    el.style.opacity='0';
-  });
-  setTimeout(()=>{
-    el.remove();
-    // rebote en el botón cesta
-    dst.style.transform='scale(1.3)';
-    setTimeout(()=>dst.style.transform='',200);
-  },680);
-}
-
-function addToCart(){
-  const mono=S.modo==='mono';
-  const p=calcPrice();
-  const item={
-    id:Date.now(),
-    modo:S.modo,
-    size:S.size,
-    qty:S.size==='grande'?1:S.qty,
-    capa:   mono?S.mono  :S.capa,
-    capaName:mono?S.monoName:S.capaName,
-    habito: mono?S.mono  :S.habito,
-    habitoName:mono?S.monoName:S.habitoName,
-    precio:p.total,
-    precioNum:parseFloat(p.total.replace(',','.')),
-    label:p.label,
-  };
-  CART.push(item);
-  flyToCartAnim();
-  renderCart();
-  // feedback botón
-  const btn=document.getElementById('addCartBtn');
-  btn.textContent='✓ Añadido';btn.classList.add('added');
-  setTimeout(()=>{btn.textContent='🛒 Añadir a la cesta';btn.classList.remove('added');},1500);
-  openCart();
-}
-
-function removeFromCart(id){CART=CART.filter(i=>i.id!==id);renderCart();}
-function clearCart(){CART=[];renderCart();}
-function toggleCart(){document.getElementById('cartPanel').classList.toggle('open');}
-function openCart(){document.getElementById('cartPanel').classList.add('open');}
-
-/* ── Popup datos cliente ── */
-let _pendingSend=null;
-function openPopup(type){
-  if(!CART.length) return;
-  _pendingSend=type;
-  // preview chips
-  const prev=document.getElementById('popupPreview');
-  prev.innerHTML=CART.map(item=>`
-    <div class="popup-item-chip">
-      <div class="popup-item-dot" style="background:${item.capa}"></div>
-      <span>${item.qty} ${item.size==='grande'?'grande':item.modo==='mono'?'mono':'color'}</span>
-      <strong>${item.precio}</strong>
-    </div>`).join('');
-  document.getElementById('popupOverlay').classList.add('open');
-  document.getElementById('popupNombre').focus();
-}
-function closePopup(){
-  document.getElementById('popupOverlay').classList.remove('open');
-  _pendingSend=null;
-}
-function sendFromPopup(type){
-  const nombre=document.getElementById('popupNombre').value.trim();
-  if(!nombre){document.getElementById('popupNombre').focus();document.getElementById('popupNombre').style.borderColor='#e11d48';return;}
-  document.getElementById('popupNombre').style.borderColor='';
-  const tel=document.getElementById('popupTel').value.trim();
-  const msg=buildCartMsg(nombre,tel);
-  if(type==='wa'){
-    window.open(`https://wa.me/34618648370?text=${encodeURIComponent(msg)}`,'_blank');
-  } else {
-    const subj=encodeURIComponent(`Pedido Nazarenos 3D · ${nombre}`);
-    window.location.href=`mailto:jaimerivasgranada@gmail.com?subject=${subj}&body=${encodeURIComponent(msg)}`;
-  }
-  closePopup();
-  // incrementar contador
-  COUNTER+=CART.reduce((s,i)=>s+i.qty,0);
-  animateCounter(COUNTER);
-}
-
-function buildCartMsg(nombre,tel){
-  let lines=[`🕯️ PEDIDO NAZARENOS 3D\nCliente: ${nombre}${tel?' · '+tel:''}\n`];
-  CART.forEach((item,i)=>{
-    const mono=item.modo==='mono';
-    lines.push(`── Artículo ${i+1} ──`);
-    lines.push(`Tipo: ${item.size==='grande'?'Nazareno grande':'Nazareno pequeño'}`);
-    lines.push(`Modo: ${mono?'Monocolor':'A color'}`);
-    if(mono) lines.push(`Color: ${item.capaName} (${item.capa})`);
-    else{lines.push(`Capa: ${item.capaName} (${item.capa})`);lines.push(`Hábito: ${item.habitoName} (${item.habito})`);}
-    lines.push(`Cantidad: ${item.qty} ${item.qty===1?'ud':'uds'}`);
-    lines.push(`Precio: ${item.precio}\n`);
-  });
-  const total=CART.reduce((s,i)=>s+i.precioNum,0);
-  lines.push(`TOTAL ESTIMADO: ${fmt(total)}`);
-  lines.push('\n¿Me confirmas disponibilidad y plazo? Gracias.');
-  return lines.join('\n');
-}
-
-/* ── Contador animado ── */
-function animateCounter(target){
+function buildPage(){
+  const combos=[{ca:'#1a3a6b',ha:'#6b1a31',cp:'#6b1a31'},{ca:'#6b1a31',ha:'#1e1e1e',cp:'#1e1e1e'},{ca:'#1a5c2e',ha:'#9a7218',cp:'#9a7218'}];
+  // Hero
+  const hA=document.getElementById('heroArt');
+  if(hA) hA.innerHTML=combos.map((c,i)=>`<div class="hnz" style="width:${[27,37,27][i]}%">${svgF(c.ca,c.ha,c.cp)}</div>`).join('');
+  // Nazareno card
+  const nz=document.getElementById('catNazSvg');
+  if(nz) nz.innerHTML=svgF('#1a3a6b','#6b1a31','#6b1a31');
+  // Sobre
+  const sb=document.getElementById('sobreArt');
+  if(sb) sb.innerHTML=combos.map((c,i)=>`<div style="width:${[26,34,26][i]}%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.5))">${svgF(c.ca,c.ha,c.cp)}</div>`).join('');
+  // Reveal
+  const obs=new IntersectionObserver(entries=>entries.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('show'),i*80);obs.unobserve(en.target);}}),{threshold:.12});
+  document.querySelectorAll('.wr').forEach(el=>obs.observe(el));
+  // Counter
   const el=document.getElementById('counterNum');
-  if(!el) return;
-  const start=parseInt(el.textContent)||0;
-  const dur=1200,step=16;
-  let t=0;
-  const timer=setInterval(()=>{
-    t+=step;
-    const prog=Math.min(t/dur,1);
-    const ease=1-Math.pow(1-prog,3);
-    el.textContent=Math.round(start+(target-start)*ease);
-    if(prog>=1){clearInterval(timer);el.textContent=target;}
-  },step);
+  if(el){const t=247,dur=1200,step=16;let tm=0;const ti=setInterval(()=>{tm+=step;const p=Math.min(tm/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t);if(p>=1){clearInterval(ti);el.textContent=t;}},step);}
 }
 
-function renderCart(){
-  const empty=document.getElementById('cartEmpty');
-  const items=document.getElementById('cartItems');
-  const footer=document.getElementById('cartFooter');
-  const badge=document.getElementById('cartBadge');
-  const count=CART.reduce((s,i)=>s+i.qty,0);
-  badge.textContent=count>99?'99+':count;
-  badge.classList.toggle('show',CART.length>0);
-  if(!CART.length){empty.style.display='block';items.innerHTML='';footer.style.display='none';return;}
-  empty.style.display='none';footer.style.display='block';
-  const total=CART.reduce((s,i)=>s+i.precioNum,0);
-  document.getElementById('cartTotal').textContent=fmt(total);
-  items.innerHTML=CART.map(item=>{
-    const mono=item.modo==='mono';
-    const miniSvg=svgF(item.capa,item.habito,item.capirote||item.habito);
-    const colorInfo=mono
-      ?`<div class="cart-item-colors"><div class="cart-item-dot" style="background:${item.capa}"></div><span style="font-size:11px;color:var(--gris)">${item.capaName} · Mono</span></div>`
-      :`<div class="cart-item-colors"><div class="cart-item-dot" style="background:${item.capa}"></div><div class="cart-item-dot" style="background:${item.habito}"></div><span style="font-size:11px;color:var(--gris)">${item.capaName} + ${item.habitoName}</span></div>`;
-    return `<div class="cart-item">
-      <div class="cart-item-svg">${miniSvg}</div>
-      <div class="cart-item-info">
-        <div class="cart-item-name">${item.size==='grande'?'Nazareno grande':'Nazareno pequeño'}</div>
-        <div class="cart-item-detail">${item.qty} ${item.qty===1?'ud':'uds'} · ${mono?'Monocolor':'A color'}</div>
-        ${colorInfo}
-      </div>
-      <div class="cart-item-right">
-        <div class="cart-item-price">${item.precio}</div>
-        <button class="cart-item-del" onclick="removeFromCart(${item.id})">✕</button>
-      </div>
-    </div>`;
-  }).join('');
-  // botones → abren popup
-  document.getElementById('cartWaBtn').onclick=()=>openPopup('wa');
-  document.getElementById('cartEmailBtn').onclick=()=>openPopup('email');
-}
-
-/* ── HOVER PREVIEW EN SWATCHES ── */
-function initSwatchPreview(){
-  const previewEl=document.getElementById('swPreview');
-  document.addEventListener('mouseover',e=>{
-    const sw=e.target.closest('.sw');
-    if(!sw) return;
-    const hex=sw.dataset.h;
-    if(!hex) return;
-    // determinar si es swatch de capa o hábito
-    const isCapa=sw.closest('#swCapa');
-    const isHabito=sw.closest('#swHabito');
-    const isMono=sw.closest('#swMono');
-    let capaH=S.capa, habH=S.habito;
-    if(isCapa) capaH=hex;
-    else if(isHabito) habH=hex;
-    else if(isMono){capaH=hex;habH=hex;}
-    previewEl.innerHTML=svgF(capaH,habH,S.capirote);
-    const r=sw.getBoundingClientRect();
-    previewEl.style.left=(r.left+r.width/2-36)+'px';
-    previewEl.style.top=(r.top-90)+'px';
-    previewEl.classList.add('show');
-  });
-  document.addEventListener('mouseout',e=>{
-    if(!e.target.closest('.sw')) previewEl.classList.remove('show');
-  });
-}
-
-// Cerrar cesta al hacer clic fuera
-document.addEventListener('click',e=>{
-  const panel=document.getElementById('cartPanel');
-  const btn=document.getElementById('cartFloat');
-  if(panel&&panel.classList.contains('open')&&!panel.contains(e.target)&&!btn.contains(e.target)){
-    panel.classList.remove('open');
-  }
-  // cerrar popup
-  const overlay=document.getElementById('popupOverlay');
-  if(overlay&&overlay.classList.contains('open')&&e.target===overlay){
-    closePopup();
-  }
-});
-
-
-/* ── ENCARGO ESPECIAL ── */
-function enviarEncargo(){
-  const nombre  = document.getElementById('eNombre').value.trim();
-  const telefono= document.getElementById('eTelefono').value.trim();
-  const tamano  = document.getElementById('eTamano').value.trim();
-
-  // Validación mínima
-  if(!nombre){document.getElementById('eNombre').focus();document.getElementById('eNombre').style.borderColor='#e11d48';return;}
-  if(!telefono){document.getElementById('eTelefono').focus();document.getElementById('eTelefono').style.borderColor='#e11d48';return;}
-  if(!tamano){document.getElementById('eTamano').focus();document.getElementById('eTamano').style.borderColor='#e11d48';return;}
-  // Limpiar bordes de error
-  ['eNombre','eTelefono','eTamano'].forEach(id=>document.getElementById(id).style.borderColor='');
-
-  const cofradia = document.getElementById('eCofraida').value.trim();
-  const ciudad   = document.getElementById('eCiudad').value.trim();
-  const cantidad = document.getElementById('eCantidad').value.trim();
-  const color    = document.getElementById('eColor').value.trim();
-  const habito   = document.getElementById('eHabito').value.trim();
-  const detalles = document.getElementById('eDetalles').value.trim();
-
-  const lineas=[
-    '✦ ENCARGO ESPECIAL · NAZARENOS 3D',
-    '',
-    '── Datos de contacto ──',
-    `Nombre: ${nombre}`,
-    `Teléfono: ${telefono}`,
-    cofradia ? `Hermandad / Cofradía: ${cofradia}` : '',
-    ciudad   ? `Localidad: ${ciudad}` : '',
-    '',
-    '── Detalles de la pieza ──',
-    `Tamaño deseado: ${tamano}`,
-    cantidad ? `Cantidad aproximada: ${cantidad} uds` : '',
-    color    ? `Color de la capa: ${color}` : '',
-    habito   ? `Color del hábito: ${habito}` : '',
-    detalles ? `\nDetalles adicionales:\n${detalles}` : '',
-    '',
-    '¿Puedes prepararme un presupuesto? Gracias 🙏',
-  ].filter(l=>l!==null&&l!==undefined).join('\n');
-
-  window.open(`https://wa.me/34618648370?text=${encodeURIComponent(lineas)}`,'_blank');
-}
-
-
-window.pickSize=pickSize;
-window.stepQty=stepQty;
-window.pickQty=pickQty;
-window.setModo=setModo;
-window.setView=setView;
-window.clickPack=clickPack;
-window.addToCart=addToCart;
-window.removeFromCart=removeFromCart;
-window.clearCart=clearCart;
-window.toggleCart=toggleCart;
-window.addPackToCart=addPackToCart;
-window.closePopup=closePopup;
-window.sendFromPopup=sendFromPopup;
-window.toggleDark=toggleDark;
-window.enviarEncargo=enviarEncargo;
+// Handle ?tipo= param to auto-open tab on nazarenos.html
+document.addEventListener('DOMContentLoaded',buildPage);
 </script>
 </body>
 </html>
