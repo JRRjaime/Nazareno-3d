@@ -1372,7 +1372,14 @@ const S={
 function h2r(h){const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return r?{r:parseInt(r[1],16),g:parseInt(r[2],16),b:parseInt(r[3],16)}:null;}
 function toHsl(r,g,b){r/=255;g/=255;b/=255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);let h,s,l=(mx+mn)/2;if(mx===mn){h=s=0;}else{const d=mx-mn;s=l>.5?d/(2-mx-mn):d/(mx+mn);switch(mx){case r:h=((g-b)/d+(g<b?6:0))/6;break;case g:h=((b-r)/d+2)/6;break;default:h=((r-g)/d+4)/6;}}return[h*360,s*100,l*100];}
 function fromHsl(h,s,l){h/=360;s/=100;l/=100;let r,g,b;if(!s){r=g=b=l;}else{const q=l<.5?l*(1+s):l+s-l*s,p=2*l-q,u=(p,q,t)=>{if(t<0)t+=1;if(t>1)t-=1;return t<1/6?p+(q-p)*6*t:t<.5?q:t<2/3?p+(q-p)*(2/3-t)*6:p;};r=u(p,q,h+1/3);g=u(p,q,h);b=u(p,q,h-1/3);}return'#'+[r,g,b].map(x=>Math.round(x*255).toString(16).padStart(2,'0')).join('');}
-function shades(hex){const rgb=h2r(hex);if(!rgb)return{l:hex,b:hex,d:hex};const[h,s,l]=toHsl(rgb.r,rgb.g,rgb.b);return{l:fromHsl(h,Math.max(s-10,0),Math.min(l+24,88)),b:hex,d:fromHsl(h,Math.min(s+8,100),Math.max(l-26,4))};}
+var _shadesCache={};
+function shades(hex){
+  if(_shadesCache[hex]) return _shadesCache[hex];
+  const rgb=h2r(hex);
+  if(!rgb) return(_shadesCache[hex]={l:hex,b:hex,d:hex});
+  const[h,s,l]=toHsl(rgb.r,rgb.g,rgb.b);
+  return(_shadesCache[hex]={l:fromHsl(h,Math.max(s-10,0),Math.min(l+24,88)),b:hex,d:fromHsl(h,Math.min(s+8,100),Math.max(l-26,4))});
+}
 function spOp(hex){const rgb=h2r(hex);return rgb?(rgb.r*.299+rgb.g*.587+rgb.b*.114)<70?0.30:0.18:0.18;}
 function fmt(n){return n.toFixed(2).replace('.',',')+' €';}
 
@@ -1386,13 +1393,16 @@ function fmt(n){return n.toFixed(2).replace('.',',')+' €';}
    habHex   = color hábito (túnica)
    capiHex  = color capirote + careta
 ═══════════════════════════════════════════ */
+var _svgFCache={};
 function svgF(capaHex,habHex,capiHex){
+  var _key=capaHex+'|'+habHex+'|'+(capiHex||habHex);
+  if(_svgFCache[_key]) return _svgFCache[_key];
   capiHex=capiHex||habHex;
   const ca=shades(capaHex),ha=shades(habHex),cp=shades(capiHex);
   const id='f'+Math.random().toString(36).slice(2,8);
   const sc=spOp(capaHex),sh=spOp(habHex),scp=spOp(capiHex);
   const skin='#d4a574',gold='#c9a54d',goldD='#8a6b20';
-  return `<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
+  return(_svgFCache[_key]=`<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <linearGradient id="ha${id}" x1=".15" y1="0" x2=".85" y2="1">
     <stop offset="0%" stop-color="${ha.l}"/><stop offset="40%" stop-color="${ha.b}"/><stop offset="100%" stop-color="${ha.d}"/>
@@ -1499,17 +1509,20 @@ function svgF(capaHex,habHex,capiHex){
 <path d="M110.8 179 C109 174 109 169 110.8 166 C112.6 169 112.6 174 110.8 179 Z" fill="#fef9c3"/>
 <ellipse cx="110.8" cy="170" rx="5" ry="7" fill="rgba(251,146,60,.12)"/>
 
-</g></svg>`;
+</g></svg>`);
 }
 
 /* ════════════ ESPALDA ════════════ */
+var _svgBCache={};
 function svgB(capaHex,habHex,capiHex){
+  var _key=capaHex+'|'+habHex+'|'+(capiHex||habHex);
+  if(_svgBCache[_key]) return _svgBCache[_key];
   capiHex=capiHex||habHex;
   const ca=shades(capaHex),ha=shades(habHex),cp=shades(capiHex);
   const id='b'+Math.random().toString(36).slice(2,8);
   const sc=spOp(capaHex),sh=spOp(habHex),scp=spOp(capiHex);
   const gold='#c9a54d',goldD='#8a6b20';
-  return `<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
+  return(_svgBCache[_key]=`<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <linearGradient id="ha${id}" x1=".85" y1="0" x2=".15" y2="1">
     <stop offset="0%" stop-color="${ha.l}"/><stop offset="40%" stop-color="${ha.b}"/><stop offset="100%" stop-color="${ha.d}"/>
@@ -1582,7 +1595,7 @@ function svgB(capaHex,habHex,capiHex){
 <path d="M54 183 Q49 196 51 206 Q49 218 52 228" fill="none" stroke="${cp.d}" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
 <path d="M66 183 Q71 196 69 206 Q71 218 68 228" fill="none" stroke="${cp.d}" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
 
-</g></svg>`;
+</g></svg>`);
 }
 
 function calcPrice(){
@@ -1613,13 +1626,19 @@ function calcPrice(){
 }
 
 /* ── REFRESH ── */
+var _refreshWaTimer=null;
 function refresh(){
   const mono=S.modo==='mono';
   const capaHex    = mono?S.mono:S.capa;
   const habitoHex  = mono?S.mono:S.habito;
   const capiroteHex= mono?S.mono:S.capirote;
-  document.getElementById('previewSvg').innerHTML=
-    S.view==='frente'?svgF(capaHex,habitoHex,capiroteHex):svgB(capaHex,habitoHex,capiroteHex);
+
+  // ── INMEDIATO: visual (SVG + colores + textos) ──────────────────────────
+  var svgStr = S.view==='frente'?svgF(capaHex,habitoHex,capiroteHex):svgB(capaHex,habitoHex,capiroteHex);
+  document.getElementById('previewSvg').innerHTML = svgStr;
+  var thumb=document.getElementById('nazPreviewThumb');
+  if(thumb) thumb.innerHTML = svgStr; // reuse same string, no 2nd call
+
   document.getElementById('dPrevCapa').style.background=capaHex;
   document.getElementById('dPrevHabito').style.background=habitoHex;
   document.getElementById('dPrevCapirote').style.background=capiroteHex;
@@ -1631,15 +1650,17 @@ function refresh(){
   document.getElementById('pModo').textContent   = mono?'Monocolor':'A color';
   document.getElementById('pTipo').textContent   = S.size==='grande'?'Nazareno grande':'Nazareno pequeño';
   document.getElementById('pQty').textContent    = S.size==='grande'?'1 unidad':S.qty+' unidades';
-  const p=calcPrice();
-  document.getElementById('pPrice').innerHTML=`${p.total}<small>${p.label}</small>`;
-  const msg=buildMsg();
-  var _waHref='https://wa.me/34618648370?text='+encodeURIComponent(msg);
-  document.getElementById('cfgWa').href=_waHref;
-  document.getElementById('waFloat').href=_waHref;
-  // Actualizar mini nazareno del panel de selección
-  const thumb=document.getElementById('nazPreviewThumb');
-  if(thumb) thumb.innerHTML=svgF(capaHex,habitoHex,capiroteHex);
+  var p=calcPrice();
+  document.getElementById('pPrice').innerHTML=p.total+'<small>'+p.label+'</small>';
+
+  // ── DIFERIDO 350ms: buildMsg + encodeURIComponent (caro) ───────────────
+  if(_refreshWaTimer) clearTimeout(_refreshWaTimer);
+  _refreshWaTimer = setTimeout(function(){
+    var msg=buildMsg();
+    var href='https://wa.me/34618648370?text='+encodeURIComponent(msg);
+    document.getElementById('cfgWa').href=href;
+    document.getElementById('waFloat').href=href;
+  }, 350);
 }
 
 /* ── MENSAJE WA ── */
@@ -2151,7 +2172,8 @@ function initSwatchPreview(){
     if(isCapa) capaH=hex;
     else if(isHabito) habH=hex;
     else if(isMono){capaH=hex;habH=hex;}
-    previewEl.innerHTML=svgF(capaH,habH,S.capirote);
+    var _k=capaH+'|'+habH+'|'+S.capirote;
+    if(previewEl._lastKey!==_k){previewEl.innerHTML=svgF(capaH,habH,S.capirote);previewEl._lastKey=_k;}
     const r=sw.getBoundingClientRect();
     // usar posición fija en el viewport (no suma scroll)
     previewEl.style.left=Math.max(4,Math.min(r.left+r.width/2-36, window.innerWidth-80))+'px';
