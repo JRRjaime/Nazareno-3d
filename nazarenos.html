@@ -791,7 +791,114 @@ body.dark .sz-table tbody tr:hover{background:rgba(201,165,77,.06);}
 
   <div class="figura-panel active" id="panel-nazareno">
     <div class="card wr" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:36px 28px;gap:18px;background:linear-gradient(135deg,rgba(75,16,32,.04),rgba(201,165,77,.06));">
-      <div id="nazPreviewThumb" style="width:110px;filter:drop-shadow(0 12px 28px rgba(0,0,0,.22))"></div>
+      <div id="nazPreviewThumb"><svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="hanaz" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0%" stop-color="var(--ha-l)"/><stop offset="40%" stop-color="var(--ha-b)"/><stop offset="100%" stop-color="var(--ha-d)"/>
+  </linearGradient>
+  <linearGradient id="canaz" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0%" stop-color="var(--ca-l)"/><stop offset="40%" stop-color="var(--ca-b)"/><stop offset="100%" stop-color="var(--ca-d)"/>
+  </linearGradient>
+  <linearGradient id="caRnaz" x1=".85" y1="0" x2=".15" y2="1">
+    <stop offset="0%" stop-color="var(--ca-l)"/><stop offset="40%" stop-color="var(--ca-b)"/><stop offset="100%" stop-color="var(--ca-d)"/>
+  </linearGradient>
+  <linearGradient id="cpnaz" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0%" stop-color="var(--cp-l)"/><stop offset="40%" stop-color="var(--cp-b)"/><stop offset="100%" stop-color="var(--cp-d)"/>
+  </linearGradient>
+  <linearGradient id="haLnaz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--sh16))"/><stop offset="50%" stop-color="rgba(255,255,255,var(--sh05))"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <linearGradient id="caLnaz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--sc16))"/><stop offset="50%" stop-color="rgba(255,255,255,var(--sc05))"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <linearGradient id="cpLnaz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--scp16))"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <radialGradient id="sgnaz" cx="50%" cy="100%" r="50%">
+    <stop offset="0%" stop-color="rgba(0,0,0,.5)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+  </radialGradient>
+  <filter id="dsnaz" x="-20%" y="-5%" width="140%" height="120%">
+    <feDropShadow dx="2" dy="6" stdDeviation="7" flood-color="rgba(0,0,0,0.5)"/>
+  </filter>
+</defs>
+<ellipse cx="60" cy="336" rx="36" ry="6" fill="url(#sgnaz)"/>
+<g filter="url(#dsnaz)">
+
+<!-- ZAPATOS -->
+<path d="M37 322 C34 322 28 323 26 326 Q26 332 37 332 L51 332 Q53 330 52 326 Z" fill="#1a1612"/>
+<path d="M83 322 C86 322 92 323 94 326 Q94 332 83 332 L69 332 Q67 330 68 326 Z" fill="#1a1612"/>
+<path d="M28 325 Q35 323 45 324" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M92 325 Q85 323 75 324" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
+
+<!-- CAPA izq (sale del borde del hábito hacia fuera) -->
+<path d="M41 172 C34 173 22 179 16 192 L10 312 Q10 322 19 323 L41 323 Z" fill="url(#canaz)"/>
+<path d="M41 172 C34 173 22 179 16 192 L10 312 L41 323 Z" fill="rgba(0,0,0,0.12)"/>
+<path d="M16 192 L10 312 L41 321 L41 172 C34 173 22 179 16 192 Z" fill="url(#caLnaz)" opacity=".5"/>
+<path d="M30 182 C25 220 18 268 12 316" fill="none" stroke="var(--ca-d)" stroke-width="1.2" opacity=".4"/>
+<!-- CAPA dch -->
+<path d="M79 172 C86 173 98 179 104 192 L110 312 Q110 322 101 323 L79 323 Z" fill="url(#caRnaz)"/>
+<path d="M79 172 C86 173 98 179 104 192 L110 312 L79 323 Z" fill="rgba(0,0,0,0.08)"/>
+<path d="M90 182 C95 220 102 268 108 316" fill="none" stroke="var(--ca-d)" stroke-width="1.2" opacity=".35"/>
+<!-- Ribete dorado capa -->
+<path d="M12 316 C22 313 31 311 41 311 M79 311 C89 311 98 313 108 316" stroke="#c9a54d" stroke-width="2.5" fill="none" opacity=".7" stroke-linecap="round"/>
+<path d="M12 318 C22 315 31 314 41 314 M79 314 C89 314 98 315 108 318" stroke="#8a6b20" stroke-width="0.8" fill="none" opacity=".4" stroke-linecap="round"/>
+
+<!-- HÁBITO (encima capa) -->
+<path d="M41 172 L34 318 Q34 328 44 328 L76 328 Q86 328 86 318 L79 172 Z" fill="url(#hanaz)"/>
+<path d="M41 172 L34 318 Q34 328 44 328 L49 328 L55 172 Z" fill="rgba(0,0,0,0.15)"/>
+<path d="M79 172 L86 318 Q86 328 76 328 L71 328 L65 172 Z" fill="rgba(0,0,0,0.1)"/>
+<path d="M41 172 L34 318 L60 326 L60 172 Z" fill="url(#haLnaz)" opacity=".35"/>
+<path d="M51 176 L46 322" fill="none" stroke="var(--ha-d)" stroke-width="1" opacity=".35"/>
+<path d="M69 176 L74 322" fill="none" stroke="var(--ha-d)" stroke-width="1" opacity=".35"/>
+<path d="M60 178 L60 326" fill="none" stroke="var(--ha-l)" stroke-width="0.6" opacity=".15"/>
+<path d="M41 172 C49 175 71 175 79 172 C79 180 71 186 60 187 C49 186 41 180 41 172 Z" fill="rgba(0,0,0,0.2)"/>
+
+<!-- ESCLAVINA (hombros, color capirote) -->
+<path d="M60 167 C48 167 28 174 20 188 Q24 208 60 212 Q96 208 100 188 C92 174 72 167 60 167 Z" fill="url(#cpnaz)"/>
+<path d="M22 190 Q26 208 60 212 Q94 208 98 190 Q94 214 60 218 Q26 214 22 190 Z" fill="rgba(0,0,0,0.2)"/>
+<path d="M36 178 Q28 196 32 210" fill="none" stroke="var(--cp-d)" stroke-width="1.2" opacity=".35"/>
+<path d="M84 178 Q92 196 88 210" fill="none" stroke="var(--cp-d)" stroke-width="1.2" opacity=".35"/>
+<path d="M20 188 Q24 208 60 212 L60 167 C48 167 28 174 20 188 Z" fill="url(#cpLnaz)" opacity=".45"/>
+<path d="M23 192 Q38 210 60 212 Q82 210 97 192" fill="none" stroke="var(--cp-d)" stroke-width="1.5" opacity=".35"/>
+
+<!-- CAPIROTE: cono, base ~36px, punta fina (color capirote) -->
+<path d="M60 8 L42 165 Q42 170 60 170 Q78 170 78 165 Z" fill="url(#cpnaz)"/>
+<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(0,0,0,0.22)"/>
+<path d="M60 8 L48 140 L60 170 L72 140 Z" fill="rgba(0,0,0,0.08)"/>
+<path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(255,255,255,var(--scp08))" opacity=".35"/>
+<path d="M60 9 L60 170" fill="none" stroke="var(--cp-l)" stroke-width="0.8" opacity=".2"/>
+<path d="M60 8 C57 40 54 80 52 120 C50 145 48 158 46 165" fill="none" stroke="var(--cp-d)" stroke-width="1.2" opacity=".3"/>
+<path d="M60 8 C63 40 66 80 68 120 C70 145 72 158 74 165" fill="none" stroke="var(--cp-d)" stroke-width="1" opacity=".25"/>
+<ellipse cx="60" cy="9" rx="2.5" ry="2" fill="var(--cp-l)" opacity=".6"/>
+
+<!-- CARETA (color capirote) -->
+<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="var(--cp-d)" opacity=".95"/>
+<ellipse cx="60" cy="134" rx="11.5" ry="7.2" fill="var(--cp-d)"/>
+<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/>
+<ellipse cx="60" cy="134" rx="10" ry="6.5" fill="rgba(0,0,0,0.5)"/>
+<ellipse cx="53.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
+<ellipse cx="53.5" cy="133" rx="2.4" ry="2" fill="#0a0604"/>
+<circle  cx="52.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
+<ellipse cx="66.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
+<ellipse cx="66.5" cy="133" rx="2.4" ry="2" fill="#0a0604"/>
+<circle  cx="65.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
+
+<!-- MANOS -->
+<ellipse cx="11"  cy="228" rx="5.5" ry="7" fill="#d4a574" opacity=".9"/>
+<ellipse cx="11"  cy="234" rx="4" ry="3.5" fill="#d4a574" opacity=".6"/>
+<ellipse cx="111" cy="225" rx="5.5" ry="7" fill="#d4a574" opacity=".9"/>
+
+<!-- VELA -->
+<rect x="108.5" y="186" width="4.5" height="40" rx="2.2" fill="#fefce8"/>
+<rect x="108.5" y="186" width="2" height="40" rx="1.2" fill="rgba(255,255,255,.4)"/>
+<path d="M108.5 198 Q106 202 108 204" fill="none" stroke="#e8e4c0" stroke-width="1" stroke-linecap="round"/>
+<line x1="110.8" y1="182" x2="110.8" y2="186" stroke="#3d2a0a" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M110.8 182 C107 175 107 167 110.8 162 C114.6 167 114.6 175 110.8 182 Z" fill="#f97316" opacity=".9"/>
+<path d="M110.8 180 C108 174 108 168 110.8 164 C113.6 168 113.6 174 110.8 180 Z" fill="#fbbf24"/>
+<path d="M110.8 179 C109 174 109 169 110.8 166 C112.6 169 112.6 174 110.8 179 Z" fill="#fef9c3"/>
+<ellipse cx="110.8" cy="170" rx="5" ry="7" fill="rgba(251,146,60,.12)"/>
+
+</g></svg></div>
       <div>
         <div class="blk-lbl" style="justify-content:center">Nazareno · Color totalmente personalizable</div>
         <p style="font-size:15px;color:var(--gris);line-height:1.65;max-width:480px;margin:8px auto 0">
@@ -1042,7 +1149,187 @@ body.dark .sz-table tbody tr:hover{background:rgba(201,165,77,.06);}
         <button class="view-btn on" id="btnFrente"  onclick="setView('frente')">▶ Frente</button>
         <button class="view-btn"    id="btnEspalda" onclick="setView('espalda')">◀ Espalda</button>
       </div>
-      <div class="prev-nz-wrap"><div class="flip-stage" id="flipStage"><div id="previewSvg"></div></div></div>
+      <div class="prev-nz-wrap"><div class="flip-stage" id="flipStage"><div id="previewSvg"><div id="svgFront" class="svg-face"><svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="hanaz" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0%" stop-color="var(--ha-l)"/><stop offset="40%" stop-color="var(--ha-b)"/><stop offset="100%" stop-color="var(--ha-d)"/>
+  </linearGradient>
+  <linearGradient id="canaz" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0%" stop-color="var(--ca-l)"/><stop offset="40%" stop-color="var(--ca-b)"/><stop offset="100%" stop-color="var(--ca-d)"/>
+  </linearGradient>
+  <linearGradient id="caRnaz" x1=".85" y1="0" x2=".15" y2="1">
+    <stop offset="0%" stop-color="var(--ca-l)"/><stop offset="40%" stop-color="var(--ca-b)"/><stop offset="100%" stop-color="var(--ca-d)"/>
+  </linearGradient>
+  <linearGradient id="cpnaz" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0%" stop-color="var(--cp-l)"/><stop offset="40%" stop-color="var(--cp-b)"/><stop offset="100%" stop-color="var(--cp-d)"/>
+  </linearGradient>
+  <linearGradient id="haLnaz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--sh16))"/><stop offset="50%" stop-color="rgba(255,255,255,var(--sh05))"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <linearGradient id="caLnaz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--sc16))"/><stop offset="50%" stop-color="rgba(255,255,255,var(--sc05))"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <linearGradient id="cpLnaz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--scp16))"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <radialGradient id="sgnaz" cx="50%" cy="100%" r="50%">
+    <stop offset="0%" stop-color="rgba(0,0,0,.5)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+  </radialGradient>
+  <filter id="dsnaz" x="-20%" y="-5%" width="140%" height="120%">
+    <feDropShadow dx="2" dy="6" stdDeviation="7" flood-color="rgba(0,0,0,0.5)"/>
+  </filter>
+</defs>
+<ellipse cx="60" cy="336" rx="36" ry="6" fill="url(#sgnaz)"/>
+<g filter="url(#dsnaz)">
+
+<!-- ZAPATOS -->
+<path d="M37 322 C34 322 28 323 26 326 Q26 332 37 332 L51 332 Q53 330 52 326 Z" fill="#1a1612"/>
+<path d="M83 322 C86 322 92 323 94 326 Q94 332 83 332 L69 332 Q67 330 68 326 Z" fill="#1a1612"/>
+<path d="M28 325 Q35 323 45 324" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M92 325 Q85 323 75 324" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
+
+<!-- CAPA izq (sale del borde del hábito hacia fuera) -->
+<path d="M41 172 C34 173 22 179 16 192 L10 312 Q10 322 19 323 L41 323 Z" fill="url(#canaz)"/>
+<path d="M41 172 C34 173 22 179 16 192 L10 312 L41 323 Z" fill="rgba(0,0,0,0.12)"/>
+<path d="M16 192 L10 312 L41 321 L41 172 C34 173 22 179 16 192 Z" fill="url(#caLnaz)" opacity=".5"/>
+<path d="M30 182 C25 220 18 268 12 316" fill="none" stroke="var(--ca-d)" stroke-width="1.2" opacity=".4"/>
+<!-- CAPA dch -->
+<path d="M79 172 C86 173 98 179 104 192 L110 312 Q110 322 101 323 L79 323 Z" fill="url(#caRnaz)"/>
+<path d="M79 172 C86 173 98 179 104 192 L110 312 L79 323 Z" fill="rgba(0,0,0,0.08)"/>
+<path d="M90 182 C95 220 102 268 108 316" fill="none" stroke="var(--ca-d)" stroke-width="1.2" opacity=".35"/>
+<!-- Ribete dorado capa -->
+<path d="M12 316 C22 313 31 311 41 311 M79 311 C89 311 98 313 108 316" stroke="#c9a54d" stroke-width="2.5" fill="none" opacity=".7" stroke-linecap="round"/>
+<path d="M12 318 C22 315 31 314 41 314 M79 314 C89 314 98 315 108 318" stroke="#8a6b20" stroke-width="0.8" fill="none" opacity=".4" stroke-linecap="round"/>
+
+<!-- HÁBITO (encima capa) -->
+<path d="M41 172 L34 318 Q34 328 44 328 L76 328 Q86 328 86 318 L79 172 Z" fill="url(#hanaz)"/>
+<path d="M41 172 L34 318 Q34 328 44 328 L49 328 L55 172 Z" fill="rgba(0,0,0,0.15)"/>
+<path d="M79 172 L86 318 Q86 328 76 328 L71 328 L65 172 Z" fill="rgba(0,0,0,0.1)"/>
+<path d="M41 172 L34 318 L60 326 L60 172 Z" fill="url(#haLnaz)" opacity=".35"/>
+<path d="M51 176 L46 322" fill="none" stroke="var(--ha-d)" stroke-width="1" opacity=".35"/>
+<path d="M69 176 L74 322" fill="none" stroke="var(--ha-d)" stroke-width="1" opacity=".35"/>
+<path d="M60 178 L60 326" fill="none" stroke="var(--ha-l)" stroke-width="0.6" opacity=".15"/>
+<path d="M41 172 C49 175 71 175 79 172 C79 180 71 186 60 187 C49 186 41 180 41 172 Z" fill="rgba(0,0,0,0.2)"/>
+
+<!-- ESCLAVINA (hombros, color capirote) -->
+<path d="M60 167 C48 167 28 174 20 188 Q24 208 60 212 Q96 208 100 188 C92 174 72 167 60 167 Z" fill="url(#cpnaz)"/>
+<path d="M22 190 Q26 208 60 212 Q94 208 98 190 Q94 214 60 218 Q26 214 22 190 Z" fill="rgba(0,0,0,0.2)"/>
+<path d="M36 178 Q28 196 32 210" fill="none" stroke="var(--cp-d)" stroke-width="1.2" opacity=".35"/>
+<path d="M84 178 Q92 196 88 210" fill="none" stroke="var(--cp-d)" stroke-width="1.2" opacity=".35"/>
+<path d="M20 188 Q24 208 60 212 L60 167 C48 167 28 174 20 188 Z" fill="url(#cpLnaz)" opacity=".45"/>
+<path d="M23 192 Q38 210 60 212 Q82 210 97 192" fill="none" stroke="var(--cp-d)" stroke-width="1.5" opacity=".35"/>
+
+<!-- CAPIROTE: cono, base ~36px, punta fina (color capirote) -->
+<path d="M60 8 L42 165 Q42 170 60 170 Q78 170 78 165 Z" fill="url(#cpnaz)"/>
+<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(0,0,0,0.22)"/>
+<path d="M60 8 L48 140 L60 170 L72 140 Z" fill="rgba(0,0,0,0.08)"/>
+<path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(255,255,255,var(--scp08))" opacity=".35"/>
+<path d="M60 9 L60 170" fill="none" stroke="var(--cp-l)" stroke-width="0.8" opacity=".2"/>
+<path d="M60 8 C57 40 54 80 52 120 C50 145 48 158 46 165" fill="none" stroke="var(--cp-d)" stroke-width="1.2" opacity=".3"/>
+<path d="M60 8 C63 40 66 80 68 120 C70 145 72 158 74 165" fill="none" stroke="var(--cp-d)" stroke-width="1" opacity=".25"/>
+<ellipse cx="60" cy="9" rx="2.5" ry="2" fill="var(--cp-l)" opacity=".6"/>
+
+<!-- CARETA (color capirote) -->
+<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="var(--cp-d)" opacity=".95"/>
+<ellipse cx="60" cy="134" rx="11.5" ry="7.2" fill="var(--cp-d)"/>
+<ellipse cx="60" cy="134" rx="13" ry="8.5" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/>
+<ellipse cx="60" cy="134" rx="10" ry="6.5" fill="rgba(0,0,0,0.5)"/>
+<ellipse cx="53.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
+<ellipse cx="53.5" cy="133" rx="2.4" ry="2" fill="#0a0604"/>
+<circle  cx="52.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
+<ellipse cx="66.5" cy="133" rx="3.2" ry="2.5" fill="#1a0f08"/>
+<ellipse cx="66.5" cy="133" rx="2.4" ry="2" fill="#0a0604"/>
+<circle  cx="65.6" cy="132.2" r=".9" fill="rgba(255,255,255,.65)"/>
+
+<!-- MANOS -->
+<ellipse cx="11"  cy="228" rx="5.5" ry="7" fill="#d4a574" opacity=".9"/>
+<ellipse cx="11"  cy="234" rx="4" ry="3.5" fill="#d4a574" opacity=".6"/>
+<ellipse cx="111" cy="225" rx="5.5" ry="7" fill="#d4a574" opacity=".9"/>
+
+<!-- VELA -->
+<rect x="108.5" y="186" width="4.5" height="40" rx="2.2" fill="#fefce8"/>
+<rect x="108.5" y="186" width="2" height="40" rx="1.2" fill="rgba(255,255,255,.4)"/>
+<path d="M108.5 198 Q106 202 108 204" fill="none" stroke="#e8e4c0" stroke-width="1" stroke-linecap="round"/>
+<line x1="110.8" y1="182" x2="110.8" y2="186" stroke="#3d2a0a" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M110.8 182 C107 175 107 167 110.8 162 C114.6 167 114.6 175 110.8 182 Z" fill="#f97316" opacity=".9"/>
+<path d="M110.8 180 C108 174 108 168 110.8 164 C113.6 168 113.6 174 110.8 180 Z" fill="#fbbf24"/>
+<path d="M110.8 179 C109 174 109 169 110.8 166 C112.6 169 112.6 174 110.8 179 Z" fill="#fef9c3"/>
+<ellipse cx="110.8" cy="170" rx="5" ry="7" fill="rgba(251,146,60,.12)"/>
+
+</g></svg></div><div id="svgBack" class="svg-face" style="display:none"><svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="hanazb" x1=".85" y1="0" x2=".15" y2="1">
+    <stop offset="0%" stop-color="var(--ha-l)"/><stop offset="40%" stop-color="var(--ha-b)"/><stop offset="100%" stop-color="var(--ha-d)"/>
+  </linearGradient>
+  <linearGradient id="canazb" x1=".85" y1="0" x2=".15" y2="1">
+    <stop offset="0%" stop-color="var(--ca-l)"/><stop offset="40%" stop-color="var(--ca-b)"/><stop offset="100%" stop-color="var(--ca-d)"/>
+  </linearGradient>
+  <linearGradient id="cpnazb" x1=".85" y1="0" x2=".15" y2="1">
+    <stop offset="0%" stop-color="var(--cp-l)"/><stop offset="40%" stop-color="var(--cp-b)"/><stop offset="100%" stop-color="var(--cp-d)"/>
+  </linearGradient>
+  <linearGradient id="caLnazb" x1="1" y1="0" x2="0" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--sc16))"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <linearGradient id="cpLnazb" x1="1" y1="0" x2="0" y2="0">
+    <stop offset="0%" stop-color="rgba(255,255,255,var(--scp16))"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <radialGradient id="sgnazb" cx="50%" cy="100%" r="50%">
+    <stop offset="0%" stop-color="rgba(0,0,0,.5)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+  </radialGradient>
+  <filter id="dsnazb" x="-20%" y="-5%" width="140%" height="120%">
+    <feDropShadow dx="-2" dy="6" stdDeviation="7" flood-color="rgba(0,0,0,0.5)"/>
+  </filter>
+</defs>
+<ellipse cx="60" cy="336" rx="36" ry="6" fill="url(#sgnazb)"/>
+<g filter="url(#dsnazb)">
+
+<!-- ZAPATOS -->
+<path d="M37 322 C34 322 28 323 26 326 Q26 332 37 332 L51 332 Q53 330 52 326 Z" fill="#1a1612"/>
+<path d="M83 322 C86 322 92 323 94 326 Q94 332 83 332 L69 332 Q67 330 68 326 Z" fill="#1a1612"/>
+
+<!-- HÁBITO ESPALDA (apenas visible) -->
+<path d="M41 172 L34 318 Q34 328 44 328 L76 328 Q86 328 86 318 L79 172 Z" fill="url(#hanazb)" opacity=".45"/>
+
+<!-- CAPA ESPALDA (protagonista) -->
+<path d="M41 172 C34 173 22 179 16 192 L10 312 Q10 322 19 323 L41 323 Z" fill="url(#canazb)"/>
+<path d="M79 172 C86 173 98 179 104 192 L110 312 Q110 322 101 323 L79 323 Z" fill="url(#canazb)"/>
+<path d="M104 192 L110 312 L79 321 L79 172 C86 173 98 179 104 192 Z" fill="url(#caLnazb)" opacity=".42"/>
+<path d="M30 182 C25 220 18 268 12 316" fill="none" stroke="var(--ca-d)" stroke-width="1.2" opacity=".35"/>
+<path d="M90 182 C95 220 102 268 108 316" fill="none" stroke="var(--ca-d)" stroke-width="1.2" opacity=".3"/>
+<!-- Centro capa espalda -->
+<path d="M41 172 L34 318 Q34 326 44 327 L76 327 Q86 326 86 318 L79 172 Z" fill="url(#canazb)"/>
+<path d="M60 174 L60 326" fill="none" stroke="var(--ca-l)" stroke-width="0.8" opacity=".2"/>
+<path d="M50 175 C48 220 46 270 44 320" fill="none" stroke="var(--ca-d)" stroke-width="1" opacity=".3"/>
+<path d="M70 175 C72 220 74 270 76 320" fill="none" stroke="var(--ca-d)" stroke-width="1" opacity=".3"/>
+<!-- Ribete dorado -->
+<path d="M12 316 C28 313 44 311 60 311 C76 311 92 313 108 316" stroke="#c9a54d" stroke-width="2.5" fill="none" opacity=".7" stroke-linecap="round"/>
+<path d="M12 318 C28 315 44 314 60 314 C76 314 92 315 108 318" stroke="#8a6b20" stroke-width="0.8" fill="none" opacity=".35" stroke-linecap="round"/>
+
+<!-- ESCLAVINA ESPALDA (color capirote) -->
+<path d="M60 167 C48 167 28 174 20 188 Q24 208 60 212 Q96 208 100 188 C92 174 72 167 60 167 Z" fill="url(#cpnazb)"/>
+<path d="M60 169 L60 212" fill="none" stroke="var(--cp-l)" stroke-width="0.9" opacity=".25"/>
+<path d="M100 188 Q96 208 60 212 L60 167 C72 167 92 174 100 188 Z" fill="url(#cpLnazb)" opacity=".42"/>
+<path d="M22 190 Q38 210 60 212 Q82 210 98 190" fill="none" stroke="var(--cp-d)" stroke-width="1.5" opacity=".3"/>
+<path d="M24 192 Q30 210 60 214 Q90 210 96 192" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="2.5"/>
+
+<!-- CAPIROTE ESPALDA (color capirote) -->
+<path d="M60 8 L42 165 Q42 170 60 170 Q78 170 78 165 Z" fill="url(#cpnazb)"/>
+<path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(0,0,0,0.2)"/>
+<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(255,255,255,var(--scp03))" opacity=".3"/>
+<path d="M60 9 L60 170" fill="none" stroke="var(--cp-l)" stroke-width="0.8" opacity=".22"/>
+<path d="M60 8 C57 40 54 80 52 120 C50 145 48 158 46 165" fill="none" stroke="var(--cp-d)" stroke-width="1.1" opacity=".28"/>
+<path d="M60 8 C63 40 66 80 68 120 C70 145 72 158 74 165" fill="none" stroke="var(--cp-d)" stroke-width="1" opacity=".22"/>
+
+<!-- LAZADA NUCA (color capirote) -->
+<path d="M60 171 C54 171 50 175 50 178 C50 182 54 184 60 184 C66 184 70 182 70 178 C70 175 66 171 60 171 Z" fill="var(--cp-b)" opacity=".9"/>
+<path d="M60 171 C54 171 50 175 50 178 C50 182 54 184 60 184 C66 184 70 182 70 178 C70 175 66 171 60 171 Z" fill="none" stroke="var(--cp-d)" stroke-width="1"/>
+<path d="M50 178 C50 182 54 184 60 184 C66 184 70 182 70 178 Z" fill="rgba(0,0,0,.2)"/>
+<path d="M54 183 Q49 196 51 206 Q49 218 52 228" fill="none" stroke="var(--cp-b)" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>
+<path d="M66 183 Q71 196 69 206 Q71 218 68 228" fill="none" stroke="var(--cp-b)" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>
+<path d="M54 183 Q49 196 51 206 Q49 218 52 228" fill="none" stroke="var(--cp-d)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+<path d="M66 183 Q71 196 69 206 Q71 218 68 228" fill="none" stroke="var(--cp-d)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+
+</g></svg></div></div></div></div>
       <div class="prev-info">
         <div class="prev-row"><span>Capa</span>    <b><span class="cdot" id="dPrevCapa"></span>   <span id="pCapa">Vino Cofrade</span></b></div>
         <div class="prev-row" id="rowHabito"><span>Hábito</span>  <b><span class="cdot" id="dPrevHabito"></span> <span id="pHabito">Azul Marino</span></b></div>
@@ -1581,7 +1868,7 @@ function svgB(capaHex,habHex,capiHex){
 <!-- CAPIROTE ESPALDA (color capirote) -->
 <path d="M60 8 L42 165 Q42 170 60 170 Q78 170 78 165 Z" fill="url(#cp${id})"/>
 <path d="M60 8 L78 165 Q78 170 60 170 Z" fill="rgba(0,0,0,0.2)"/>
-<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(255,255,255,${scp*0.3})" opacity=".3"/>
+<path d="M60 8 L42 165 Q42 170 60 170 Z" fill="rgba(255,255,255,var(--scp03))" opacity=".3"/>
 <path d="M60 9 L60 170" fill="none" stroke="${cp.l}" stroke-width="0.8" opacity=".22"/>
 <path d="M60 8 C57 40 54 80 52 120 C50 145 48 158 46 165" fill="none" stroke="${cp.d}" stroke-width="1.1" opacity=".28"/>
 <path d="M60 8 C63 40 66 80 68 120 C70 145 72 158 74 165" fill="none" stroke="${cp.d}" stroke-width="1" opacity=".22"/>
@@ -1626,6 +1913,26 @@ function calcPrice(){
 }
 
 /* ── REFRESH ── */
+
+/* ── UPDATE COLORS (CSS vars only — no DOM rebuild) ── */
+function updateColors(capaHex, habitoHex, capiroteHex){
+  var ca=shades(capaHex), ha=shades(habitoHex), cp=shades(capiroteHex);
+  var sc=spOp(capaHex), sh=spOp(habitoHex), scp=spOp(capiroteHex);
+  // 9 color vars + 6 opacity vars = 15 CSS custom property writes
+  var targets=[document.getElementById('previewSvg'), document.getElementById('nazPreviewThumb')];
+  // CSS vars on parent propagate to both svgFront and svgBack
+  targets.forEach(function(el){
+    if(!el) return;
+    var s=el.style;
+    s.setProperty('--ca-l',ca.l); s.setProperty('--ca-b',ca.b); s.setProperty('--ca-d',ca.d);
+    s.setProperty('--ha-l',ha.l); s.setProperty('--ha-b',ha.b); s.setProperty('--ha-d',ha.d);
+    s.setProperty('--cp-l',cp.l); s.setProperty('--cp-b',cp.b); s.setProperty('--cp-d',cp.d);
+    s.setProperty('--sc16',sc*1.6); s.setProperty('--sc05',sc*0.5);
+    s.setProperty('--sh16',sh*1.6); s.setProperty('--sh05',sh*0.5);
+    s.setProperty('--scp16',scp*1.6); s.setProperty('--scp08',scp*0.8); s.setProperty('--scp03',scp*0.3);
+  });
+}
+
 var _refreshWaTimer=null;
 function refresh(){
   const mono=S.modo==='mono';
@@ -1633,11 +1940,8 @@ function refresh(){
   const habitoHex  = mono?S.mono:S.habito;
   const capiroteHex= mono?S.mono:S.capirote;
 
-  // ── INMEDIATO: visual (SVG + colores + textos) ──────────────────────────
-  var svgStr = S.view==='frente'?svgF(capaHex,habitoHex,capiroteHex):svgB(capaHex,habitoHex,capiroteHex);
-  document.getElementById('previewSvg').innerHTML = svgStr;
-  var thumb=document.getElementById('nazPreviewThumb');
-  if(thumb) thumb.innerHTML = svgStr; // reuse same string, no 2nd call
+  // ── INMEDIATO: CSS vars only (no DOM rebuild) ───────────────────────────
+  updateColors(capaHex, habitoHex, capiroteHex);
 
   document.getElementById('dPrevCapa').style.background=capaHex;
   document.getElementById('dPrevHabito').style.background=habitoHex;
@@ -1697,7 +2001,8 @@ function setView(v){
     S.view=v;
     const mono=S.modo==='mono';
     const ca=mono?S.mono:S.capa, ha=mono?S.mono:S.habito, cp=mono?S.mono:S.capirote;
-    document.getElementById('previewSvg').innerHTML=v==='frente'?svgF(ca,ha,cp):svgB(ca,ha,cp);
+    document.getElementById('svgFront').style.display=v==='frente'?'':'none';
+    document.getElementById('svgBack').style.display=v==='espalda'?'':'none';
   },275); // mitad de los 550ms
   setTimeout(()=>stage.classList.remove(animClass),560);
   document.getElementById('btnFrente').classList.toggle('on',v==='frente');
@@ -1933,8 +2238,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   setupReveal();
   initSwatchPreview();
   // Mini nazareno en panel de selección
-  const thumb=document.getElementById('nazPreviewThumb');
-  if(thumb) thumb.innerHTML=svgF(S.capa,S.habito,S.capirote);
+  // Initialize CSS color vars (static SVG already in DOM)
+  updateColors(S.capa, S.habito, S.capirote);
   initDark();
   // contador inicial animado
   animateCounter(COUNTER);
