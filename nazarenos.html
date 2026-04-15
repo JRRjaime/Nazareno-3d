@@ -1681,14 +1681,42 @@ function fmt(n){return n.toFixed(2).replace('.',',')+' €';}
    capiHex  = color capirote + careta
 ═══════════════════════════════════════════ */
 var _svgFCache={};
-function svgF(capaHex,habHex,capiHex){
-  var _key=capaHex+'|'+habHex+'|'+(capiHex||habHex);
+function svgF(capaHex,habHex,capiHex,conCruz){
+  var _key=capaHex+'|'+habHex+'|'+(capiHex||habHex)+'|'+(conCruz?'cruz':'');
   if(_svgFCache[_key]) return _svgFCache[_key];
   capiHex=capiHex||habHex;
   const ca=shades(capaHex),ha=shades(habHex),cp=shades(capiHex);
   const id='f'+Math.random().toString(36).slice(2,8);
   const sc=spOp(capaHex),sh=spOp(habHex),scp=spOp(capiHex);
   const skin='#d4a574',gold='#c9a54d',goldD='#8a6b20';
+  
+  // Elemento cruz que se agregará si conCruz es true
+  const cruzSVG = conCruz ? `
+<!-- CRUZ PROCESIONAL -->
+<g id="cruz">
+  <!-- Palo vertical de la cruz (madera) -->
+  <rect x="8" y="190" width="8" height="135" rx="3" fill="#5a3a1a"/>
+  <rect x="8.5" y="190" width="3" height="135" rx="1.5" fill="rgba(255,255,255,.15)"/>
+  <path d="M10 200 L10 315" stroke="#3a2410" stroke-width="0.8" opacity=".6"/>
+  
+  <!-- Cruz (madera oscura con detalles) -->
+  <rect x="3" y="200" width="18" height="7" rx="2.5" fill="#4a2a0a"/>
+  <rect x="3.5" y="200" width="3" height="7" rx="1" fill="rgba(255,255,255,.1)"/>
+  
+  <!-- Centro de la cruz con detalle de unión -->
+  <circle cx="12" cy="203.5" r="4.5" fill="#3a1a00"/>
+  <circle cx="12" cy="203.5" r="3.5" fill="#5a3a1a"/>
+  <circle cx="12" cy="203.5" r="2" fill="#8a5a2a" opacity=".3"/>
+  
+  <!-- Palo vertical de cruz superior -->
+  <rect x="9" y="185" width="6" height="20" rx="2" fill="#5a3a1a"/>
+  <rect x="9.5" y="185" width="2" height="20" rx="1" fill="rgba(255,255,255,.12)"/>
+  
+  <!-- Sombra de la cruz en la mano -->
+  <ellipse cx="12" cy="228" rx="6" ry="3" fill="rgba(0,0,0,.2)"/>
+</g>
+` : '';
+  
   return(_svgFCache[_key]=`<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <linearGradient id="ha${id}" x1=".15" y1="0" x2=".85" y2="1">
@@ -1796,19 +1824,45 @@ function svgF(capaHex,habHex,capiHex){
 <path d="M110.8 179 C109 174 109 169 110.8 166 C112.6 169 112.6 174 110.8 179 Z" fill="#fef9c3"/>
 <ellipse cx="110.8" cy="170" rx="5" ry="7" fill="rgba(251,146,60,.12)"/>
 
+${cruzSVG}
+
 </g></svg>`);
 }
 
 /* ════════════ ESPALDA ════════════ */
 var _svgBCache={};
-function svgB(capaHex,habHex,capiHex){
-  var _key=capaHex+'|'+habHex+'|'+(capiHex||habHex);
+function svgB(capaHex,habHex,capiHex,conCruz){
+  var _key=capaHex+'|'+habHex+'|'+(capiHex||habHex)+'|'+(conCruz?'cruz':'');
   if(_svgBCache[_key]) return _svgBCache[_key];
   capiHex=capiHex||habHex;
   const ca=shades(capaHex),ha=shades(habHex),cp=shades(capiHex);
   const id='b'+Math.random().toString(36).slice(2,8);
   const sc=spOp(capaHex),sh=spOp(habHex),scp=spOp(capiHex);
   const gold='#c9a54d',goldD='#8a6b20';
+  
+  // Elemento cruz que se agregará si conCruz es true (vista desde atrás)
+  const cruzSVG = conCruz ? `
+<!-- CRUZ PROCESIONAL (vista espalda) -->
+<g id="cruz-espalda">
+  <!-- Palo vertical de la cruz (madera) -->
+  <rect x="8" y="190" width="8" height="135" rx="3" fill="#4a2a0a"/>
+  <rect x="11" y="190" width="3" height="135" rx="1.5" fill="rgba(0,0,0,.25)"/>
+  <path d="M10 200 L10 315" stroke="#2a1a00" stroke-width="0.8" opacity=".6"/>
+  
+  <!-- Cruz horizontal (madera oscura) -->
+  <rect x="3" y="200" width="18" height="7" rx="2.5" fill="#3a1a00"/>
+  <rect x="15" y="200" width="3" height="7" rx="1" fill="rgba(0,0,0,.2)"/>
+  
+  <!-- Centro de la cruz con detalle de unión -->
+  <circle cx="12" cy="203.5" r="4.5" fill="#2a1000"/>
+  <circle cx="12" cy="203.5" r="3.5" fill="#4a2a0a"/>
+  
+  <!-- Palo vertical de cruz superior -->
+  <rect x="9" y="185" width="6" height="20" rx="2" fill="#4a2a0a"/>
+  <rect x="12" y="185" width="2" height="20" rx="1" fill="rgba(0,0,0,.2)"/>
+</g>
+` : '';
+  
   return(_svgBCache[_key]=`<svg viewBox="0 0 120 340" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <linearGradient id="ha${id}" x1=".85" y1="0" x2=".15" y2="1">
@@ -1882,6 +1936,8 @@ function svgB(capaHex,habHex,capiHex){
 <path d="M54 183 Q49 196 51 206 Q49 218 52 228" fill="none" stroke="${cp.d}" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
 <path d="M66 183 Q71 196 69 206 Q71 218 68 228" fill="none" stroke="${cp.d}" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
 
+${cruzSVG}
+
 </g></svg>`);
 }
 
@@ -1939,9 +1995,20 @@ function refresh(){
   const capaHex    = mono?S.mono:S.capa;
   const habitoHex  = mono?S.mono:S.habito;
   const capiroteHex= mono?S.mono:S.capirote;
+  const esCruz = (typeof CON_CRUZ !== 'undefined' && CON_CRUZ);
 
   // ── INMEDIATO: CSS vars only (no DOM rebuild) ───────────────────────────
   updateColors(capaHex, habitoHex, capiroteHex);
+  
+  // ── Regenerar SVG si cambia cruz ──
+  const svgFrontEl = document.getElementById('svgFront');
+  const svgBackEl = document.getElementById('svgBack');
+  if(svgFrontEl) {
+    svgFrontEl.innerHTML = svgF(capaHex, habitoHex, capiroteHex, esCruz);
+  }
+  if(svgBackEl) {
+    svgBackEl.innerHTML = svgB(capaHex, habitoHex, capiroteHex, esCruz);
+  }
 
   document.getElementById('dPrevCapa').style.background=capaHex;
   document.getElementById('dPrevHabito').style.background=habitoHex;
@@ -2480,8 +2547,9 @@ function initSwatchPreview(){
     if(isCapa) capaH=hex;
     else if(isHabito) habH=hex;
     else if(isMono){capaH=hex;habH=hex;}
-    var _k=capaH+'|'+habH+'|'+S.capirote;
-    if(previewEl._lastKey!==_k){previewEl.innerHTML=svgF(capaH,habH,S.capirote);previewEl._lastKey=_k;}
+    const esCruz = typeof CON_CRUZ !== 'undefined' && CON_CRUZ;
+    var _k=capaH+'|'+habH+'|'+S.capirote+'|'+(esCruz?'cruz':'');
+    if(previewEl._lastKey!==_k){previewEl.innerHTML=svgF(capaH,habH,S.capirote,esCruz);previewEl._lastKey=_k;}
     const r=sw.getBoundingClientRect();
     // usar posición fija en el viewport (no suma scroll)
     previewEl.style.left=Math.max(4,Math.min(r.left+r.width/2-36, window.innerWidth-80))+'px';
