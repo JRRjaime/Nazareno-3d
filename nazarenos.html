@@ -2359,7 +2359,7 @@ function sendFromPopup(type){
 
 function buildCartMsg(nombre,tel){
   const numPedido=genOrderId();
-  let lines=[`🕯️ PEDIDO SEMANA SANTA 3D\nNº Pedido: ${numPedido}\nCliente: ${nombre}${tel?' · '+tel:''}\n`];
+  let lines=[`✅ ¡PEDIDO RECIBIDO!\n\n📦 ID de pedido: #${numPedido}\n👤 Nombre: ${nombre}${tel?'\n📱 Teléfono: '+tel:''}\n`];
   CART.forEach((item,i)=>{
     const mono=item.modo==='mono';
     lines.push(`── Artículo ${i+1} ──`);
@@ -2380,8 +2380,11 @@ function buildCartMsg(nombre,tel){
     lines.push(`Precio: ${item.precio}\n`);
   });
   const total=CART.reduce((s,i)=>s+i.precioNum,0);
-  lines.push(`TOTAL ESTIMADO: ${fmt(total)}`);
-  lines.push('\n¿Me confirmas disponibilidad y plazo? Gracias.');
+  lines.push(`💰 TOTAL ESTIMADO: ${fmt(total)}`);
+  lines.push('\n🔔 Consulta el estado de tu pedido en tiempo real:');
+  lines.push('👉 https://t.me/Webjrr_bot');
+  lines.push('\nEscribe /consultarpedido en el bot e introduce tu número de pedido: #'+numPedido);
+  lines.push('\n¡Gracias por confiar en Nazarenos 3D!');
   return lines.join('\n');
 }
 
@@ -2526,20 +2529,23 @@ function enviarEncargo(){
   const detalles = document.getElementById('eDetalles').value.trim();
 
   const lineas=[
-    '✦ ENCARGO ESPECIAL · NAZARENOS 3D',
+    '✅ ¡ENCARGO ESPECIAL RECIBIDO!',
     '',
     '── Datos de contacto ──',
-    `Nombre: ${nombre}`,
-    `Teléfono: ${telefono}`,
-    cofradia ? `Hermandad / Cofradía: ${cofradia}` : '',
-    ciudad   ? `Localidad: ${ciudad}` : '',
+    `👤 Nombre: ${nombre}`,
+    `📱 Teléfono: ${telefono}`,
+    cofradia ? `⛪ Hermandad / Cofradía: ${cofradia}` : '',
+    ciudad   ? `📍 Localidad: ${ciudad}` : '',
     '',
     '── Detalles de la pieza ──',
-    `Tamaño deseado: ${tamano}`,
-    cantidad ? `Cantidad aproximada: ${cantidad} uds` : '',
-    color    ? `Color de la capa: ${color}` : '',
-    habito   ? `Color del hábito: ${habito}` : '',
-    detalles ? `\nDetalles adicionales:\n${detalles}` : '',
+    `📏 Tamaño deseado: ${tamano}`,
+    cantidad ? `🔢 Cantidad aproximada: ${cantidad} uds` : '',
+    color    ? `🎨 Color de la capa: ${color}` : '',
+    habito   ? `🎭 Color del hábito: ${habito}` : '',
+    detalles ? `\n📝 Detalles adicionales:\n${detalles}` : '',
+    '',
+    '🔔 Podrás consultar el estado de tu pedido en:',
+    '👉 https://t.me/Webjrr_bot',
     '',
     '¿Puedes prepararme un presupuesto? Gracias 🙏',
   ].filter(l=>l!==null&&l!==undefined).join('\n');
