@@ -2652,6 +2652,17 @@ function showTipo(tipo,btn){
   var p=document.getElementById('panel-'+tipo);
   if(p) p.classList.add('active');
   if(btn) btn.classList.add('on');
+  
+  // Mostrar/ocultar el configurador completo según la pestaña
+  var configuradorSection=document.getElementById('catalogo');
+  if(configuradorSection){
+    if(tipo==='nazareno'||tipo==='cruz'){
+      configuradorSection.style.display='block';
+    } else {
+      configuradorSection.style.display='none';
+    }
+  }
+  
   // Mostrar/ocultar toggle cruz según la pestaña
   var wrap=document.getElementById('cruzToggleWrap');
   if(wrap){
@@ -2715,6 +2726,9 @@ function activarCruz(){
   // Marcar el check
   var wrap = document.getElementById('cruzToggleWrap');
   if(wrap) wrap.style.display = 'block';
+  // Mostrar configurador
+  var configuradorSection = document.getElementById('catalogo');
+  if(configuradorSection) configuradorSection.style.display = 'block';
   // Scroll al configurador
   document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});
   // Forzar pestaña nazareno activa por si acaso
