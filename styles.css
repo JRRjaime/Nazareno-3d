@@ -1,0 +1,424 @@
+/* ============ GOTHIC CATHEDRAL · SEMANA SANTA 3D ============ */
+:root{
+  --stone-0:#0a0908;          /* casi negro, tono cálido */
+  --stone-1:#13110f;          /* fondo principal */
+  --stone-2:#1c1814;          /* fondo elevado */
+  --stone-3:#2a241e;          /* divisores */
+  --stone-4:#3d3328;          /* bordes activos */
+
+  --parchment:#efe4cc;        /* pergamino */
+  --parchment-2:#e1d3b5;
+  --parchment-soft:#cfc1a2;
+  --parchment-mute:#9b8e72;
+
+  --burgundy:#6b1024;         /* granate cofrade */
+  --burgundy-2:#8a1832;
+  --burgundy-deep:#3d0915;
+
+  --gold:#caa54c;             /* oro litúrgico */
+  --gold-bright:#e3c073;
+  --gold-deep:#8c6c1f;
+
+  --glass-blue:#1c3a6e;
+  --glass-blue-2:#2a5aa8;
+  --glass-red:#7a1422;
+  --glass-green:#1f4a35;
+  --glass-violet:#3a1a4d;
+
+  --max:1300px;
+  --gutter:32px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--stone-1)}
+body{
+  background:var(--stone-1);
+  color:var(--parchment);
+  font-family:"Cormorant Garamond","EB Garamond",Georgia,serif;
+  font-size:18px;
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+.cinzel{font-family:"Cinzel","Cinzel Decorative",serif;font-weight:500;letter-spacing:0.04em}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.italic{font-style:italic;font-family:"Cormorant Garamond","EB Garamond",serif}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+@media (max-width:640px){:root{--gutter:20px}}
+
+/* paper grain + stone block texture on dark backgrounds */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(202,165,76,0.05), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(107,16,36,0.07), transparent 55%),
+    /* stone ashlar courses */
+    repeating-linear-gradient(0deg, transparent 0 118px, rgba(0,0,0,0.35) 118px 119px, transparent 119px 120px),
+    repeating-linear-gradient(90deg, transparent 0 196px, rgba(0,0,0,0.28) 196px 197px);
+  mix-blend-mode:screen;
+  opacity:.55;
+}
+/* shafts of light from clerestory windows above */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:
+    linear-gradient(190deg, rgba(227,192,115,0.05) 0%, transparent 28%),
+    linear-gradient(170deg, rgba(227,192,115,0.04) 0%, transparent 28%);
+}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.9  0 0 0 0 0.7  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ============ TYPE SCALE ============ */
+.eyebrow{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow-with-rule{display:inline-flex;align-items:center;gap:14px}
+.eyebrow-with-rule::before,
+.eyebrow-with-rule::after{content:"";display:block;width:42px;height:1px;background:var(--gold);opacity:.55}
+.eyebrow-with-rule.left::before{display:none}
+
+h1,h2,h3,h4{font-family:"Cinzel",serif;font-weight:500;color:var(--parchment);margin:0;letter-spacing:0.03em;text-transform:uppercase;line-height:1.05}
+h1{font-size:clamp(48px,8vw,120px);font-weight:600;letter-spacing:0.04em}
+h2{font-size:clamp(36px,5vw,68px);font-weight:500;letter-spacing:0.06em}
+h3{font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:0.08em}
+.script{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:0;color:var(--gold-bright)}
+
+p{margin:0 0 1em;color:var(--parchment-soft);text-wrap:pretty}
+.lede{font-size:21px;line-height:1.55;color:var(--parchment-2);max-width:58ch}
+.latin{
+  font-family:"Cormorant Garamond",serif;font-style:italic;
+  color:var(--gold-bright);letter-spacing:0.04em;
+  font-size:15px;
+}
+strong{color:var(--parchment);font-weight:600}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(10,9,8,0.78);
+  backdrop-filter:blur(14px) saturate(120%);
+  -webkit-backdrop-filter:blur(14px) saturate(120%);
+  border-bottom:1px solid rgba(202,165,76,0.18);
+}
+.nav-inner{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;
+  padding:18px 0;
+}
+.brand{display:inline-flex;align-items:center;gap:14px;text-decoration:none;color:var(--parchment)}
+.brand-mark{
+  width:44px;height:60px;flex:none;
+  background:linear-gradient(180deg,var(--burgundy),var(--burgundy-deep));
+  clip-path:path("M22 0 C 33 0, 44 11, 44 22 L 44 60 L 0 60 L 0 22 C 0 11, 11 0, 22 0 Z");
+  display:grid;place-items:center;
+  color:var(--gold-bright);
+  font-family:"Cinzel",serif;font-weight:600;font-size:20px;
+  border:1px solid rgba(202,165,76,0.35);
+  position:relative;
+}
+.brand-mark::after{
+  content:"";position:absolute;inset:6px;
+  border:1px solid rgba(202,165,76,0.25);
+  clip-path:path("M16 0 C 24 0, 32 8, 32 16 L 32 48 L 0 48 L 0 16 C 0 8, 8 0, 16 0 Z");
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text .a{font-family:"Cinzel",serif;font-weight:500;font-size:17px;letter-spacing:0.12em;text-transform:uppercase;color:var(--parchment)}
+.brand-text .b{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--parchment-mute);font-family:"JetBrains Mono",monospace;margin-top:3px}
+
+.nav-links{display:flex;justify-content:center;gap:30px}
+.nav-links a{
+  text-decoration:none;color:var(--parchment-soft);
+  font-family:"Cinzel",serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;
+  position:relative;padding:6px 2px;
+  transition:color .25s ease;
+}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nav-links a:hover{color:var(--gold-bright)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+.nav-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 20px;
+  background:var(--burgundy);color:var(--parchment);
+  font-family:"Cinzel",serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;
+  text-decoration:none;
+  border:1px solid var(--gold);
+  position:relative;
+  transition:background .25s ease, color .25s ease;
+}
+.nav-cta::before,.nav-cta::after{
+  content:"";position:absolute;width:6px;height:6px;border:1px solid var(--gold);
+}
+.nav-cta::before{top:-3px;left:-3px;border-right:none;border-bottom:none}
+.nav-cta::after{bottom:-3px;right:-3px;border-left:none;border-top:none}
+.nav-cta:hover{background:var(--burgundy-2);color:var(--gold-bright)}
+
+@media (max-width:920px){
+  .nav-links{display:none}
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 30px;
+  font-family:"Cinzel",serif;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;
+  text-decoration:none;
+  border:none;cursor:pointer;
+  position:relative;
+  transition:transform .2s ease, background .25s ease, color .25s ease;
+}
+.btn-primary{
+  background:var(--gold);color:var(--stone-0);
+  box-shadow:0 1px 0 var(--gold-bright) inset, 0 -2px 0 var(--gold-deep) inset, 0 12px 30px -10px rgba(202,165,76,0.4);
+}
+.btn-primary:hover{background:var(--gold-bright);transform:translateY(-2px)}
+.btn-ghost{
+  background:transparent;color:var(--parchment);
+  border:1px solid rgba(239,228,204,0.3);
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-bright)}
+.btn-wa{
+  background:#1a4d2e;color:#e8d9ad;
+  border:1px solid rgba(202,165,76,0.4);
+}
+.btn-wa:hover{background:#0f3a20;color:var(--gold-bright)}
+.btn-burgundy{
+  background:var(--burgundy);color:var(--parchment);
+  border:1px solid var(--gold);
+}
+.btn-burgundy:hover{background:var(--burgundy-2);color:var(--gold-bright)}
+.arrow{display:inline-block;transition:transform .25s ease}
+.btn:hover .arrow{transform:translate(4px,-4px)}
+
+/* ============ ARCH FRAME (POINTED ARCH) ============ */
+/* element to apply: a wrapper with .arch */
+.arch{
+  --arch-r:50%;
+  position:relative;
+  clip-path:path("M0 var(--arch-h) L0 var(--arch-r) Q0 0 var(--arch-w-half) 0 Q var(--arch-w) 0 var(--arch-w) var(--arch-r) L var(--arch-w) var(--arch-h) Z");
+}
+/* Use SVG-clip via inline mask — safer cross-browser. We'll do via SVG clipPath in markup. */
+
+/* Generic fallback: rounded top with a triangular cap via overflow */
+.gothic-frame{
+  position:relative;
+  background:var(--stone-2);
+  border:1px solid rgba(202,165,76,0.22);
+  overflow:hidden;
+}
+.gothic-frame::before{
+  /* pointed arch top: two diagonal lines via clip-path on an inner pseudo isn't great.
+     Use background-clip-path on the frame itself via class .arch-clip */
+}
+.arch-clip{
+  -webkit-clip-path:polygon(0 100%, 0 30%, 50% 0, 100% 30%, 100% 100%);
+  clip-path:polygon(0 100%, 0 30%, 50% 0, 100% 30%, 100% 100%);
+}
+/* Smoother arch using SVG clip path defined inline in HTML: we'll reference #pointed-arch */
+
+/* gothic divider — a row of small lozenges */
+.divider{
+  display:flex;justify-content:center;align-items:center;gap:14px;
+  padding:24px 0;color:var(--gold);
+}
+.divider::before,.divider::after{content:"";flex:1;max-width:240px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.4}
+.divider .glyph{font-family:"Cinzel",serif;font-size:14px;letter-spacing:0.4em;color:var(--gold-bright)}
+
+/* ===== CATHEDRAL ORNAMENTS ===== */
+/* ribbed vault ceiling at top of page (sits inside hero) */
+.vault-ceiling{
+  position:absolute;top:0;left:0;right:0;height:160px;
+  pointer-events:none;z-index:3;overflow:hidden;
+  -webkit-mask:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);
+  mask:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);
+}
+.vault-ceiling svg{width:100%;height:100%;display:block}
+
+/* quatrefoil tracery overlaid at top of each niche arch */
+.niche-tracery{
+  position:absolute;left:18px;right:18px;top:18px;height:38%;
+  pointer-events:none;z-index:3;
+}
+.niche-tracery svg{width:100%;height:100%;display:block;filter:drop-shadow(0 2px 0 rgba(0,0,0,0.5))}
+
+/* fleur-de-lis ornament block (used in dividers + sections) */
+.fleur{display:inline-block;color:var(--gold);width:48px;height:48px}
+.fleur svg{width:100%;height:100%;display:block}
+
+/* ornate horizontal divider with gold capitals */
+.ornate-rule{
+  display:flex;align-items:center;justify-content:center;gap:22px;
+  padding:70px 0 10px;
+}
+.ornate-rule .line{flex:1;max-width:280px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep) 30%,var(--gold) 50%,var(--gold-deep) 70%,transparent)}
+.ornate-rule .lozenge{
+  width:14px;height:14px;background:var(--gold);
+  transform:rotate(45deg);position:relative;
+  box-shadow:0 0 0 1px var(--gold-deep), 0 0 16px rgba(227,192,115,0.4);
+}
+.ornate-rule .lozenge::after{content:"";position:absolute;inset:3px;background:var(--burgundy-deep);transform:rotate(-45deg)}
+
+/* clerestory window strip above sections */
+.clerestory{
+  position:absolute;top:-1px;left:0;right:0;height:38px;pointer-events:none;
+  background:
+    linear-gradient(180deg,transparent 0%,rgba(202,165,76,0.18) 100%),
+    repeating-linear-gradient(90deg,
+      transparent 0 7%,
+      var(--gold-deep) 7% 7.4%,
+      transparent 7.4% 7.7%,
+      var(--glass-blue) 7.7% 14%,
+      var(--gold-deep) 14% 14.4%,
+      transparent 14.4% 14.7%,
+      var(--burgundy) 14.7% 21%,
+      var(--gold-deep) 21% 21.4%,
+      transparent 21.4% 21.7%);
+  -webkit-mask:linear-gradient(180deg,transparent,#000 50%,transparent);
+  mask:linear-gradient(180deg,transparent,#000 50%,transparent);
+  opacity:.45;
+}
+
+/* ============ SECTION HEADERS ============ */
+section{padding:140px 0;position:relative;z-index:3}
+@media (max-width:640px){section{padding:90px 0}}
+.sec-head{
+  text-align:center;
+  max-width:820px;margin:0 auto 80px;
+}
+.sec-num{
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;letter-spacing:0.32em;color:var(--gold);
+  margin-bottom:18px;
+}
+.sec-head h2{margin:0 0 18px}
+.sec-head .latin{display:block;margin-bottom:8px}
+.sec-head .lede{margin:24px auto 0}
+
+/* ============ STAINED GLASS RIBBON ============ */
+.glass-ribbon{
+  height:14px;width:100%;
+  background:
+    linear-gradient(90deg,
+      var(--burgundy) 0 6%, var(--gold) 6% 7%,
+      var(--glass-blue) 7% 18%, var(--gold) 18% 19%,
+      var(--glass-red) 19% 30%, var(--gold) 30% 31%,
+      var(--glass-violet) 31% 42%, var(--gold) 42% 43%,
+      var(--glass-green) 43% 54%, var(--gold) 54% 55%,
+      var(--burgundy) 55% 66%, var(--gold) 66% 67%,
+      var(--glass-blue) 67% 78%, var(--gold) 78% 79%,
+      var(--glass-red) 79% 90%, var(--gold) 90% 91%,
+      var(--burgundy) 91% 100%);
+  position:relative;
+  border-top:1px solid var(--gold-deep);
+  border-bottom:1px solid var(--gold-deep);
+}
+.glass-ribbon::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.18), transparent 40%, rgba(0,0,0,0.35));
+  pointer-events:none;
+}
+
+/* ============ FAQ DETAILS ============ */
+.faq-list{display:flex;flex-direction:column;border-top:1px solid rgba(202,165,76,0.2)}
+.faq-item{border-bottom:1px solid rgba(202,165,76,0.2)}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;
+  padding:30px 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  font-family:"Cinzel",serif;font-size:18px;font-weight:500;letter-spacing:0.06em;
+  color:var(--parchment);text-transform:uppercase;
+}
+.faq-q .ic{
+  flex-shrink:0;width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(202,165,76,0.4);
+  display:grid;place-items:center;color:var(--gold);
+  transition:transform .3s ease, background .25s ease;
+  font-size:20px;line-height:0;font-weight:300;
+}
+.faq-item[open] .faq-q .ic{transform:rotate(45deg);background:var(--burgundy);border-color:var(--gold);color:var(--gold-bright)}
+.faq-a{padding:0 60px 28px 0;color:var(--parchment-soft);font-size:17px;line-height:1.65;max-width:780px;font-family:"Cormorant Garamond",serif}
+
+/* ============ FOOTER ============ */
+footer{
+  background:var(--stone-0);
+  padding:80px 0 28px;
+  border-top:1px solid rgba(202,165,76,0.2);
+  position:relative;
+  z-index:3;
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:60px;border-bottom:1px solid rgba(202,165,76,0.18);
+}
+@media (max-width:820px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin:0 0 18px;font-weight:500}
+.foot-grid a, .foot-grid p{color:var(--parchment-soft);text-decoration:none;font-size:15px;line-height:1.85;font-family:"Cormorant Garamond",serif}
+.foot-grid a:hover{color:var(--gold-bright)}
+.foot-brand .name{font-family:"Cinzel",serif;font-size:22px;letter-spacing:0.1em;color:var(--parchment);margin-bottom:10px;text-transform:uppercase}
+.foot-brand .tag{color:var(--parchment-mute);font-size:14px;max-width:300px;line-height:1.7}
+.foot-bottom{
+  padding-top:24px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--parchment-mute);
+}
+
+/* ============ FLOATING WHATSAPP ============ */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:60;
+  background:#25d366;color:#0a3d20;
+  width:62px;height:62px;border-radius:50%;
+  display:grid;place-items:center;
+  box-shadow:0 14px 32px -10px rgba(37,211,102,0.55), 0 0 0 4px rgba(37,211,102,0.15);
+  text-decoration:none;
+  transition:transform .15s ease;
+  border:2px solid var(--gold);
+}
+.wa-float:hover{transform:translateY(-3px) scale(1.04)}
+.wa-float svg{width:30px;height:30px}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ ROSETTE / ROSE WINDOW ANIMATION ============ */
+.rose-spin{
+  animation:rose-spin 80s linear infinite;
+  transform-origin:center;
+}
+.rose-spin-rev{
+  animation:rose-spin 60s linear infinite reverse;
+  transform-origin:center;
+}
+@keyframes rose-spin{
+  to{transform:rotate(360deg)}
+}
+.glass-pulse{animation:glass-pulse 4.5s ease-in-out infinite alternate;transform-origin:center}
+@keyframes glass-pulse{
+  0%{filter:brightness(0.8)}
+  100%{filter:brightness(1.25)}
+}
+.glass-pulse.delay-1{animation-delay:.7s}
+.glass-pulse.delay-2{animation-delay:1.4s}
+.glass-pulse.delay-3{animation-delay:2.1s}
+
+/* parallax helper */
+.parallax{will-change:transform}
+
+/* selection */
+::selection{background:var(--burgundy);color:var(--gold-bright)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:10px;background:var(--stone-0)}
+::-webkit-scrollbar-thumb{background:var(--stone-3);border-radius:0}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-deep)}
